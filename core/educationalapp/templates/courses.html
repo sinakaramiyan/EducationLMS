@@ -1,0 +1,301 @@
+{% extends "base/_base.html" %}
+
+{% block content %} 
+<!-- header -->
+<div class="grid grid-cols-2 border-b-2 sm:grid-cols-1">
+    <div class="grid grid-rows-2">
+        <p class="text-4xl">دوره ها/</p>
+        <div class="flex flex-col gap-4 ml-28 sm:w-full">
+            <label class="text-3xl font-bold" for="search">جستجو</label>
+            <div class="relative">
+                <svg class="absolute transform translate-y-1/2 w-8 h-8" fill="gray" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <defs>
+                    <style>
+                        .cls-1 {
+                        fill: none;
+                        }
+                    </style>
+                    </defs>
+                    <path d="M29,27.5859l-7.5521-7.5521a11.0177,11.0177,0,1,0-1.4141,1.4141L27.5859,29ZM4,13a9,9,0,1,1,9,9A9.01,9.01,0,0,1,4,13Z" transform="translate(0 0)"/>
+                    <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                </svg>
+                
+                <input class="border-b-[2px] border-gray-400 bg-zinc-200 h-16 w-full text-center" type="text" id="search" name="search">
+            </div>
+        </div>
+    </div>
+    <figure>
+        <img class="w-full h-auto" src="https://i.ibb.co/5nZW4JL/Vector.png" alt="">
+    </figure>
+</div>
+<!-- content -->
+<div class="grid grid-cols-4 mt-8 sm:grid-cols-1">
+    <!-- column 1 : Filter -->
+    <div class="col-span-1 py-4 pl-4">
+        <div class="grid grid-cols-2 justify-between items-center p-4 h-auto text-white bg-zinc-700">
+            <span class="text-xl">نوع فیلتر</span>            
+            <a class="flex justify-end items-center text-sm text-blue-500" href="">پاک کردن فیلترها</a>
+        </div>
+        <!-- accordion1 -->
+        <details class="group my-1">
+            <summary type="button" class="flex items-center justify-between w-full cursor-pointer p-4 font-medium rtl:text-right text-black border border-b-2 border-zinc-300 bg-zinc-200 hover:bg-zinc-400" aria-expanded="false" aria-controls="accordion-body-1">
+                <span>زبان های برنامه نویسی</span>
+                <svg data-accordion-icon class="w-6 h-6 shrink-0 group-open:rotate-180" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </summary>
+            <div class="overflow-hidden">
+                <div class="flex justify-between p-2 border-2 border-gray-200 bg-zinc-200">
+                    <div>
+                        <input type="checkbox" id="language">
+                        <label for="language" id="language">زبان پایتون</label>
+                    </div>
+                    <div>
+                        <span>12</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <!-- accordion2 -->
+        <details class="group my-1">
+            <summary type="button" class="flex items-center justify-between w-full p-4 cursor-pointer font-medium rtl:text-right text-black border border-b-2 border-zinc-300 bg-zinc-200 hover:bg-zinc-400" aria-expanded="false" aria-controls="accordion-body-1">
+                <span>زبان های برنامه نویسی</span>
+                <svg data-accordion-icon class="w-6 h-6 shrink-0 group-open:rotate-180" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </summary>
+            <div class="overflow-hidden">
+                <div class="flex justify-between p-2 border-2 border-gray-200 bg-zinc-200">
+                    <div>
+                        <input type="checkbox" id="language">
+                        <label for="language" id="language">زبان پایتون</label>
+                    </div>
+                    <div>
+                        <span>12</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <!-- column 2 : courses -->
+    <div class="grid col-span-3 py-4 pr-4 sm:justify-centers sm:pr-0">
+        <div class="grid grid-cols-3 text-white bg-blue-500 sm:grid-cols-2">
+            <p class="text-xl p-4">نشان دادن 13 نتیجه</p>
+            <div class="flex justify-end items-center gap-4 border-l-2 border-white">
+                <svg class="w-7 h-7" id="icon" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <defs>
+                    <style>
+                        .cls-1{fill:none;}
+                    </style>
+                    </defs>
+                    <title>
+                    menu
+                    </title>
+                    <rect x="4" y="6" width="24" height="2"/>
+                    <rect x="4" y="24" width="24" height="2"/>
+                    <rect x="4" y="12" width="24" height="2"/>
+                    <rect x="4" y="18" width="24" height="2"/>
+                    <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                </svg>
+                <svg class="ml-4 w-7 h-7" version="1.1" id="icon" xmlns="http://www.w3.org/2000/svg" fill="white" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:none;}
+                    </style>
+                    <rect class="st0" width="32" height="32"/>
+                    <rect x="14" y="4" width="4" height="4"/>
+                    <rect x="4" y="4" width="4" height="4"/>
+                    <rect x="24" y="4" width="4" height="4"/>
+                    <rect x="14" y="14" width="4" height="4"/>
+                    <rect x="4" y="14" width="4" height="4"/>
+                    <rect x="24" y="14" width="4" height="4"/>
+                    <rect x="14" y="24" width="4" height="4"/>
+                    <rect x="4" y="24" width="4" height="4"/>
+                    <rect x="24" y="24" width="4" height="4"/>
+                </svg>
+            </div>
+            <div class="flex justify-end items-center sm:col-span-2">
+                <span class="text-xl p-4">مرتب کردن بر اساس</span>
+                <details class="group relative inline-block text-right">
+                    <summary type="button" class="inline-flex w-full justify-center gap-x-2 px-3 py-2 text-sm cursor-pointer text-black hover:bg-blue-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                        <span class="text-white">نام</span>
+                        <svg class="-mr-1 h-5 w-5 text-gray-400 fill-white group-open:rotate-180 " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </summary>
+                    <div class="absolute left-0 flex w-48 flex-col rounded-sm translate-y-3 border border-solid bg-white shadow-sm">
+                        <ul class="flex flex-col border-b text-black">
+                            <li class="hover:bg-zinc-200">
+                                <a href="" class="flex items-center gap-4 px-4 py-3 text-sm font-medium duration-300 ease-in-out hover:text-blue-500">
+                                    <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z" fill=""></path>
+                                        <path d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z" fill=""></path>
+                                    </svg>
+                                    نام
+                                </a>
+                            </li>
+                            <li class="hover:bg-zinc-200">
+                                <a href="" class="flex items-center gap-4 px-4 py-3 text-sm font-medium duration-300 ease-in-out hover:text-blue-500">
+                                    <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.6687 1.44374C17.1187 0.893744 16.4312 0.618744 15.675 0.618744H7.42498C6.25623 0.618744 5.25935 1.58124 5.25935 2.78437V4.12499H4.29685C3.88435 4.12499 3.50623 4.46874 3.50623 4.91562C3.50623 5.36249 3.84998 5.70624 4.29685 5.70624H5.25935V10.2781H4.29685C3.88435 10.2781 3.50623 10.6219 3.50623 11.0687C3.50623 11.4812 3.84998 11.8594 4.29685 11.8594H5.25935V16.4312H4.29685C3.88435 16.4312 3.50623 16.775 3.50623 17.2219C3.50623 17.6687 3.84998 18.0125 4.29685 18.0125H5.25935V19.25C5.25935 20.4187 6.22185 21.4156 7.42498 21.4156H15.675C17.2218 21.4156 18.4937 20.1437 18.5281 18.5969V3.47187C18.4937 2.68124 18.2187 1.95937 17.6687 1.44374ZM16.9469 18.5625C16.9469 19.2844 16.3625 19.8344 15.6406 19.8344H7.3906C7.04685 19.8344 6.77185 19.5594 6.77185 19.2156V17.875H8.6281C9.0406 17.875 9.41873 17.5312 9.41873 17.0844C9.41873 16.6375 9.07498 16.2937 8.6281 16.2937H6.77185V11.7906H8.6281C9.0406 11.7906 9.41873 11.4469 9.41873 11C9.41873 10.5875 9.07498 10.2094 8.6281 10.2094H6.77185V5.63749H8.6281C9.0406 5.63749 9.41873 5.29374 9.41873 4.84687C9.41873 4.39999 9.07498 4.05624 8.6281 4.05624H6.77185V2.74999C6.77185 2.40624 7.04685 2.13124 7.3906 2.13124H15.6406C15.9844 2.13124 16.2937 2.26874 16.5687 2.50937C16.8094 2.74999 16.9469 3.09374 16.9469 3.43749V18.5625Z" fill=""></path>
+                                    </svg>
+                                    تاریخ   
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- accordion item1 -->
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between text-black border bg-zinc-200 hover:bg-zinc-200  p-5">
+                <div class="flex items-center gap-4">
+                    <svg id="icon" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <defs>
+                            <style>
+                            .cls-1 {
+                                fill: none;
+                            }
+                            </style>
+                        </defs>
+                        <path d="M28,21V18a4,4,0,0,0-8,0v3a2.0025,2.0025,0,0,0-2,2v5a2.0025,2.0025,0,0,0,2,2h8a2.0025,2.0025,0,0,0,2-2V23A2.0025,2.0025,0,0,0,28,21Zm-6-3a2,2,0,0,1,4,0v3H22ZM20,28V23h8v5Z" transform="translate(0 0)"/>
+                        <path d="M23.499,9.085,16.707,2.293A1,1,0,0,0,16,2H6A2.0058,2.0058,0,0,0,4,4V28a2.0058,2.0058,0,0,0,2,2h8V28H6V4h8v6a2.0023,2.0023,0,0,0,2,2h6.292a1.7075,1.7075,0,0,0,1.207-2.915ZM16,10V4.4141L21.5854,10Z" transform="translate(0 0)"/>
+                        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                    </svg>
+                    <span class="text-xl font-bold">دوره نمونه</span>
+                </div>
+                <svg class="flex justify-end w-10 h-10 group-open:rotate-180" data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
+                    </path>
+                </svg>
+            </summary>
+            <div class="overflow-hidden">
+                <div class="grid grid-cols-3 justify-between p-5 border-2 border-zinc-400 sm:grid-cols-1">
+                    <figure class="grid col-span-1 ml-4">
+                        <img class="w-full h-auto" src="https://i.ibb.co/1bspL6f/christopher-gower-m-HRf-Lhg-ABo-unsplash.jpg" alt="عکس دوره">
+                    </figure>
+                    <div class="grid grid-rows-2 justify-between gap-4 col-span-2 pb-4 sm:grid-rows-1">
+                        <div>
+                            <p class="text-base my-2">این دوره به شما در جهت افزایش دانش کمک میکند</p>
+                            <div class="flex flex-grow-1 gap-5 sm:flex-col">
+                                <p class="border-l-2 pl-2 border-zinc-500 sm:border-l-0">توضیحات 1</p>
+                                <p class="border-l-2 pl-2 border-zinc-500 sm:border-l-0">توضیحات 1</p>
+                                <p class="border-l-2 pl-2 border-zinc-500 sm:border-l-0">توضیحات 1</p>
+                                <p>توضیحات 1</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="inline-flex items-center justify-between px-4 py-3 mb-2 text-base font-light text-center text-white bg-blue-700 border-2 border-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" href="">
+                                <span>شروع دوره</span>
+                                <svg id="icon" class="w-7 h-7" fill="currentcolor" viewBox="0 0 32 32">
+                                    <defs>
+                                        <style>
+                                        .cls-1 {
+                                            fill: none;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
+                                    <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="20" height="20" fill="#000000"/>
+                                </svg>
+                            </a>
+                            <a href="/course" class="inline-flex items-center justify-between px-4 py-3 text-base font-light text-center border-2 border-blue-700 text-blue-700 hover:bg-blue-100 focus:ring-2 focus:ring-blue-300">
+                                <span>مشاهده دوره</span>
+                                <svg fill="blue" class="w-7 h-7" id="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                    <defs>
+                                        <style>
+                                        .cls-1 {
+                                            fill: none;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <polygon points="22 27.1798 19.41 24.5899 18 26 22 30 30 22 28.5899 20.59 22 27.1798"/>
+                                    <rect x="9" y="17" width="7" height="2"/>
+                                    <rect x="9" y="12" width="12" height="2"/>
+                                    <rect x="9" y="7" width="12" height="2"/>
+                                    <path d="m16,30H6c-1.103,0-2-.8972-2-2V4c0-1.1028.897-2,2-2h18c1.103,0,2,.8972,2,2v15h-2V4H6v24h10v2Z"/>
+                                    <rect id="_Transparent_Rectangle_" data-name="&amp;lt;Transparent Rectangle&amp;gt;" class="cls-1 bg-white" width="32" height="32"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <!-- accordion item2 -->
+        <details class="group mt-1">
+            <summary class="flex cursor-pointer items-center justify-between text-black border bg-zinc-200 hover:bg-zinc-200  p-5">
+                <div class="flex items-center gap-4">
+                    <svg id="icon" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <defs>
+                            <style>
+                            .cls-1 {
+                                fill: none;
+                            }
+                            </style>
+                        </defs>
+                        <path d="M28,21V18a4,4,0,0,0-8,0v3a2.0025,2.0025,0,0,0-2,2v5a2.0025,2.0025,0,0,0,2,2h8a2.0025,2.0025,0,0,0,2-2V23A2.0025,2.0025,0,0,0,28,21Zm-6-3a2,2,0,0,1,4,0v3H22ZM20,28V23h8v5Z" transform="translate(0 0)"/>
+                        <path d="M23.499,9.085,16.707,2.293A1,1,0,0,0,16,2H6A2.0058,2.0058,0,0,0,4,4V28a2.0058,2.0058,0,0,0,2,2h8V28H6V4h8v6a2.0023,2.0023,0,0,0,2,2h6.292a1.7075,1.7075,0,0,0,1.207-2.915ZM16,10V4.4141L21.5854,10Z" transform="translate(0 0)"/>
+                        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                    </svg>
+                    <span class="text-xl font-bold">دوره نمونه</span>
+                </div>
+                <svg class="flex justify-end w-10 h-10 group-open:rotate-180" data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
+                    </path>
+                </svg>
+            </summary>
+            <div class="overflow-hidden">
+                <div class="grid grid-cols-3 justify-between p-5 border-2 border-zinc-400 sm:grid-cols-1">
+                    <figure class="grid col-span-1 ml-4">
+                        <img class="w-full h-auto" src="https://i.ibb.co/1bspL6f/christopher-gower-m-HRf-Lhg-ABo-unsplash.jpg" alt="عکس دوره">
+                    </figure>
+                    <div class="grid grid-rows-2 justify-between gap-4 col-span-2 pb-4 sm:grid-rows-1">
+                        <div>
+                            <p class="text-base my-2">این دوره به شما در جهت افزایش دانش کمک میکند</p>
+                            <div class="flex flex-grow-1 gap-5 sm:flex-col">
+                                <p class="border-l-2 pl-2 border-zinc-500 sm:border-l-0">توضیحات 1</p>
+                                <p class="border-l-2 pl-2 border-zinc-500 sm:border-l-0">توضیحات 1</p>
+                                <p class="border-l-2 pl-2 border-zinc-500 sm:border-l-0">توضیحات 1</p>
+                                <p>توضیحات 1</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="inline-flex items-center justify-between px-4 py-3 mb-2 text-base font-light text-center text-white bg-blue-700 border-2 border-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" href="">
+                                <span>شروع دوره</span>
+                                <svg id="icon" class="w-7 h-7" fill="currentcolor" viewBox="0 0 32 32">
+                                    <defs>
+                                        <style>
+                                        .cls-1 {
+                                            fill: none;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
+                                    <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="20" height="20" fill="#000000"/>
+                                </svg>
+                            </a>
+                            <a href="/course" class="inline-flex items-center justify-between px-4 py-3 text-base font-light text-center border-2 border-blue-700 text-blue-700 hover:bg-blue-100 focus:ring-2 focus:ring-blue-300">
+                                <span>مشاهده دوره</span>
+                                <svg fill="blue" class="w-7 h-7" id="icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                    <defs>
+                                        <style>
+                                        .cls-1 {
+                                            fill: none;
+                                        }
+                                        </style>
+                                    </defs>
+                                    <polygon points="22 27.1798 19.41 24.5899 18 26 22 30 30 22 28.5899 20.59 22 27.1798"/>
+                                    <rect x="9" y="17" width="7" height="2"/>
+                                    <rect x="9" y="12" width="12" height="2"/>
+                                    <rect x="9" y="7" width="12" height="2"/>
+                                    <path d="m16,30H6c-1.103,0-2-.8972-2-2V4c0-1.1028.897-2,2-2h18c1.103,0,2,.8972,2,2v15h-2V4H6v24h10v2Z"/>
+                                    <rect id="_Transparent_Rectangle_" data-name="&amp;lt;Transparent Rectangle&amp;gt;" class="cls-1 bg-white" width="32" height="32"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,84 @@
+{% extends "../base/_baselogin.html" %}
+
+{% block content %} 
+<div class="flex flex-row justify-start sm:flex-col sm:w-full my-2">
+    <div class="w-1/2 h-full my-4 sm:w-full">
+        <h1 class="text-3xl font-bold">خوش آمدید به سایت</h1>
+        <h3 class="text-xl my-4">یک اکانت بسازید و از آموزش های جدید لذت ببرید</h3>
+        <figure class="w-full h-auto">
+            <img class="w-full h-full" src="https://i.ibb.co/WB4HKTL/sofatutor-4sy-O0f-P1-Bf0-unsplash.jpg" alt="">
+        </figure>
+    </div>
+    <div class="flex flex-col w-2/3 px-4 sm:w-full">
+        <h1 class="text-2xl font-bold border-b-2 border-zinc-400 py-3">ایجاد اکانت جدید</h1>
+        <form action="">
+            <div class="flex flex-row gap-2">
+            <div class="flex flex-col gap-1 pt-3 mb-2 w-1/2 border-b-2 border-zinc-400">
+                <label class="text-sm" for="name">نام و نام خانوادگی</label>
+                <input class="h-10 bg-zinc-100" type="text" id="name" name="name" required />
+            </div>
+            <div class="flex flex-col pt-3 mb-2">
+                <label class="text-sm" for="birthdate">جنسیت</label>
+                <div class="flex flex-row h-10">
+                <div class="pt-2">
+                    <label class="text-base pr-2" for="men">مرد</label>
+                    <input type="checkbox" id="men" name="men" required />
+                </div>
+                <div class="pt-2">
+                    <label class="text-base pr-2" for="women">زن</label>
+                    <input type="checkbox" id="women" name="women" required />
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="flex flex-row gap-2">
+            <div class="flex flex-col gap-1 pt-3 my-2 w-1/2 border-b-2 border-zinc-400">
+                <label class="text-sm" for="birthdate">تاریخ تولد</label>
+                <input class="h-10 bg-zinc-100" type="date" value="2017-06-01" id="birthdate" name="birthdate" required />
+            </div>
+            <div class="flex flex-col gap-1 pt-3 my-2 w-1/2 border-b-2 border-zinc-400">
+                <label class="text-sm" for="city">استان</label>
+                <input class="h-10 bg-zinc-100" type="text" id="city" name="city" required />
+            </div>
+            </div>
+            <div class="flex flex-col gap-1 pt-3 my-2 w-1/2 border-b-2 border-zinc-400">
+            <label class="text-sm" for="reagent">معرف</label>
+            <input class="h-10 bg-zinc-100" type="text" id="reagent" name="reagent" required />
+            </div>
+            <div class="flex flex-row gap-2">
+            <div class="flex flex-col gap-1 pt-3 my-2 w-1/2 border-b-2 border-zinc-400">
+                <label class="text-sm" for="email">ایمیل</label>
+                <input class="h-10 bg-zinc-100" type="email" id="email" name="email" required />
+            </div>
+            <div class="flex flex-col gap-1 pt-3 my-2 w-1/2 border-b-2 border-zinc-400">
+                <label class="text-sm" for="pass">تعیین رمز عبور</label>
+                <input class="h-10 bg-zinc-100" type="password" id="pass" name="pass" required />
+            </div>
+            </div>
+            <a href="/signinfavorite" class="inline-flex items-center justify-between px-8 py-3 mt-8 w-1/2 sm:w-full text-base font-light text-center border-2 border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
+                ادامه
+                <svg class="w-7 h-7" fill="currentcolor" viewBox="0 0 32 32">
+                    <defs>
+                    <style>
+                        .cls-1 {
+                        fill: none;
+                        }
+                    </style>
+                    </defs>
+                    <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
+                    <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" fill="#000000"/>
+                </svg>
+            </a>
+        </form>
+        <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-1/2 sm:w-full text-base font-light text-center text-black bg-zinc-200 hover:bg-zinc-300 focus:ring-2 focus:ring-zinc-400" href="">
+            <span>ایجاد حساب از طریق گوگل</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 326667 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+            <path d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z" fill="#4285f4"/>
+            <path d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z" fill="#34a853"/>
+            <path d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z" fill="#fbbc04"/>
+            <path d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z" fill="#ea4335"/>
+            </svg>
+        </button>
+    </div>
+</div>
+{% endblock content %}
