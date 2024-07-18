@@ -1,90 +1,92 @@
 {% extends "../base/_baselogin.html" %}
+{% load static %}
 
 {% block content %} 
-<div class="flex flex-row justify-start sm:flex-col sm:w-full my-2">
-    <div class="flex flex-col w-2/3 pl-4 sm:w-full sm:pl-0">
-        <h1 class="text-2xl font-bold border-b-2 border-zinc-400 py-3">ورود کاربر</h1>
-        <div class="inline-flex flex-row py-4">
-            <button id="teacher" class="inline-flex justify-between items-center h-10 w-[12dvw] sm:w-1/2 p-4 border-2 bg-zinc-200 cursor-pointer">
-                <h2 class="text-xl">اساتید</h2>
-                <svg id="teachersvg" version="1.1" id="icon" class="w-7 h-7 -rotate-90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                    <style type="text/css">
-                        .st0{fill:none;}
-                    </style>
-                    <polygon points="10,16 20,6 21.4,7.4 12.8,16 21.4,24.6 20,26 "/>
-                    <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
-                </svg>
-            </button>
-            <button id="student" class="inline-flex justify-between items-center h-10 w-[12.3dvw] sm:w-1/2 p-4 mr-3 border-2 cursor-pointer">
-                <h2 class="text-xl">دانش آموزان</h2>
-                <svg id="studensvg" version="1.1" id="icon" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                    <style type="text/css">
-                        .st0{fill:none;}
-                    </style>
-                    <polygon points="10,16 20,6 21.4,7.4 12.8,16 21.4,24.6 20,26 "/>
-                    <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
-                </svg>
-            </button>
-        </div>
-        <div class="py-2">
-            <h2 id="content" class="text-xl">ورود به بخش اساتید</h2>
-            <form action="">
-                <div class="flex flex-col w-[25dvw] sm:w-full gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
-                    <label class="text-sm" for="username">نام کاربری</label>
-                    <input class="h-10 bg-zinc-100" type="text" id="username" name="username" required />
-                </div>
-                <div class="flex flex-col w-[25dvw] sm:w-full gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
-                    <label class="text-sm" for="pass1">نام کاربری</label>
-                    <input class="h-10 bg-zinc-100" type="password" id="pass1" name="pass1" required />
-                </div>
-                <a class="flex w-[7vw] sm:w-full text-sm text-blue-600 hover:text-blue-800 hover:border-b hover:border-b-blue-800" href="">فراموشی رمز عبور</a>
-                <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] sm:w-full text-base font-light text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" href="">
-                    <span>ورود</span>
-                    <svg class="w-7 h-7" id="icon" fill="currentcolor" viewBox="0 0 32 32">
-                        <defs>
-                            <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                            </style>
-                        </defs>
-                        <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
-                        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" fill="#000000"/>
+    <div class="flex flex-row justify-start sm:flex-col sm:w-full my-2">
+        <div class="flex flex-col w-2/3 pl-4 sm:w-full sm:pl-0">
+            <h1 class="text-2xl font-bold border-b-2 border-zinc-400 py-3">ورود کاربر</h1>
+            <div class="inline-flex flex-row py-4">
+                <button id="teacher" class="inline-flex justify-between items-center h-10 w-[12dvw] sm:w-1/2 p-4 border-2 bg-zinc-200 cursor-pointer">
+                    <h2 class="text-xl">اساتید</h2>
+                    <svg id="teachersvg" version="1.1" id="icon" class="w-7 h-7 -rotate-90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:none;}
+                        </style>
+                        <polygon points="10,16 20,6 21.4,7.4 12.8,16 21.4,24.6 20,26 "/>
+                        <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
                     </svg>
                 </button>
-            </form>
-            <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] sm:w-full text-base font-light text-center text-black bg-zinc-200 hover:bg-zinc-300 focus:ring-2 focus:ring-zinc-400" href="">
-                <span>ورود از طریق گوگل</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 326667 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
-                    <path d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z" fill="#4285f4"/>
-                    <path d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z" fill="#34a853"/>
-                    <path d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z" fill="#fbbc04"/>
-                    <path d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z" fill="#ea4335"/>
-                </svg>
-            </button>
-            <div class="border-t-2 border-zinc-400">
-                <h2 class="text-sm pt-1">حساب کاربری ندارید؟</h2>
-                <a href="/signin" class="inline-flex items-center justify-between px-8 py-3 mt-1 w-[25dvw] sm:w-full text-base font-light text-center border-2 border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
-                    <span>ایجاد حساب کاربری</span>
-                    <svg class="w-7 h-7" id="icon" fill="currentcolor" viewBox="0 0 32 32">
-                        <defs>
-                            <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                            </style>
-                        </defs>
-                        <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
-                        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" fill="#000000"/>
+                <button id="student" class="inline-flex justify-between items-center h-10 w-[12.3dvw] sm:w-1/2 p-4 mr-3 border-2 cursor-pointer">
+                    <h2 class="text-xl">دانش آموزان</h2>
+                    <svg id="studensvg" version="1.1" id="icon" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:none;}
+                        </style>
+                        <polygon points="10,16 20,6 21.4,7.4 12.8,16 21.4,24.6 20,26 "/>
+                        <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
                     </svg>
-                </a>
+                </button>
+            </div>
+            <div class="py-2">
+                <h2 id="content" class="text-xl">ورود به بخش اساتید</h2>
+                <form action="">
+                    <div class="flex flex-col w-[25dvw] sm:w-full gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
+                        <label class="text-sm" for="username">نام کاربری</label>
+                        <input class="h-10 bg-zinc-100" type="text" id="username" name="username" required />
+                    </div>
+                    <div class="flex flex-col w-[25dvw] sm:w-full gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
+                        <label class="text-sm" for="pass1">نام کاربری</label>
+                        <input class="h-10 bg-zinc-100" type="password" id="pass1" name="pass1" required />
+                    </div>
+                    <a class="flex w-[7vw] sm:w-full text-sm text-blue-600 hover:text-blue-800 hover:border-b hover:border-b-blue-800" href="">فراموشی رمز عبور</a>
+                    <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] sm:w-full text-base font-light text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" href="">
+                        <span>ورود</span>
+                        <svg class="w-7 h-7" id="icon" fill="currentcolor" viewBox="0 0 32 32">
+                            <defs>
+                                <style>
+                                .cls-1 {
+                                    fill: none;
+                                }
+                                </style>
+                            </defs>
+                            <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
+                            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" fill="#000000"/>
+                        </svg>
+                    </button>
+                </form>
+                <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] sm:w-full text-base font-light text-center text-black bg-zinc-200 hover:bg-zinc-300 focus:ring-2 focus:ring-zinc-400" href="">
+                    <span>ورود از طریق گوگل</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 326667 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z" fill="#4285f4"/>
+                        <path d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z" fill="#34a853"/>
+                        <path d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z" fill="#fbbc04"/>
+                        <path d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z" fill="#ea4335"/>
+                    </svg>
+                </button>
+                <div class="border-t-2 border-zinc-400">
+                    <h2 class="text-sm pt-1">حساب کاربری ندارید؟</h2>
+                    <a href="/signin" class="inline-flex items-center justify-between px-8 py-3 mt-1 w-[25dvw] sm:w-full text-base font-light text-center border-2 border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
+                        <span>ایجاد حساب کاربری</span>
+                        <svg class="w-7 h-7" id="icon" fill="currentcolor" viewBox="0 0 32 32">
+                            <defs>
+                                <style>
+                                .cls-1 {
+                                    fill: none;
+                                }
+                                </style>
+                            </defs>
+                            <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
+                            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" fill="#000000"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
+        <figure class="w-5/6 h-auto sm:w-full my-3">
+            <img class="w-full h-auto" src="https://i.ibb.co/WB4HKTL/sofatutor-4sy-O0f-P1-Bf0-unsplash.jpg" alt="">
+        </figure>
     </div>
-    <figure class="w-5/6 h-auto sm:w-full my-3">
-        <img class="w-full h-auto" src="https://i.ibb.co/WB4HKTL/sofatutor-4sy-O0f-P1-Bf0-unsplash.jpg" alt="">
-    </figure>
-</div>
+    <script src="{% static 'js/login.js' %}" type="text/javascript"></script>
 {% endblock content %}

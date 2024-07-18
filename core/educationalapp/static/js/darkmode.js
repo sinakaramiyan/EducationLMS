@@ -1,10 +1,10 @@
-class app{
+class darkmode{
     constructor(){
-        this.admin();
+        this.darkmode();
     }
-    admin(){
-        //dark mode toggle
 
+    darkmode(){
+        //dark mode toggle
         var themeToggleBtn = document.getElementById('theme-toggle');
 
         themeToggleBtn.addEventListener('click', function () {
@@ -30,4 +30,4 @@ class app{
     }
 }
 
-new app();
+new darkmode();
