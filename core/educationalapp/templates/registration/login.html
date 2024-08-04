@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %} 
-    <div class="flex flex-row justify-start sm:flex-col sm:w-full my-2">
-        <div class="flex flex-col w-2/3 pl-4 sm:w-full sm:pl-0">
+    <div class="flex flex-row justify-start my-2">
+        <div class="flex flex-col w-2/3 pl-4">
             <h1 class="text-2xl font-bold border-b-2 border-zinc-400 py-3">ورود کاربر</h1>
             <div class="inline-flex flex-row py-4">
-                <button id="teacher" class="inline-flex justify-between items-center h-10 w-[12dvw] sm:w-1/2 p-4 border-2 bg-zinc-200 cursor-pointer">
+                <button id="teacher" class="inline-flex justify-between items-center h-10 w-[12dvw] p-4 border-2 bg-zinc-200 cursor-pointer">
                     <h2 class="text-xl">اساتید</h2>
                     <svg id="teachersvg" version="1.1" id="icon" class="w-7 h-7 -rotate-90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
@@ -17,7 +17,7 @@
                         <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
                     </svg>
                 </button>
-                <button id="student" class="inline-flex justify-between items-center h-10 w-[12.3dvw] sm:w-1/2 p-4 mr-3 border-2 cursor-pointer">
+                <button id="student" class="inline-flex justify-between items-center h-10 w-[12.3dvw] p-4 mr-3 border-2 cursor-pointer">
                     <h2 class="text-xl">دانش آموزان</h2>
                     <svg id="studensvg" version="1.1" id="icon" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
@@ -32,16 +32,16 @@
             <div class="py-2">
                 <h2 id="content" class="text-xl">ورود به بخش اساتید</h2>
                 <form action="">
-                    <div class="flex flex-col w-[25dvw] sm:w-full gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
+                    <div class="flex flex-col w-[25dvw] gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
                         <label class="text-sm" for="username">نام کاربری</label>
                         <input class="h-10 bg-zinc-100" type="text" id="username" name="username" required />
                     </div>
-                    <div class="flex flex-col w-[25dvw] sm:w-full gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
+                    <div class="flex flex-col w-[25dvw] gap-1 pt-1 mb-2 border-b-2 border-zinc-400">
                         <label class="text-sm" for="pass1">نام کاربری</label>
                         <input class="h-10 bg-zinc-100" type="password" id="pass1" name="pass1" required />
                     </div>
-                    <a class="flex w-[7vw] sm:w-full text-sm text-blue-600 hover:text-blue-800 hover:border-b hover:border-b-blue-800" href="">فراموشی رمز عبور</a>
-                    <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] sm:w-full text-base font-light text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" href="">
+                    <a class="flex w-[7vw] text-sm text-blue-600 hover:text-blue-800 hover:border-b hover:border-b-blue-800" href="">فراموشی رمز عبور</a>
+                    <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] text-base font-light text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" href="">
                         <span>ورود</span>
                         <svg class="w-7 h-7" id="icon" fill="currentcolor" viewBox="0 0 32 32">
                             <defs>
@@ -56,7 +56,7 @@
                         </svg>
                     </button>
                 </form>
-                <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] sm:w-full text-base font-light text-center text-black bg-zinc-200 hover:bg-zinc-300 focus:ring-2 focus:ring-zinc-400" href="">
+                <button class="inline-flex items-center justify-between px-8 py-3 my-2 w-[25dvw] text-base font-light text-center text-black bg-zinc-200 hover:bg-zinc-300 focus:ring-2 focus:ring-zinc-400" href="">
                     <span>ورود از طریق گوگل</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 326667 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
                         <path d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z" fill="#4285f4"/>
@@ -67,7 +67,7 @@
                 </button>
                 <div class="border-t-2 border-zinc-400">
                     <h2 class="text-sm pt-1">حساب کاربری ندارید؟</h2>
-                    <a href="/signin" class="inline-flex items-center justify-between px-8 py-3 mt-1 w-[25dvw] sm:w-full text-base font-light text-center border-2 border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
+                    <a href="/signin" class="inline-flex items-center justify-between px-8 py-3 mt-1 w-[25dvw] text-base font-light text-center border-2 border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
                         <span>ایجاد حساب کاربری</span>
                         <svg class="w-7 h-7" id="icon" fill="currentcolor" viewBox="0 0 32 32">
                             <defs>
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <figure class="w-5/6 h-auto sm:w-full my-3">
+        <figure class="w-5/6 h-auto my-3">
             <img class="w-full h-auto" src="https://i.ibb.co/WB4HKTL/sofatutor-4sy-O0f-P1-Bf0-unsplash.jpg" alt="">
         </figure>
     </div>

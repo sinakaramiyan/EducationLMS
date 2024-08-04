@@ -1,0 +1,182 @@
+{% extends "base/_baseadmin.html" %}
+
+{% block main %} 
+<!-- calendar -->
+<div class="dark:bg-slate-700">
+    <div class="mx-auto w-full min-h-screen my-8 p-8">
+        <!-- Breadcrumb Start -->
+        <div class="mb-6 flex gap-3 flex-row items-center justify-between px-4">
+            <h2 class="text-2xl font-bold text-black dark:text-white">
+                تقویم
+            </h2>
+
+            <nav>
+                <ol class="flex items-center gap-2">
+                    <li class="text-blue-600">تقویم </li>
+                    <li>
+                        <a class="font-medium dark:text-slate-400" href="/dashboard">/ داشبورد</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Breadcrumb End -->
+
+        <div class="w-full border border-solid dark:border-slate-700 dark:bg-slate-600 bg-white shadow-sm ">
+            <table class="w-full">
+                <thead>
+                    <tr class="grid grid-cols-7 bg-blue-700 text-white">
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> شنبه </span>
+                        </th>
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> یکشنبه </span>
+                        </th>
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> دوشنبه </span>
+                        </th>
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> سه شنبه </span>
+                        </th>
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> چهارشنبه </span>
+                        </th>
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> پنح شنبه </span>
+                        </th>
+                        <th class="flex md:h-14 h-10 items-center justify-center p-1 md:text-base text-sm font-semibold">
+                            <span> جمعه </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Line 1 -->
+                    <tr class="grid grid-cols-7">
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">1</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">2</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">3</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">4</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">5</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">6</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">7</span>
+                        </td>
+                    </tr>
+                    <!-- Line 1 -->
+                    <!-- Line 2 -->
+                    <tr class="grid grid-cols-7">
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">8</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">9</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">10</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">11</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">12</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">13</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">14</span>
+                        </td>
+                    </tr>
+                    <!-- Line 2 -->
+                    <!-- Line 3 -->
+                    <tr class="grid grid-cols-7">
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">15</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">16</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">17</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">18</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">19</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">20</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">21</span>
+                        </td>
+                    </tr>
+                    <!-- Line 3 -->
+                    <!-- Line 4 -->
+                    <tr class="grid grid-cols-7">
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">22</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">23</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">24</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">25</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">26</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">27</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">28</span>
+                        </td>
+                    </tr>
+                    <!-- Line 4 -->
+                    <!-- Line 5 -->
+                    <tr class="grid grid-cols-7">
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">29</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">30</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">31</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">1</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">2</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">3</span>
+                        </td>
+                        <td class="ease-linear relative md:h-32 h-20 cursor-pointer border border-solid dark:border-slate-500 p-2 hover:bg-gray-200 dark:bg-slate-600 dark:hover:bg-slate-500">
+                            <span class="font-medium text-black dark:text-white">4</span>
+                        </td>
+                    </tr>
+                    <!-- Line 5 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock main %} 
