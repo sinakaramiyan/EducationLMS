@@ -92,8 +92,6 @@ class home{
                 csharp_cotent.classList.remove('hidden');
             }
         });
-
-        
     }
 }
 
