@@ -33,18 +33,6 @@
         <header class="fixed top-0 w-full h-16 z-50 bg-zinc-50 dark:bg-slate-600 px-8 shadow-md">
             <nav class="flex justify-between h-16 items-center dark:bg-slate-600">
                 <div class="flex flex-row gap-2">
-                    {% comment %} <div class="border border-black dark:border-white mx-2 p-1">
-                        <label for="menu-toggle" class="cursor-pointer block">
-                            <svg
-                                class="fill-current text-gray-900 w-6 h-6 dark:fill-white"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20">
-                                <title>menu</title>
-                                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                            </svg>
-                        </label>
-                        <input class="hidden" type="checkbox" id="menu-toggle" />
-                    </div> {% endcomment %}
                     <svg class="w-8 h-8 fill-white stroke-[0.5px] stroke-black dark:stroke-white" viewBox="0 0 32 32" focusable="false" class="chakra-icon css-y0f7a" xmlns="http://www.w3.org/2000/svg"><path d="M22.676 11.3021H16.9944L19.1005 4.98646C19.2964 4.20312 18.7087 3.46875 17.974 3.46875H10.9209C10.3331 3.46875 9.79435 3.90937 9.74537 4.49687L8.17802 16.2469C8.08006 16.9812 8.61883 17.5687 9.35353 17.5687H15.1331L12.8801 27.1156C12.7331 27.85 13.2719 28.5354 14.0066 28.5354C14.4474 28.5354 14.8393 28.3396 15.0352 27.9479L23.6556 13.0646C24.1454 12.3302 23.5577 11.3021 22.676 11.3021Z"></path></svg>
                 </div>
                 <div class="flex w-full md:w-3/4 lg:w-1/2 gap-2 justify-center items-center mx-2">
@@ -61,74 +49,59 @@
                     </a>
                 </div>
                 <div class="flex flex-row gap-2 items-center justify-center">
-                    <!-- Dark Mode Toggler -->
-                    {% comment %} <label id="theme-toggle" class="relative m-0 block mx-1 h-7 w-12 bg-slate-300 dark:bg-blue-500">
-                        <input class="absolute top-0 m-0 h-full w-full z-30 cursor-pointer opacity-0">
-                        <span class="absolute left-1 dark:right-1 top-1/2 flex h-5 w-5 -translate-y-1/2 translate-x-0 items-center justify-center bg-white shadow-switcher duration-75 ease-linear">
-                            <span class="dark:hidden">
-                                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.99992 12.6666C10.5772 12.6666 12.6666 10.5772 12.6666 7.99992C12.6666 5.42259 10.5772 3.33325 7.99992 3.33325C5.42259 3.33325 3.33325 5.42259 3.33325 7.99992C3.33325 10.5772 5.42259 12.6666 7.99992 12.6666Z" fill="#969AA1"></path>
-                                    <path d="M8.00008 15.3067C7.63341 15.3067 7.33342 15.0334 7.33342 14.6667V14.6134C7.33342 14.2467 7.63341 13.9467 8.00008 13.9467C8.36675 13.9467 8.66675 14.2467 8.66675 14.6134C8.66675 14.9801 8.36675 15.3067 8.00008 15.3067ZM12.7601 13.4267C12.5867 13.4267 12.4201 13.3601 12.2867 13.2334L12.2001 13.1467C11.9401 12.8867 11.9401 12.4667 12.2001 12.2067C12.4601 11.9467 12.8801 11.9467 13.1401 12.2067L13.2267 12.2934C13.4867 12.5534 13.4867 12.9734 13.2267 13.2334C13.1001 13.3601 12.9334 13.4267 12.7601 13.4267ZM3.24008 13.4267C3.06675 13.4267 2.90008 13.3601 2.76675 13.2334C2.50675 12.9734 2.50675 12.5534 2.76675 12.2934L2.85342 12.2067C3.11342 11.9467 3.53341 11.9467 3.79341 12.2067C4.05341 12.4667 4.05341 12.8867 3.79341 13.1467L3.70675 13.2334C3.58008 13.3601 3.40675 13.4267 3.24008 13.4267ZM14.6667 8.66675H14.6134C14.2467 8.66675 13.9467 8.36675 13.9467 8.00008C13.9467 7.63341 14.2467 7.33342 14.6134 7.33342C14.9801 7.33342 15.3067 7.63341 15.3067 8.00008C15.3067 8.36675 15.0334 8.66675 14.6667 8.66675ZM1.38675 8.66675H1.33341C0.966748 8.66675 0.666748 8.36675 0.666748 8.00008C0.666748 7.63341 0.966748 7.33342 1.33341 7.33342C1.70008 7.33342 2.02675 7.63341 2.02675 8.00008C2.02675 8.36675 1.75341 8.66675 1.38675 8.66675ZM12.6734 3.99341C12.5001 3.99341 12.3334 3.92675 12.2001 3.80008C11.9401 3.54008 11.9401 3.12008 12.2001 2.86008L12.2867 2.77341C12.5467 2.51341 12.9667 2.51341 13.2267 2.77341C13.4867 3.03341 13.4867 3.45341 13.2267 3.71341L13.1401 3.80008C13.0134 3.92675 12.8467 3.99341 12.6734 3.99341ZM3.32675 3.99341C3.15341 3.99341 2.98675 3.92675 2.85342 3.80008L2.76675 3.70675C2.50675 3.44675 2.50675 3.02675 2.76675 2.76675C3.02675 2.50675 3.44675 2.50675 3.70675 2.76675L3.79341 2.85342C4.05341 3.11342 4.05341 3.53341 3.79341 3.79341C3.66675 3.92675 3.49341 3.99341 3.32675 3.99341ZM8.00008 2.02675C7.63341 2.02675 7.33342 1.75341 7.33342 1.38675V1.33341C7.33342 0.966748 7.63341 0.666748 8.00008 0.666748C8.36675 0.666748 8.66675 0.966748 8.66675 1.33341C8.66675 1.70008 8.36675 2.02675 8.00008 2.02675Z" fill="#969AA1"></path>
-                                </svg>
-                            </span>
-                            <span class="hidden dark:inline-block">
-                                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.3533 10.62C14.2466 10.44 13.9466 10.16 13.1999 10.2933C12.7866 10.3667 12.3666 10.4 11.9466 10.38C10.3933 10.3133 8.98659 9.6 8.00659 8.5C7.13993 7.53333 6.60659 6.27333 6.59993 4.91333C6.59993 4.15333 6.74659 3.42 7.04659 2.72666C7.33993 2.05333 7.13326 1.7 6.98659 1.55333C6.83326 1.4 6.47326 1.18666 5.76659 1.48C3.03993 2.62666 1.35326 5.36 1.55326 8.28666C1.75326 11.04 3.68659 13.3933 6.24659 14.28C6.85993 14.4933 7.50659 14.62 8.17326 14.6467C8.27993 14.6533 8.38659 14.66 8.49326 14.66C10.7266 14.66 12.8199 13.6067 14.1399 11.8133C14.5866 11.1933 14.4666 10.8 14.3533 10.62Z" fill="#969AA1"></path>
-                                </svg>
-                            </span>
-                        </span>
-                    </label> {% endcomment %}
                     <a href="/courses/coursename" class="border-2 border-black dark:border-white p-1">
                         <svg class="w-4 h-4 dark:fill-white" viewBox="0 0 14 14" focusable="false" class="chakra-icon css-5qgw6i" aria-hidden="true"><path d="M7.00003 5.58577L2.05024 0.635986L0.636031 2.0502L5.58582 6.99999L0.636019 11.9498L2.05023 13.364L7.00003 8.4142L11.9497 13.3639L13.364 11.9497L8.41425 6.99999L13.3639 2.05029L11.9497 0.636079L7.00003 5.58577Z"></path></svg>
                     </a>
                 </div>
             </nav>
-            {% comment %} <nav>
-                <div id="menumobile" class="fixed bg-zinc-300/30 backdrop-blur-2xl translate-x-full right-0 w-72 flex h-screen z-40 flex-col bg-slate-600 duration-300 ease-linear">
-                    <nav>
-                        <ul class="text-base flex flex-col text-center items-center">
-                            <li class="w-full">
-                                <a href="" class="flex items-center justify-between w-full h-12 px-8 border-b border-zinc-400 duration-300 ease-in-out hover:text-blue-500 hover:bg-zinc-300">
-                                    فصل اول
-                                    <svg class="w-4 h-4" fill="blue" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="437.3,30 202.7,339.3 64,200.7 0,264.7 213.3,478 512,94 "></polygon> </g></svg>
-                                </a>
-                                <a href="" class="flex items-center justify-between w-full h-12 px-8 border-b border-zinc-400 duration-300 ease-in-out hover:text-blue-500 hover:bg-zinc-300">
-                                    فصل دوم
-                                    <span class="text-base text-blue-600 font-bold">0%</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </nav> {% endcomment %}
         </header>
 
         <!--lesson content-->
         <main id="main" class="flex justify-center items-center p-8 mt-12">
             <!--tab1-->
-            <div class="flex justify-center w-full md:w-3/4 lg:w-1/2">
-                <div class="flex flex-col gap-4 justify-center p-4 w-full">
-                    <div class="flex flex-col gap-8 items-start p-4 mt-8 justify-center w-full">
+            <div class="flex justify-center items-center w-full">
+                <div class="flex flex-col gap-4 justify-center items-center p-4 w-full">
+                    <div class="flex flex-col gap-8 items-start p-4 mt-8 justify-center w-full h-[80dvh] md:w-3/4 lg:w-1/2">
                         <div class="flex w-full justify-center items-center">
                             <img src="https://i.ibb.co/g6bGSmt/ben-griffiths-g-Ae1p-HGc6ms-unsplash.jpg" alt="quiz picture" class="object-cover w-80" />
                         </div>
                         <div class="flex flex-col gap-8">
                             <h2 class="text-sm">این متن سوال مورد نظر است؟</h2>
                             <div class="flex flex-col gap-4">
-                                <a id="tabc" class="border border-zinc-300 p-1 bg-zinc-200 hover:border-black cursor-pointer">جواب درست</a>
-                                <a id="tabc1" class="border border-zinc-300 p-1 bg-zinc-200 hover:border-black cursor-pointer">جواب غلط</a>
+                                <button id="tabc" class="border border-zinc-300 p-1 bg-zinc-200 hover:border-black cursor-pointer">جواب درست</button>
+                                <button id="tabc1" class="border border-zinc-300 p-1 bg-zinc-200 hover:border-black cursor-pointer">جواب غلط</button>
                             </div>
                         </div>
                     </div>
-                    <div id="t2" class="hidden flex flex-col  items-start mt-8 justify-center w-full bg-zinc-50">
+                    <div id="t2" class="hidden flex flex-col justify-between items-start mt-8 w-full h-[80dvh] bg-zinc-50 md:w-3/4 lg:w-1/2">
+                        <!-- content-->
                         <div class="w-full p-4">
                             <h2>این یک متن کوییز است؟</h2>
-                            <div class="flex justify-center my-4">
-                                در اینجا کوییز تعاملی شکل میگیرد
-
+                            <div class="flex flex-col justify-center my-4">
+                                <div class="flex w-full justify-center items-center">
+                                    <img src="https://i.ibb.co/g6bGSmt/ben-griffiths-g-Ae1p-HGc6ms-unsplash.jpg" alt="quiz picture" class="object-cover w-80" />
+                                </div>
+                                <ul class="flex flex-col justify-center p-4 gap-4">
+                                    <li class="flex items-center gap-4">
+                                        <input id="answer" type="checkbox" class="w-5 h-5" />
+                                        <span>این جواب گزینه اول است</span>
+                                    </li>
+                                    <li class="flex items-center gap-4">
+                                        <input id="answer" type="checkbox" class="w-5 h-5" />
+                                        <span>این جواب گزینه اول است</span>
+                                    </li>
+                                    <li class="flex items-center gap-4">
+                                        <input id="answer" type="checkbox" class="w-5 h-5" />
+                                        <span>این جواب گزینه اول است</span>
+                                    </li>
+                                    <li class="flex items-center gap-4">
+                                        <input id="answer" type="checkbox" class="w-5 h-5" />
+                                        <span>این جواب گزینه اول است</span>
+                                    </li>
+                                </ul>
                             </div>
                             <!-- correct answer  -->
-                            <div class="flex justify-between w-full">
+                            <div id="correctmessage" class="hidden flex justify-between w-full">
                                 <div class="flex gap-2">
                                     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_615_5434)"><path d="M19.1999 19.2L1.91993 24L4.79993 4.79998H8.15993L19.1999 15.84V19.2Z" fill="#E1503C" class="brand-refresh-emoji-red"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.6869 21.2869L7.49024 22.4527L2.84831 17.8107L3.54775 13.1478L11.6869 21.2869ZM12.7494 20.9918L3.72484 11.9673L4.79993 4.79998H8.15993L19.1999 15.84V19.2L12.7494 20.9918ZM2.67123 18.9913L6.42773 22.7478L1.91993 24L2.67123 18.9913Z" fill="#EEA71F" class="brand-refresh-emoji-yellow"></path><path d="M4.79993 7.67998L4.79993 4.79998H8.15993L19.1999 15.84V19.2H16.3199L4.79993 7.67998Z" fill="black"></path><path d="M11.1999 3.19994L9.59998 2.39998L11.2 1.59999L12 0L12.7999 1.59995L14.4 2.39998L12.8 3.19999L12 4.8L11.1999 3.19994Z" fill="#DB53F1" class="brand-refresh-emoji-pink"></path><path d="M20.7999 3.19994L19.1999 2.39998L20.7999 1.59999L21.5999 0L22.3999 1.59995L23.9999 2.39998L22.3999 3.19999L21.5999 4.8L20.7999 3.19994Z" fill="#EEA71F" class="brand-refresh-emoji-yellow"></path><path d="M18.7199 9.11998L17.2799 7.67998L11.04 13.92L12.48 15.36L18.7199 9.11998Z" fill="#DB53F1" class="brand-refresh-emoji-pink"></path><path d="M23.76 11.28L22.32 9.83998L16.56 15.6L18 17.04L23.76 11.28Z" fill="#3070EE" class="brand-refresh-emoji-blue"></path><path d="M17.9999 4.80003L16.5599 3.35998L13.4399 6.47994L14.88 7.91999L17.9999 4.80003Z" fill="#E1503C" class="brand-refresh-emoji-red"></path><path d="M3.84 2.40001L2.39998 0.959969L0.959961 2.39999L2.39999 3.84003L3.84 2.40001Z" fill="#EEA71F" class="brand-refresh-emoji-yellow"></path><path d="M23.04 22.56L21.6 21.12L20.16 22.56L21.6 24L23.04 22.56Z" fill="#EEA71F" class="brand-refresh-emoji-yellow"></path><path d="M9.56469 3.87534L10.9694 5.28L8.8446 7.40472L10.0799 8.64007L7.92007 10.8L6.48004 9.35992L8.12464 7.7153L6.92462 6.51532L9.56469 3.87534Z" fill="#E1503C" class="brand-refresh-emoji-red"></path></g><defs><clipPath id="clip0_615_5434"><rect width="24" height="24" fill="white"></rect></clipPath></defs></svg>
                                     <span class="font-bold">درست</span>
@@ -138,28 +111,45 @@
                                 </div>
                             </div>
                             <!-- wrong answer  -->
-                            <div class="flex justify-between w-full">
+                            <div id="wrongmessage" class="hidden flex justify-between w-full">
                                 <div class="flex gap-2">
                                     <span class="font-bold text-red-700">غلط</span>
                                 </div>
                             </div>
                         </div>
+                        <!-- buttons-->
                         <div class="flex items-center gap-2 bg-zinc-100 w-full p-4">
-                            <a class="inline-flex items-center px-4 py-1 gap-2 text-base font-light cursor-pointer text-center border border-blue-600 text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" id="hero">
+                            <a id="checkanswer" class="hidden inline-flex items-center px-4 py-1 gap-2 text-base font-light cursor-pointer text-center border border-blue-600 text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" id="hero">
                                 <svg class="w-4 h-4 rotate-180 fill-white" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>play</title> <path d="M5.92 24.096q0 1.088 0.928 1.728 0.512 0.288 1.088 0.288 0.448 0 0.896-0.224l16.16-8.064q0.48-0.256 0.8-0.736t0.288-1.088-0.288-1.056-0.8-0.736l-16.16-8.064q-0.448-0.224-0.896-0.224-0.544 0-1.088 0.288-0.928 0.608-0.928 1.728v16.16z"></path> </g></svg>
                                 <span>بررسی جواب</span>
                             </a>
-                            <a href="/signin" class="inline-flex items-center px-4 py-1 text-base font-light text-center border border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
-                                <span>راهنمایی</span>
+                            <a id="nextsection" class="hidden inline-flex items-center px-4 py-1 gap-2 text-base font-light cursor-pointer text-center border border-blue-600 text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" id="hero">
+                                <svg class="w-4 h-4 rotate-180 fill-white" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>play</title> <path d="M5.92 24.096q0 1.088 0.928 1.728 0.512 0.288 1.088 0.288 0.448 0 0.896-0.224l16.16-8.064q0.48-0.256 0.8-0.736t0.288-1.088-0.288-1.056-0.8-0.736l-16.16-8.064q-0.448-0.224-0.896-0.224-0.544 0-1.088 0.288-0.928 0.608-0.928 1.728v16.16z"></path> </g></svg>
+                                <span>رفتن به قسمت بعد</span>
                             </a>
+                            <a id="tryingagain" class="hidden inline-flex items-center px-4 py-1 gap-2 text-base font-light cursor-pointer text-center border border-blue-600 text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300" id="hero">
+                                <svg class="w-4 h-4 rotate-180 fill-white" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>play</title> <path d="M5.92 24.096q0 1.088 0.928 1.728 0.512 0.288 1.088 0.288 0.448 0 0.896-0.224l16.16-8.064q0.48-0.256 0.8-0.736t0.288-1.088-0.288-1.056-0.8-0.736l-16.16-8.064q-0.448-0.224-0.896-0.224-0.544 0-1.088 0.288-0.928 0.608-0.928 1.728v16.16z"></path> </g></svg>
+                                <span>تلاش دوباره</span>
+                            </a>
+                            <button id="guide" class="inline-flex items-center px-4 py-1 text-base font-light text-center border border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
+                                <span>راهنمایی</span>
+                            </button>
                         </div>
                     </div>
-                    <div id="t3" class="hidden flex flex-col  items-start mt-8 justify-center w-full bg-zinc-50">
+
+                    <!-- guide page for question-->
+                    <div id="t21" class="hidden flex flex-col justify-center items-center mt-8 w-full h-[80dvh] bg-zinc-50 md:w-3/4 lg:w-1/2">
+                        <button id="rt21" class="inline-flex items-center px-4 py-1 text-base font-light text-center border border-blue-600 text-blue-600 hover:bg-zinc-200 focus:ring-2 focus:ring-blue-300">
+                            <span>برگشت</span>
+                        </button>
+                    </div>
+                    
+                    <!-- quiz structure-->
+                    <div id="t3" class="hidden flex flex-col justify-between items-start mt-8 w-full h-[80dvh] bg-zinc-50 md:w-3/4 lg:w-1/2">
                         <div class="w-full p-4">
                             <h2>این یک متن کوییز اشتباه است؟</h2>
                             <div class="flex justify-center my-4">
                                 در اینجا کوییز تعاملی شکل میگیرد
-
                             </div>
                             <!-- correct answer  -->
                             <div class="flex justify-between w-full">
@@ -188,7 +178,45 @@
                             </a>
                         </div>
                     </div>
-                    <button id="tabc2" class="w-1/2 bg-green-400">پیشروی</button>
+
+                    <!-- two column structure-->
+                    <div id="t4" class="hidden flex flex-col justify-between md:flex-row items-start mt-12 p-2 gap-4 w-full md:h-[80dvh]">
+                        <div class="flex flex-col gap-8 items-start p-4 mt-8 justify-center w-full h-[80dvh]">
+                            <div class="flex w-full justify-start items-center">
+                                <img src="https://i.ibb.co/g6bGSmt/ben-griffiths-g-Ae1p-HGc6ms-unsplash.jpg" alt="quiz picture" class="object-cover w-80" />
+                            </div>
+                            <div class="flex flex-col gap-8">
+                                <h2 class="text-sm">این متن سوال مورد نظر است؟</h2>
+                                <div class="flex flex-col gap-4">
+                                    <button id="nextsectiontwocolumn" class="border border-zinc-300 p-1 bg-zinc-200 hover:border-black cursor-pointer">جواب درست</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-full h-full p-2">
+                            <img src="https://i.ibb.co/g6bGSmt/ben-griffiths-g-Ae1p-HGc6ms-unsplash.jpg" alt="عکس تمرین دو ستونی" />
+                        </div>
+                    </div>
+
+                    <!-- two column structure-->
+                    <div id="t5" class="hidden flex flex-col justify-between md:flex-row items-start mt-12 p-2 gap-4 w-full md:h-[80dvh]">
+                        <div class="flex flex-col gap-8 items-start p-4 mt-8 justify-center w-full h-[80dvh]">
+                            <div class="flex w-full justify-start items-center">
+                                <img src="https://i.ibb.co/g6bGSmt/ben-griffiths-g-Ae1p-HGc6ms-unsplash.jpg" alt="quiz picture" class="object-cover w-80" />
+                            </div>
+                            <div class="flex flex-col gap-8">
+                                <h2 class="text-sm">این متن سوال ssssssمورد نظر است؟</h2>
+                                <div class="flex flex-col gap-4">
+                                    <button class="border border-zinc-300 p-1 bg-zinc-200 hover:border-black cursor-pointer">جواب درست</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-full h-full p-2">
+                            <img src="https://i.ibb.co/g6bGSmt/ben-griffiths-g-Ae1p-HGc6ms-unsplash.jpg" alt="عکس تمرین دو ستونی" />
+                        </div>
+                    </div>
+                    
+                    <!-- button for ending section-->
+                    <button id="tabc2" class="bg-green-400 fixed top-16 left-0">پیشروی</button>
                     <div id="complete" class="hidden flex justify-between items-center">
                         <a id="tabh" class="inline-flex items-center justify-between gap-8 px-4 py-2 text-base font-light text-center cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300">
                             <span>ادامه</span>

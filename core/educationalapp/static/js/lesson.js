@@ -147,7 +147,11 @@ class lesson {
                 progress.firstElementChild.style = `width:  ${currentProgress}%`;
             }
 
-            button.disabled = true
+            button.disabled = true;
+            button2.disabled =true;
+            button.classList.remove('border', 'border-zinc-300', 'cursor-pointer');
+            button2.classList.remove('border', 'border-zinc-300', 'cursor-pointer', 'bg-zinc-200');
+            button2.classList.add('bg-zinc-100');
         });
         
         const button2 = document.querySelector('#tabc1');
@@ -167,7 +171,11 @@ class lesson {
                 progress.firstElementChild.style = `width:  ${currentProgress}%`;
             }
 
+            button.disabled = true;
             button2.disabled = true;
+            button.classList.remove('border', 'border-zinc-300', 'cursor-pointer');
+            button2.classList.remove('border', 'border-zinc-300', 'cursor-pointer', 'bg-zinc-200');
+            button2.classList.add('bg-zinc-100');
         });
 
         const tabc2 = document.querySelector('#tabc2');
@@ -258,11 +266,32 @@ class lesson {
 
         // show guidance
         const guide = document.querySelector('#guide');
+        const t21 = document.querySelector('#t21');
         guide.addEventListener('click', () => {
-            
+            t2.classList.add('hidden');
+            t21.classList.remove('hidden');
         })
 
-        
+        // close guide page
+        const rt21 = document.querySelector('#rt21');
+        rt21.addEventListener('click', () => {
+            t2.classList.remove('hidden');
+            t21.classList.add('hidden')
+        })
+
+        // next section after two column page
+        const nextsectiontwocolumn = document.querySelector('#nextsectiontwocolumn');
+        nextsectiontwocolumn.addEventListener('click', () => {
+            t5.classList.remove('hidden');
+            window.location.href = 'http://127.0.0.1:8000/courses/coursename/lesson' + '#t5';
+            t4.previousElementSibling.classList.remove('h-[80dvh]', 'mt-12');
+        })
+
+
+        // unchecked checkbox button after refresh
+        answers.forEach((checkbox) => {
+            checkbox.checked = false;
+        });
     }
 }
 
