@@ -24,8 +24,45 @@ def testimonial(request):
 def courses(request):
     return render(request, 'courses.html')
 
-def course(request):
-    return render(request, 'course.html')
+def courseintroduction(request):
+    return render(request, 'courseintroduction.html')
 
-def userdashboard(request):
-    return render(request, 'adminPanels/userdashboard.html')
+def dashboard(request):
+    return render(request, 'adminPanels/dashboard.html')
+
+def profile(request):
+    return render(request, 'adminPanels/profile.html')
+
+def calendar(request):
+    return render(request, 'adminPanels/calendar.html')
+
+def resetpassword(request):
+    return render(request, 'adminPanels/resetpassword.html')
+
+def setting(request):
+    return render(request, 'adminPanels/setting.html')
+
+def modules(request):
+    return render(request, 'courseLearning/modules.html')
+
+def course(request):
+    return render(request, 'courseLearning/course.html')
+
+def lesson(request):
+    return render(request, 'courseLearning/lesson.html')
+
+def lessoncomplete(request):
+    return render(request, 'courseLearning/lessoncomplete.html')
+
+def lessoncompletestroke(request):
+    return render(request, 'courseLearning/lessoncompletestroke.html')
+
+def lessoncompleteleague(request):
+    return render(request, 'courseLearning/lessoncompleteleague.html')
+
+def userhomecourse(request):
+    return render(request, 'userhomecourse.html')
+
+def monacoeditor(request):
+    return render(request, 'monacoeditor.html')
+    

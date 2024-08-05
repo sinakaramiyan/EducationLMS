@@ -3,14 +3,21 @@
 {% block content %}
 <!-- hero section -->
 <div class="w-full">
-  <div class="grid grid-cols-2 sm:grid-cols-1">
-    <div class="py-8">
+  <div class="flex flex-col md:flex-row-reverse md:gap-10 justify-between ">
+    <figure class="flex justify-center lg:items-center lg:justify-end my-8 md:w-1/2">
+      <img
+        class=""
+        src="https://i.ibb.co/zJfxxtm/hero-section.jpg"
+        alt="عکس قسمت اول سایت"
+      />
+    </figure>
+    <div class="flex flex-col items-center md:items-start md:w-1/2 py-8">
       <h1
-        class="mb-10 text-5xl font-base leading-none tracking-tight text-gray-900"
+        class="mb-10 text-3xl font-medium leading-none tracking-tight text-gray-900"
       >
         ز دانش بود جان و دل را فروغ
       </h1>
-      <p class="mb-12 text-lg font-normal text-gray-900">
+      <p class="mb-4 md:mb-10 text-lg font-normal text-gray-900">
         آینده یادگیری خود را تقویت ببحشید
       </p>
       <a
@@ -39,17 +46,10 @@
         </svg>
       </a>
     </div>
-    <figure class="flex justify-end my-8">
-      <img
-        class="w-full h-full"
-        src="https://i.ibb.co/zJfxxtm/hero-section.jpg"
-        alt="عکس قسمت اول سایت"
-      />
-    </figure>
   </div>
 </div>
 <!-- learning path -->
-<div class="w-full grid grid-cols-4 sm:grid-cols-1">
+<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
   <a class="grid grid-cols-2 border-2 hover:bg-slate-100 cursor-pointer">
     <figure class="m-2">
       <img
@@ -185,7 +185,7 @@
 
 <!-- competitive advantages  -->
 <div class="grid grid-rows-2 my-8 border-b-2 py-8">
-  <div class="grid grid-cols-2 sm:grid-cols-1">
+  <div class="grid grid-cols-2">
     <h2 class="text-4xl font-bold">ایجاد عادات یادگیری</h2>
     <div class="grid-rows-2">
       <p class="text-2xl">
@@ -224,7 +224,7 @@
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-2 sm:grid-cols-1">
+  <div class="grid grid-cols-2">
     <h2 class="text-4xl font-bold">جلسات رفع اشکال</h2>
     <div class="grid-rows-2">
       <p class="text-2xl">
@@ -301,7 +301,7 @@
   <p class="mb-4 text-lg font-normal text-gray-900">
     تمام دوره های ما با اساتید مجرب و دارای سابقه پشتیبانی می شوند
   </p>
-  <div class="grid grid-cols-4 sm:grid-cols-1">
+  <div class="grid grid-cols-4">
     <button
       id="python"
       class="flex justify-between items-center border-2 bg-zinc-200 cursor-pointer"
@@ -658,7 +658,7 @@
 
   <div>
     <div id="python_cotent">
-      <div class="grid grid-cols-2 my-4 sm:grid-cols-1">
+      <div class="grid grid-cols-2 my-4">
         <div class="border-2">
           <div class="grid grid-cols-2">
             <div class="flex gap-4 p-4">
@@ -807,7 +807,7 @@
       </div>
     </div>
     <div id="assembly_cotent" class="hidden">
-      <div class="grid grid-cols-2 my-4 sm:grid-cols-1">
+      <div class="grid grid-cols-2 my-4">
         <div class="border-2">
           <div class="grid grid-cols-2">
             <div class="flex gap-4 p-4">
@@ -956,7 +956,7 @@
       </div>
     </div>
     <div id="cprgrmaing_cotent" class="hidden">
-      <div class="grid grid-cols-2 my-4 sm:grid-cols-1">
+      <div class="grid grid-cols-2 my-4">
         <div class="border-2">
           <div class="grid grid-cols-2">
             <div class="flex gap-4 p-4">
@@ -1103,7 +1103,7 @@
       </div>
     </div>
     <div id="csharp_cotent" class="hidden">
-      <div class="grid grid-cols-2 my-4 sm:grid-cols-1">
+      <div class="grid grid-cols-2 my-4">
         <div class="border-2">
           <div class="grid grid-cols-2">
             <div class="flex gap-4 p-4">
@@ -1255,7 +1255,7 @@
 </div>
 
 <!-- testimonial -->
-<div class="grid grid-cols-4 mt-8 sm:grid-cols-1">
+<div class="grid grid-cols-4 mt-8">
   <div class="border-2 hover:bg-slate-100">
     <figure class="m-2">
       <img
@@ -1372,8 +1372,8 @@
 </div>
 
 <!-- consultation form -->
-<div class="grid grid-cols-2 items-center sm:grid-cols-1">
-  <div class="mt-8 border-l-4 h-full sm:border-b-2">
+<div class="grid grid-cols-2 items-center">
+  <div class="mt-8 border-l-4 h-full">
     <div class="flex items-center">
       <svg
         id="icon"
@@ -1418,7 +1418,7 @@
   <div class="mt-8 h-full">
     <form class="grid gap-2 m-10" action="">
       <div
-        class="grid grid-rows-2 pt-2 w-[25dvw] sm:w-full bg-slate-200 border-b-2 border-black"
+        class="grid grid-rows-2 pt-2 w-[25dvw] bg-slate-200 border-b-2 border-black"
       >
         <label class="text-xs pr-2" for="name">نام و نام خانوادگی</label>
         <input
@@ -1429,7 +1429,7 @@
         />
       </div>
       <div
-        class="grid grid-rows-2 pt-2 w-[25dvw] sm:w-full bg-slate-200 border-b-2 border-black"
+        class="grid grid-rows-2 pt-2 w-[25dvw] bg-slate-200 border-b-2 border-black"
       >
         <label class="text-xs pr-2" for="tel">شماره تلفن</label>
         <input
@@ -1440,11 +1440,11 @@
         />
       </div>
       <div>
-        <div class="grid grid-rows-2 pt-2 w-[25dvw] sm:w-full bg-slate-200">
+        <div class="grid grid-rows-2 pt-2 w-[25dvw] bg-slate-200">
           <label class="text-xs pr-2" for="description">توضیحات</label>
         </div>
         <textarea
-          class="border-b-2 border-black w-[25dvw] sm:w-full bg-slate-200"
+          class="border-b-2 border-black w-[25dvw] bg-slate-200"
           name="description"
           id="description"
           rows="4"
@@ -1452,7 +1452,7 @@
         ></textarea>
       </div>
       <a
-        class="inline-flex items-center justify-between px-8 py-3 w-[25dvw] sm:w-full text-base font-light text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300"
+        class="inline-flex items-center justify-between px-8 py-3 w-[25dvw] text-base font-light text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300"
         href=""
       >
         <span>ثبت مشاوره</span>
