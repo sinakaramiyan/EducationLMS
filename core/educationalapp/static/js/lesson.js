@@ -261,7 +261,16 @@ class lesson {
                     checkbox.disabled = true;
                 });
             }
-            checkedAnswers = []
+            checkedAnswers = [];
+
+            // progressbar
+            if (currentProgress < 100) {
+                currentProgress += 20;
+                if (currentProgress === 100) {
+                    complete.classList.remove('hidden');
+                }
+                progress.firstElementChild.style = `width:  ${currentProgress}%`;
+            }
         })
 
         // show guidance
@@ -285,6 +294,17 @@ class lesson {
             t5.classList.remove('hidden');
             window.location.href = 'http://127.0.0.1:8000/courses/coursename/lesson' + '#t5';
             t4.previousElementSibling.classList.remove('h-[80dvh]', 'mt-12');
+
+            // progressbar
+            if (currentProgress < 100) {
+                currentProgress += 20;
+                if (currentProgress === 100) {
+                    complete.classList.remove('hidden');
+                }
+                progress.firstElementChild.style = `width:  ${currentProgress}%`;
+            }
+
+            nextsectiontwocolumn.disabled = true;
         })
 
 
