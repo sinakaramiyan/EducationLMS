@@ -5,6 +5,17 @@ class lesson {
 
     lesson(){
 
+        const p1 = document.querySelector('#progress');
+        const strike = document.querySelector('#strike');
+
+        // preloader
+        const p = document.querySelector('#preloader');
+        window.addEventListener('DOMContentLoaded', () => setTimeout(() => {
+            p.classList.add('translate-y-full');
+            p1.classList.remove('hidden');
+            strike.parentElement.parentElement.classList.remove('hidden');
+        }, 5000));
+
         // scroll to top with smooth behavior
         window.addEventListener("load", (event) => {
             window.scrollTo({
@@ -46,7 +57,7 @@ class lesson {
                         div[j].classList.remove('hidden');
                     }
                 }
-                // perviouse and next button control to show and hide
+                // pervious and next button control to show and hide
                 if (i == (innerdivlength - 1)) {
                     next.classList.add('fill-gray-200');
                     next.classList.remove('cursor-pointer');
@@ -127,7 +138,8 @@ class lesson {
 
         // function for every tab complete
         const button = document.querySelector('#tabc');
-        const t2 = document.querySelector('#t2');
+        const t2 = document.querySelector('#t2'); 
+        const t1 = document.querySelector('#t1');
         const progress = progressbar.children[0];
         const complete = document.querySelector('#complete');
         
@@ -138,9 +150,10 @@ class lesson {
             e.preventDefault();
             if (currentProgress < 100) {
                 currentProgress += 20;          
+                t1.classList.remove('hidden');
                 t2.classList.remove('hidden');
                 window.location.href = 'http://127.0.0.1:8000/courses/coursename/lesson' + '#t2';
-                t2.previousElementSibling.classList.remove('h-[80dvh]');
+                button.parentElement.parentElement.parentElement.classList.remove('h-[70dvh]');
                 if (currentProgress === 100) {
                     complete.classList.remove('hidden');
                 }
@@ -162,6 +175,7 @@ class lesson {
             e.preventDefault();
             if (currentProgress < 100) {
                 currentProgress += 20;
+                t1.classList.remove('hidden');
                 t3.classList.remove('hidden');
                 window.location.href = 'http://127.0.0.1:8000/courses/coursename/lesson' + '#t3';
                 t3.previousElementSibling.classList.remove('h-[80dvh]');
@@ -198,13 +212,15 @@ class lesson {
         answers.forEach((checkbox, index) => {
             checkbox.addEventListener('click', () => {
                 if (checkbox.checked) {
-                    checkanswer.classList.remove('hidden');
+                    checkanswer.classList.remove('hidden');                    
                     // Add the checked answer to the array
                     checkedAnswers.push(index);
-                } else {
+                } else if(!checkbox.checked) {
                     // Remove the unchecked answer from the array
                     checkedAnswers = checkedAnswers.filter((answer) => answer !== index);
-                    checkanswer.classList.add('hidden');
+                    if(checkedAnswers.length === 0){
+                        checkanswer.classList.add('hidden');
+                    }
                 }
             })
         });
@@ -216,7 +232,7 @@ class lesson {
 
         const tryingagain = document.querySelector('#tryingagain');
         const nextsection = document.querySelector('#nextsection');
-
+        
         const t4 = document.querySelector('#t4');
         checkanswer.addEventListener('click', () => {
             // Comparing each element of array
@@ -236,7 +252,7 @@ class lesson {
                                 checkbox.checked = false;
                                 checkbox.disabled = false;
                                 tryingagain.classList.add('hidden');
-                                checkanswer.classList.remove('hidden');
+                                checkanswer.classList.add('hidden');
                                 wrongmessage.classList.add('hidden');
                             })
                         })
@@ -253,7 +269,15 @@ class lesson {
                         nextsection.addEventListener('click', () => {
                             t4.classList.remove('hidden');
                             window.location.href = 'http://127.0.0.1:8000/courses/coursename/lesson' + '#t4';
-                            t2.previousElementSibling.classList.remove('h-[80dvh]');
+
+                            t2.classList.remove('absolute', 'md:w-3/4', 'lg:w-1/2');
+                            t3.classList.remove('absolute');
+
+                            // for charge strike
+                            const strike = document.querySelector('#strike');
+                            strike.style = 'fill: #72CC58;animation: fills 1s;';
+                            strike.parentElement.previousElementSibling.textContent = '1';
+
                         })
                     }
                 }
@@ -271,22 +295,26 @@ class lesson {
                 }
                 progress.firstElementChild.style = `width:  ${currentProgress}%`;
             }
-        })
+        });
 
         // show guidance
         const guide = document.querySelector('#guide');
         const t21 = document.querySelector('#t21');
         guide.addEventListener('click', () => {
-            t2.classList.add('hidden');
-            t21.classList.remove('hidden');
-        })
+            guide.classList.add('hidden');
+            t2.classList.add('rotate-y-180');
+            t21.classList.add('rotate-y-0');
+            t21.classList.remove('-rotate-y-180');
+        });
 
         // close guide page
         const rt21 = document.querySelector('#rt21');
         rt21.addEventListener('click', () => {
-            t2.classList.remove('hidden');
-            t21.classList.add('hidden')
-        })
+            guide.classList.remove('hidden');
+            t2.classList.remove('rotate-y-180');
+            t21.classList.remove('rotate-y-0');
+            t21.classList.add('-rotate-y-180');
+        });
 
         // next section after two column page
         const nextsectiontwocolumn = document.querySelector('#nextsectiontwocolumn');
@@ -305,7 +333,7 @@ class lesson {
             }
 
             nextsectiontwocolumn.disabled = true;
-        })
+        });
 
 
         // unchecked checkbox button after refresh

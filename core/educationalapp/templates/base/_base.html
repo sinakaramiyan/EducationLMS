@@ -41,7 +41,7 @@
 </head>
 <body>
     <!-- Navbar content -->
-    <header class="fixed top-0 w-full z-40 bg-zinc-200 dark:bg-slate-600 px-8">
+    <header class="sticky top-0 w-full z-40 bg-zinc-200 dark:bg-slate-600 px-8">
         <nav class="flex justify-between items-center dark:bg-slate-600">
             <!-- Mobile menu bar (displayed on screens smaller than lg size) -->
             <details class="group lg:hidden">
@@ -253,7 +253,7 @@
     </header>
 
     <!-- Main content section of the page -->
-    <main class="p-8 mt-12">
+    <main class="px-8 py-4">
         {% block content %} 
         {% endblock content %}
     </main>
