@@ -61,7 +61,7 @@ def lessoncompleteleague(request):
     return render(request, 'courseLearning/lessoncompleteleague.html')
 
 def userhomecourse(request):
-    return render(request, 'userhomecourse.html')
+    return render(request, 'courseLearning/userhomecourse.html')
 
 def monacoeditor(request):
     return render(request, 'monacoeditor.html')
