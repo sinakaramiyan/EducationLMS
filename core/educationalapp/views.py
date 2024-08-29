@@ -21,11 +21,10 @@ def congrateRegister(request):
 def testimonial(request):
     return render(request, 'testimonial.html')
 
-def courses(request):
-    return render(request, 'courses.html')
-
 def courseintroduction(request):
     return render(request, 'courseintroduction.html')
+
+# start admin
 
 def dashboard(request):
     return render(request, 'adminPanels/dashboard.html')
@@ -41,6 +40,13 @@ def resetpassword(request):
 
 def setting(request):
     return render(request, 'adminPanels/setting.html')
+
+# end admin
+
+# start brilliant
+
+def courses(request):
+    return render(request, 'courseLearning/courses.html')
 
 def modules(request):
     return render(request, 'courseLearning/modules.html')
@@ -62,6 +68,14 @@ def lessoncompleteleague(request):
 
 def userhomecourse(request):
     return render(request, 'courseLearning/userhomecourse.html')
+
+# end brilliant
+
+# start moodle
+
+
+
+# end moodle
 
 def monacoeditor(request):
     return render(request, 'monacoeditor.html')
