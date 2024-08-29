@@ -88,10 +88,13 @@
     <!-- animated learning path button and directions between them for learning related course-->
     <div class="flex flex-col justify-center md:w-2/3 lg:w-3/4 translate-y-20 md:-translate-y-20" style="background-image: url('{% static 'images/bg-course1.svg' %}');">
         <div class='flex flex-col items-center justify-center gap-6 -translate-y-14'>
-            <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center overflow-x-scroll w-full">
                 <!-- item1 -->
                 <div class="flex flex-col justify-center items-center z-20 translate-y-52">
-                    <a id="lessoncomplete" class="duration-700 ease-in-out flex justify-center items-center transform rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-16 h-16 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
+                    <div id="lock" class="">
+                        <svg class="w-12 h-12" fill="#2e63cc" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" stroke="#2e63cc"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M 27.9883 51.2969 C 28.3633 51.2969 28.9492 51.1562 29.5586 50.8516 C 42.6602 43.4688 47.1836 40.3750 47.1836 31.9609 L 47.1836 14.2891 C 47.1836 11.8750 46.1289 11.1016 44.1836 10.2813 C 41.4414 9.1562 32.6524 5.9922 29.9336 5.0313 C 29.3008 4.8438 28.6680 4.7031 27.9883 4.7031 C 27.3320 4.7031 26.6992 4.8438 26.0664 5.0313 C 23.3476 6.0156 14.5586 9.1797 11.8164 10.2813 C 9.8711 11.0781 8.8164 11.8750 8.8164 14.2891 L 8.8164 31.9609 C 8.8164 40.3750 13.3633 43.4453 26.4414 50.8516 C 27.0508 51.1562 27.6133 51.2969 27.9883 51.2969 Z M 19.7617 35.7344 L 19.7617 26.6406 C 19.7617 25.1172 20.3476 24.3203 21.5898 24.1328 L 21.5898 21.3203 C 21.5898 17.0078 24.1914 14.1016 27.9883 14.1016 C 31.8086 14.1016 34.3867 17.0078 34.3867 21.3203 L 34.3867 24.1094 C 35.6524 24.2969 36.2383 25.0938 36.2383 26.6406 L 36.2383 35.7344 C 36.2383 37.4922 35.4649 38.3125 33.8242 38.3125 L 22.1524 38.3125 C 20.5351 38.3125 19.7617 37.4922 19.7617 35.7344 Z M 24.0508 24.0860 L 31.9492 24.0625 L 31.9492 21.0625 C 31.9492 18.2969 30.3789 16.4687 27.9883 16.4687 C 25.6211 16.4687 24.0508 18.2969 24.0508 21.0625 Z"></path></g></svg> 
+                    </div>
+                    <a id="lessoncomplete" class="duration-700 ease-in-out flex justify-center items-center transform rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-20 h-20 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
                         <div class='button w-10 h-10 bg-blue-500 cursor-pointer select-none
                             active:translate-y-2  active:[box-shadow:0px_0px_0px_0px_#1b6ff8]
                             active:border-b-[0px]
@@ -110,7 +113,7 @@
                 <svg class="w-96 h-96 z-10" fill="white" viewBox="-2 -2 454 160" focusable="false" class="chakra-icon css-d6l4aw"><path d="M194.5 27L152.992 2.19083C151.76 1.45444 150.228 1.43462 148.978 2.13888L54.1875 55.5158C51.4715 57.0452 51.4709 60.9558 54.1865 62.486L167.882 126.553C170.583 128.074 170.601 131.957 167.914 133.504L124.5 158.5" stroke="gray" stroke-width="8"></path></svg>
                 <!-- item2 -->
                 <div class="flex flex-col justify-center items-center z-20 -translate-x-[100px] -translate-y-36">
-                    <div class="flex justify-center items-center transform rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-16 h-16 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
+                    <div class="flex justify-center items-center transform rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-20 h-20 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
                         <a href="/courses/coursename/lesson" class='button w-10 h-10 bg-blue-500 cursor-pointer select-none
                             active:translate-y-2  active:[box-shadow:0px_0px_0px_0px_#1b6ff8]
                             active:border-b-[0px]
@@ -127,7 +130,7 @@
                 <svg class="w-52 h-52 z-10 -translate-x-32 -translate-y-48" fill="white" viewBox="0 0 228 263" focusable="false" class="chakra-icon css-1kxskb2"><path d="M124 1.5L10.4044 68.5038C7.76628 70.0599 7.78428 73.8823 10.4369 75.4134L168.977 166.927C170.227 167.648 171.769 167.64 173.011 166.906L227 135" stroke="gray" stroke-width="8"></path></svg>
                 <!-- item3 -->
                 <div class="flex flex-col justify-center items-center z-20 -translate-x-[20px] -translate-y-[340px]">
-                    <div class="flex justify-center items-center  transform rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-16 h-16 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
+                    <div class="flex justify-center items-center  transform rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-20 h-20 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
                         <div class='button w-10 h-10 bg-blue-500 cursor-pointer select-none
                             active:translate-y-2  active:[box-shadow:0px_0px_0px_0px_#1b6ff8]
                             active:border-b-[0px]
@@ -144,7 +147,7 @@
                 <svg class="w-52 h-52 z-10 translate-x-16 -translate-y-[500px]" viewBox="0 0 228 263" fill="none" focusable="false" class="chakra-icon css-1kxskb2"><path d="M1.5 133.5L62.4395 97.7102C63.7085 96.9648 65.2844 96.9766 66.5422 97.7408L216.79 189.03C219.373 190.6 219.349 194.359 216.744 195.894L105.5 261.5" stroke="gray" stroke-width="8"></path></svg>
                 <!-- item4 -->
                 <div class="flex flex-col justify-center items-center z-20 translate-x-10 -translate-y-[520px]">
-                    <div class="flex justify-center items-center transform z-20 rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-16 h-16 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
+                    <div class="flex justify-center items-center transform z-20 rotate-x-60 rotate-45 border-[1px] border-blue-400 bg-blue-500 w-20 h-20 [box-shadow:5px_5px_2px_5px_#1b6ff8]">
                         <div class='button w-10 h-10 bg-blue-500 cursor-pointer select-none
                             active:translate-y-2  active:[box-shadow:0px_0px_0px_0px_#1b6ff8]
                             active:border-b-[0px]
