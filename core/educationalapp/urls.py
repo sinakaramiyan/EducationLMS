@@ -23,20 +23,20 @@ urlpatterns = [
 
     # start brilliant
 
-    path('courses/', courses , name='courses'),
-    path('home/', userhomecourse , name='userhomecourse'),
-    path('modules/learning_path', modules , name='modules'),   
-    path('courses/coursename', course , name='course'),   
-    path('courses/coursename/lesson', lesson , name='lesson'),
-    path('courses/coursename/lesson/lessoncomplete', lessoncomplete , name='lessoncomplete'),
-    path('courses/coursename/lesson/lessoncompletestroke', lessoncompletestroke , name='lessoncompletestroke'),
-    path('courses/coursename/lesson/lessoncompleteleague', lessoncompleteleague , name='lessoncompleteleague'),
+    path('brilliant/home/', userhomecourse , name='userhomecourse'),
+    path('brilliant/courses/', courses , name='courses'),
+    path('brilliant/modules/learning_path', modules , name='modules'),   
+    path('brilliant/courses/coursename', course , name='course'),   
+    path('brilliant/courses/coursename/lesson', lesson , name='lesson'),
+    path('brilliant/courses/coursename/lesson/lessoncomplete', lessoncomplete , name='lessoncomplete'),
+    path('brilliant/courses/coursename/lesson/lessoncompletestroke', lessoncompletestroke , name='lessoncompletestroke'),
+    path('brilliant/courses/coursename/lesson/lessoncompleteleague', lessoncompleteleague , name='lessoncompleteleague'),
 
     # end brilliant
 
     # start moodle
 
-    
+    path('meetbased/courses/', courses , name='courses'),
 
     # end moodle
     

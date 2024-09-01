@@ -73,7 +73,8 @@ def userhomecourse(request):
 
 # start moodle
 
-
+def courses(request):
+    return render(request, 'meetbased/courses.html')
 
 # end moodle
 
