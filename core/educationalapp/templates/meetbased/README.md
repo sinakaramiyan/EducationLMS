@@ -15,6 +15,7 @@ In this section explain figma and code implenetation of pages.
 > Html file for this page is named **courses.html**
 
 #### **Preview of FIGMA**:
-![courses list searchjpg](https://github.com/user-attachments/assets/541da9eb-5963-41e1-a0a1-d229005a4548)
+![courses list searchjpg](https://github.com/user-attachments/assets/827ca773-ccc5-4d18-ba4b-36d8f932b9da)
+
 
 ___
