@@ -13,6 +13,6 @@ In this section explain figma and code implenetation of pages.
 
 > [!Note]
 > Html file for this page is named **courses.html**
-
-#### preview:
+___
+#### Preview of FIGMA:
 ![courses list searchjpg](https://github.com/user-attachments/assets/541da9eb-5963-41e1-a0a1-d229005a4548)
