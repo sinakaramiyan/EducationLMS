@@ -11,7 +11,7 @@ Moodle is used to create custom websites with online courses and allows for comm
 In this section explain figma and code implenetation of pages.
 ### Page1 : Course list search
 
-> [!CAUTION]
+> [!Note]
 > Html file for this page is named **courses.html**
 
 ![courses list searchjpg](https://github.com/user-attachments/assets/541da9eb-5963-41e1-a0a1-d229005a4548)
