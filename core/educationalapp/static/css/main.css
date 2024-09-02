@@ -3096,11 +3096,6 @@ body {
     position: static;
   }
 
-  .md\:my-4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
   .md\:-mt-px {
     margin-top: -1px;
   }
@@ -3208,10 +3203,6 @@ body {
 
   .md\:border-l {
     border-left-width: 1px;
-  }
-
-  .md\:p-4 {
-    padding: 1rem;
   }
 
   .md\:text-base {
