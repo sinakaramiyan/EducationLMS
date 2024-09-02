@@ -11,7 +11,7 @@ in this project first implement student and teacher roles.
 ## Implementation of student
 In this section explain figma and code implenetation of student pages.
 ### STUDENT.Page1 : Course list search
-This page is main page of courses and search for courses and see other details about courses and in readme file see section 'Page1 : Course list search
+This page is main page of courses and search for courses and see other details about courses.
 > [!Note]
 > Html file for this page located in student folder and named **courses.html**
 
@@ -20,7 +20,7 @@ This page is main page of courses and search for courses and see other details a
 ___
 
 ### STUDENT.Page2 : Course detail page
-This page is main page of detail course page that explain course and can join course in this page and in readme file see section 'Page2 : course detail page
+This page is main page of detail course page that explain course and can join course in this page.
 > [!Note]
 > Html file for this page located in student folder and named **coursedetail.html**
 
