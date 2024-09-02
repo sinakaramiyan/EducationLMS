@@ -24,5 +24,5 @@ This page is main page of courses and search for courses and see other details a
 > Html file for this page is named **course.html**
 
 #### **Preview of FIGMA**:
-___![course detail pagejpg](https://github.com/user-attachments/assets/5958bcfb-ab59-47f7-878f-058b85783644)
+![course detail pagejpg](https://github.com/user-attachments/assets/5958bcfb-ab59-47f7-878f-058b85783644)
 ___
