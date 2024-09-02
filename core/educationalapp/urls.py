@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, login, signin, signinfavorite, testimonial, courses,course, course,monacoeditor, lessoncompletestroke, lessoncompleteleague,  courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription, modules, lesson, lessoncomplete, userhomecourse
+from .views import home, login, signin, signinfavorite, testimonial, courses,course, course,monacoeditor, lessoncompletestroke, lessoncompleteleague,  courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription, modules, lesson, lessoncomplete, userhomecourse, moodlecourses, moodlecourse
 
 urlpatterns = [
     path('', home, name='home'),
@@ -36,7 +36,9 @@ urlpatterns = [
 
     # start moodle
 
-    path('meetbased/courses/', courses , name='courses'),
+    path('meetbased/courses/', moodlecourses , name='courses'),
+    path('meetbased/course/', moodlecourse , name='course'),
+
 
     # end moodle
     

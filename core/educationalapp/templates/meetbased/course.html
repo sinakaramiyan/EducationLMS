@@ -1,0 +1,353 @@
+<!-- This page is main page of courses and search for courses and see other details about courses 
+    and in readme file see section 'Page2 : course detail page'
+-->
+{% extends "base/_base.html" %}
+{% load static %}
+
+{% block content %} 
+<div class="w-full">
+    <!-- hero section-->
+    <div class="relative isolate h-4/5 bg-blue-400">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 h-full w-full -z-10 object-cover">
+        <div class="flex w-full flex-col lg:flex-row justify-center items-center lg:justify-between py-20">
+            <!-- right section-->
+            <div class="flex flex-col items-center lg:items-start text-right p-8">
+                <h1 class="text-3xl text-justify font-bold tracking-tight text-white sm:text-5xl">دوره یادگیری عمیق پایتون</h1>
+                <p class="mt-6 text-justify text-xs sm:text-lg leading-8 text-gray-300">توضیحات این دوره را در این قسمت مشاهده میکند</p>
+                <div class="mt-10 flex gap-x-6 items-center">
+                    <div class="w-12 h-12 bg-blue-400"></div>
+                    <div>
+                        <h2 class="text-white font-bold">مدرس:</h2>
+                        <p class="text-gray-300 font-bold text-lg">سینا کرمیان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- left section-->
+            <div class="flex flex-col justify-between max-w-96 bg-zinc-100 p-4 mx-8 border border-zinc-300">
+                <span class="text-xs text-justify sm:text-base font-bold mt-4">دوره را شروع کنید یا برای اطلاعات بیشتر با ما در ارتباط باشید</span>
+                <!-- buttons -->
+                <div>
+                    <!-- start course button-->
+                    <button class="flex justify-center w-full bg-blue-600 p-2 my-4 select-none cursor-pointer hover:bg-blue-400">
+                        <span class="text-white">شروع دوره</span>
+                    </button>
+                    <!-- more information button -->
+                    <button class="flex justify-center w-full bg-white p-2 my-4 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                        <span class="text-blue-600">درخواست اطلاعات بیشتر</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- course details -->
+    <div class="grid grid-cols-1 md:grid-cols-3 relative w-3/4 bg-zinc-100 border border-zinc-200 -mt-10 mx-auto shadow-lg p-2">
+        <div class="flex flex-col p-2 justify-center items-center border-b md:border-b-0 md:border-l border-zinc-400">
+            <h3 class="font-bold">دو تا سه هفته</h3>
+            <p class="text-xs">این دوره دو تا سه هقته است</p>
+        </div>
+        <div class="flex flex-col p-2 justify-center items-center border-b md:border-b-0 md:border-l border-zinc-400">
+            <h3 class="font-bold">تکنولوژی</h3>
+            <p class="text-xs">یادگیری سه الی پنح تکنولوژی</p>
+        </div>
+        <div class="flex flex-col p-2 justify-center items-center">
+            <h3 class="font-bold">تعاملی</h3>
+            <p class="text-xs">این دوره کاملا تعاملی است</p>
+        </div>
+    </div>
+    <!-- course description -->
+    <div class="my-8 py-4 border-b border-zinc-400">
+        <h3 class="my-4 font-bold text-base sm:text-lg">توضیحات</h3>
+        <p class="text-justify">پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند و به آن مهارت داشته باشند. شرکت در کلاس پایتون کندو می‌تواند شما را در مسیر شغلی این رشته قرار دهد.
+        پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. 
+        </p>
+    </div>
+    <!-- weeks details -->
+    <div>
+        <!-- header -->
+        <h3 class="my-4 text-base sm:text-xl font-bold">
+            جزییات هفته ها
+        </h3>
+        <!-- weeks -->
+        <div class="flex flex-col gap-2">
+            <!-- week 1 -->
+            <div class="w-full p-4 h-full border border-zinc-300">
+                <details class="group" open>
+                    <summary class="flex gap-4 my-2 cursor-pointer">
+                        <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                            <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                        </svg>
+                        هفته اول :
+                        <span>
+                            سرتیتر فصل
+                        </span>
+                    </summary>
+                    <div class="py-4 border-t border-zinc-300">
+                        <!-- description -->
+                        <p class="text-justify text-sm sm:text-base">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند.
+                        </p>
+                        <!-- details -->
+                        <div class="flex flex-col justify-center gap-4 p-4 my-4">
+                            <!-- technologies -->
+                            <div class="flex items-center before:absolute before:h-[8dvh] before:w-2 before:bg-blue-500">
+                                <div class="flex items-center justify-center gap-4 px-4">
+                                    <h3 class="text-xs sm:text-sm">تکنولوژی ها:</h3>
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                            پایتون
+                                        </div>
+                                        <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                            ویرایشگر vs code
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- duration of week -->
+                            <div class="flex items-center before:absolute before:h-[8dvh] before:w-2 before:bg-blue-500">
+                                <div class="flex items-center justify-center gap-4 px-4">
+                                    <h3 class="text-xs sm:text-sm">مدت هفته:</h3>
+                                    <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                        3 الی 7 روز
+                                    </div>
+                                    <a>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="20" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M10.625 13.75V8.75H8.125V10H9.375V13.75H7.5V15H12.5V13.75H10.625Z" fill="#161616"/>
+                                            <path d="M10 5C9.81458 5 9.63333 5.05499 9.47916 5.158C9.32499 5.26101 9.20482 5.40743 9.13387 5.57874C9.06291 5.75004 9.04434 5.93854 9.08052 6.1204C9.11669 6.30226 9.20598 6.46931 9.33709 6.60042C9.4682 6.73153 9.63525 6.82082 9.81711 6.85699C9.99896 6.89316 10.1875 6.8746 10.3588 6.80364C10.5301 6.73268 10.6765 6.61252 10.7795 6.45835C10.8825 6.30418 10.9375 6.12292 10.9375 5.9375C10.9375 5.68886 10.8387 5.45041 10.6629 5.27459C10.4871 5.09878 10.2486 5 10 5Z" fill="#161616"/>
+                                            <path d="M10 18.75C8.26942 18.75 6.57769 18.2368 5.13876 17.2754C3.69983 16.3139 2.57832 14.9473 1.91606 13.3485C1.25379 11.7496 1.08051 9.9903 1.41813 8.29296C1.75575 6.59563 2.58911 5.03653 3.81282 3.81282C5.03653 2.58911 6.59563 1.75575 8.29296 1.41813C9.9903 1.08051 11.7496 1.25379 13.3485 1.91606C14.9473 2.57832 16.3139 3.69983 17.2754 5.13876C18.2368 6.57769 18.75 8.26942 18.75 10C18.75 12.3206 17.8281 14.5462 16.1872 16.1872C14.5462 17.8281 12.3206 18.75 10 18.75ZM10 2.5C8.51664 2.5 7.0666 2.93987 5.83323 3.76398C4.59986 4.58809 3.63856 5.75943 3.07091 7.12988C2.50325 8.50032 2.35473 10.0083 2.64411 11.4632C2.9335 12.918 3.64781 14.2544 4.6967 15.3033C5.7456 16.3522 7.08197 17.0665 8.53683 17.3559C9.99168 17.6453 11.4997 17.4968 12.8701 16.9291C14.2406 16.3614 15.4119 15.4002 16.236 14.1668C17.0601 12.9334 17.5 11.4834 17.5 10C17.5 8.01088 16.7098 6.10323 15.3033 4.6967C13.8968 3.29018 11.9891 2.5 10 2.5Z" fill="#161616"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- week 2 -->
+             <div class="w-full p-4 h-full border border-zinc-300">
+                <details class="group">
+                    <summary class="flex gap-4 my-2 cursor-pointer">
+                        <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                            <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                        </svg>
+                        هفته دوم :
+                        <span>
+                            سرتیتر فصل
+                        </span>
+                    </summary>
+                    <div class="py-4 border-t border-zinc-300">
+                        <!-- description -->
+                        <p class="text-justify text-sm sm:text-base">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند.
+                        </p>
+                        <!-- details -->
+                        <div class="flex flex-col justify-center gap-4 p-4 my-4">
+                            <!-- technologies -->
+                            <div class="flex items-center before:absolute before:h-[8dvh] before:w-2 before:bg-blue-500">
+                                <div class="flex items-center justify-center gap-4 px-4">
+                                    <h3 class="text-xs sm:text-sm">تکنولوژی ها:</h3>
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                            پایتون
+                                        </div>
+                                        <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                            ویرایشگر vs code
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- duration of week -->
+                            <div class="flex items-center before:absolute before:h-[8dvh] before:w-2 before:bg-blue-500">
+                                <div class="flex items-center justify-center gap-4 px-4">
+                                    <h3 class="text-xs sm:text-sm">مدت هفته:</h3>
+                                    <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                        3 الی 7 روز
+                                    </div>
+                                    <a>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="20" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M10.625 13.75V8.75H8.125V10H9.375V13.75H7.5V15H12.5V13.75H10.625Z" fill="#161616"/>
+                                            <path d="M10 5C9.81458 5 9.63333 5.05499 9.47916 5.158C9.32499 5.26101 9.20482 5.40743 9.13387 5.57874C9.06291 5.75004 9.04434 5.93854 9.08052 6.1204C9.11669 6.30226 9.20598 6.46931 9.33709 6.60042C9.4682 6.73153 9.63525 6.82082 9.81711 6.85699C9.99896 6.89316 10.1875 6.8746 10.3588 6.80364C10.5301 6.73268 10.6765 6.61252 10.7795 6.45835C10.8825 6.30418 10.9375 6.12292 10.9375 5.9375C10.9375 5.68886 10.8387 5.45041 10.6629 5.27459C10.4871 5.09878 10.2486 5 10 5Z" fill="#161616"/>
+                                            <path d="M10 18.75C8.26942 18.75 6.57769 18.2368 5.13876 17.2754C3.69983 16.3139 2.57832 14.9473 1.91606 13.3485C1.25379 11.7496 1.08051 9.9903 1.41813 8.29296C1.75575 6.59563 2.58911 5.03653 3.81282 3.81282C5.03653 2.58911 6.59563 1.75575 8.29296 1.41813C9.9903 1.08051 11.7496 1.25379 13.3485 1.91606C14.9473 2.57832 16.3139 3.69983 17.2754 5.13876C18.2368 6.57769 18.75 8.26942 18.75 10C18.75 12.3206 17.8281 14.5462 16.1872 16.1872C14.5462 17.8281 12.3206 18.75 10 18.75ZM10 2.5C8.51664 2.5 7.0666 2.93987 5.83323 3.76398C4.59986 4.58809 3.63856 5.75943 3.07091 7.12988C2.50325 8.50032 2.35473 10.0083 2.64411 11.4632C2.9335 12.918 3.64781 14.2544 4.6967 15.3033C5.7456 16.3522 7.08197 17.0665 8.53683 17.3559C9.99168 17.6453 11.4997 17.4968 12.8701 16.9291C14.2406 16.3614 15.4119 15.4002 16.236 14.1668C17.0601 12.9334 17.5 11.4834 17.5 10C17.5 8.01088 16.7098 6.10323 15.3033 4.6967C13.8968 3.29018 11.9891 2.5 10 2.5Z" fill="#161616"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- week 3 -->
+            <div class="w-full p-4 h-full border border-zinc-300">
+                <details class="group">
+                    <summary class="flex gap-4 my-2 cursor-pointer">
+                        <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                            <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                        </svg>
+                        هفته سوم :
+                        <span>
+                            سرتیتر فصل
+                        </span>
+                    </summary>
+                    <div class="py-4 border-t border-zinc-300">
+                        <!-- description -->
+                        <p class="text-justify text-sm sm:text-base">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند.
+                        </p>
+                        <!-- details -->
+                        <div class="flex flex-col justify-center gap-4 p-4 my-4">
+                            <!-- technologies -->
+                            <div class="flex items-center before:absolute before:h-[8dvh] before:w-2 before:bg-blue-500">
+                                <div class="flex items-center justify-center gap-4 px-4">
+                                    <h3 class="text-xs sm:text-sm">تکنولوژی ها:</h3>
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                            پایتون
+                                        </div>
+                                        <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                            ویرایشگر vs code
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- duration of week -->
+                            <div class="flex items-center before:absolute before:h-[8dvh] before:w-2 before:bg-blue-500">
+                                <div class="flex items-center justify-center gap-4 px-4">
+                                    <h3 class="text-xs sm:text-sm">مدت هفته:</h3>
+                                    <div class="flex justify-center items-center p-2 text-xs sm:text-sm bg-blue-300">
+                                        3 الی 7 روز
+                                    </div>
+                                    <a>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="20" height="20" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M10.625 13.75V8.75H8.125V10H9.375V13.75H7.5V15H12.5V13.75H10.625Z" fill="#161616"/>
+                                            <path d="M10 5C9.81458 5 9.63333 5.05499 9.47916 5.158C9.32499 5.26101 9.20482 5.40743 9.13387 5.57874C9.06291 5.75004 9.04434 5.93854 9.08052 6.1204C9.11669 6.30226 9.20598 6.46931 9.33709 6.60042C9.4682 6.73153 9.63525 6.82082 9.81711 6.85699C9.99896 6.89316 10.1875 6.8746 10.3588 6.80364C10.5301 6.73268 10.6765 6.61252 10.7795 6.45835C10.8825 6.30418 10.9375 6.12292 10.9375 5.9375C10.9375 5.68886 10.8387 5.45041 10.6629 5.27459C10.4871 5.09878 10.2486 5 10 5Z" fill="#161616"/>
+                                            <path d="M10 18.75C8.26942 18.75 6.57769 18.2368 5.13876 17.2754C3.69983 16.3139 2.57832 14.9473 1.91606 13.3485C1.25379 11.7496 1.08051 9.9903 1.41813 8.29296C1.75575 6.59563 2.58911 5.03653 3.81282 3.81282C5.03653 2.58911 6.59563 1.75575 8.29296 1.41813C9.9903 1.08051 11.7496 1.25379 13.3485 1.91606C14.9473 2.57832 16.3139 3.69983 17.2754 5.13876C18.2368 6.57769 18.75 8.26942 18.75 10C18.75 12.3206 17.8281 14.5462 16.1872 16.1872C14.5462 17.8281 12.3206 18.75 10 18.75ZM10 2.5C8.51664 2.5 7.0666 2.93987 5.83323 3.76398C4.59986 4.58809 3.63856 5.75943 3.07091 7.12988C2.50325 8.50032 2.35473 10.0083 2.64411 11.4632C2.9335 12.918 3.64781 14.2544 4.6967 15.3033C5.7456 16.3522 7.08197 17.0665 8.53683 17.3559C9.99168 17.6453 11.4997 17.4968 12.8701 16.9291C14.2406 16.3614 15.4119 15.4002 16.236 14.1668C17.0601 12.9334 17.5 11.4834 17.5 10C17.5 8.01088 16.7098 6.10323 15.3033 4.6967C13.8968 3.29018 11.9891 2.5 10 2.5Z" fill="#161616"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+    <!-- Faq's section -->
+    <div class="p-4 my-6 bg-gray-200">
+        <!-- header section -->
+        <h3 class="text-base sm:text-xl font-bold mx-4 p-2 border-b border-zinc-500">سوالات پرتکرار</h3>
+        <div class="flex items-start p-4">
+            <!-- Faq's question -->
+            <div class="w-full md:w-3/4">
+                <!-- Faq 1-->
+                <div class="w-full md:w-10/12 py-4 border-b border-zinc-400">
+                    <details class="group">
+                        <summary class="flex items-center gap-4 select-none cursor-pointer text-sm sm:text-base">
+                            <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                            </svg>
+                            آیا دوره های شما در هر زمینه ای وجود دارد و شرایط شرکت در آن چیست؟
+                        </summary>
+                        <p class="my-2 mx-10 text-justify text-xs sm:text-sm">
+                            یادگیری ماشین (Machine Learning) موضوعی است که در زندگی روزمره ما حضور دارد و گاهی بدون اینکه متوجه باشیم در حال استفاده از آن هستیم. برای مثال زمانی که در سایت گوگل به جستجو می‌پردازیم و گوگل لیستی از نتایج را به ما نشان می‌دهد، در حقیقت در حال استفاده از الگوریتم‌های یادگیری ماشین هستیم. همچنین، بعضی از فروشگاه‌های اینترنتی با شخصی‌سازی سایت برای کاربران، پیشنهادهایی هوشمندانه‌ای به ما ارائه می‌دهند. سیستم‌های تشخیص چهره یا دستیارهای صوتی مثل Cortana یا Siri نمونه دیگری از کاربردهای یادگیری ماشین هستند. لازم به ذکر است که پایتون در یادگیری ماشین عملکرد مناسبی دارد و بسیاری از متخصصان Machine Learning از کتابخانه‌های آن استفاده می‌کنند.
+                        </p>
+                    </details>
+                </div>
+                <!-- Faq 2-->
+                <div class="w-full md:w-10/12 py-4 border-b border-zinc-400">
+                    <details class="group">
+                        <summary class="flex items-center gap-4 select-none cursor-pointer text-sm sm:text-base">
+                            <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                            </svg>
+                            آیا دوره های شما در هر زمینه ای وجود دارد و شرایط شرکت در آن چیست؟
+                        </summary>
+                        <p class="my-2 mx-10 text-justify text-xs sm:text-sm">
+                            یادگیری ماشین (Machine Learning) موضوعی است که در زندگی روزمره ما حضور دارد و گاهی بدون اینکه متوجه باشیم در حال استفاده از آن هستیم. برای مثال زمانی که در سایت گوگل به جستجو می‌پردازیم و گوگل لیستی از نتایج را به ما نشان می‌دهد، در حقیقت در حال استفاده از الگوریتم‌های یادگیری ماشین هستیم. همچنین، بعضی از فروشگاه‌های اینترنتی با شخصی‌سازی سایت برای کاربران، پیشنهادهایی هوشمندانه‌ای به ما ارائه می‌دهند. سیستم‌های تشخیص چهره یا دستیارهای صوتی مثل Cortana یا Siri نمونه دیگری از کاربردهای یادگیری ماشین هستند. لازم به ذکر است که پایتون در یادگیری ماشین عملکرد مناسبی دارد و بسیاری از متخصصان Machine Learning از کتابخانه‌های آن استفاده می‌کنند.
+                        </p>
+                    </details>
+                </div>
+                <!-- Faq 3-->
+                <div class="w-full md:w-10/12 py-4 border-b border-zinc-400">
+                    <details class="group">
+                        <summary class="flex items-center gap-4 select-none cursor-pointer text-sm sm:text-base">
+                            <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                            </svg>
+                            آیا دوره های شما در هر زمینه ای وجود دارد و شرایط شرکت در آن چیست؟
+                        </summary>
+                        <p class="my-2 mx-10 text-justify text-xs sm:text-sm">
+                            یادگیری ماشین (Machine Learning) موضوعی است که در زندگی روزمره ما حضور دارد و گاهی بدون اینکه متوجه باشیم در حال استفاده از آن هستیم. برای مثال زمانی که در سایت گوگل به جستجو می‌پردازیم و گوگل لیستی از نتایج را به ما نشان می‌دهد، در حقیقت در حال استفاده از الگوریتم‌های یادگیری ماشین هستیم. همچنین، بعضی از فروشگاه‌های اینترنتی با شخصی‌سازی سایت برای کاربران، پیشنهادهایی هوشمندانه‌ای به ما ارائه می‌دهند. سیستم‌های تشخیص چهره یا دستیارهای صوتی مثل Cortana یا Siri نمونه دیگری از کاربردهای یادگیری ماشین هستند. لازم به ذکر است که پایتون در یادگیری ماشین عملکرد مناسبی دارد و بسیاری از متخصصان Machine Learning از کتابخانه‌های آن استفاده می‌کنند.
+                        </p>
+                    </details>
+                </div>
+                <!-- Faq 4-->
+                <div class="w-full md:w-10/12 py-4 border-b border-zinc-400">
+                    <details class="group">
+                        <summary class="flex items-center gap-4 select-none cursor-pointer text-sm sm:text-base">
+                            <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                            </svg>
+                            آیا دوره های شما در هر زمینه ای وجود دارد و شرایط شرکت در آن چیست؟
+                        </summary>
+                        <p class="my-2 mx-10 text-justify text-xs sm:text-sm">
+                            یادگیری ماشین (Machine Learning) موضوعی است که در زندگی روزمره ما حضور دارد و گاهی بدون اینکه متوجه باشیم در حال استفاده از آن هستیم. برای مثال زمانی که در سایت گوگل به جستجو می‌پردازیم و گوگل لیستی از نتایج را به ما نشان می‌دهد، در حقیقت در حال استفاده از الگوریتم‌های یادگیری ماشین هستیم. همچنین، بعضی از فروشگاه‌های اینترنتی با شخصی‌سازی سایت برای کاربران، پیشنهادهایی هوشمندانه‌ای به ما ارائه می‌دهند. سیستم‌های تشخیص چهره یا دستیارهای صوتی مثل Cortana یا Siri نمونه دیگری از کاربردهای یادگیری ماشین هستند. لازم به ذکر است که پایتون در یادگیری ماشین عملکرد مناسبی دارد و بسیاری از متخصصان Machine Learning از کتابخانه‌های آن استفاده می‌کنند.
+                        </p>
+                    </details>
+                </div>
+                <!-- Faq 5-->
+                <div class="w-full md:w-10/12 py-4 border-b border-zinc-400">
+                    <details class="group">
+                        <summary class="flex items-center gap-4 select-none cursor-pointer text-sm sm:text-base">
+                            <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                            </svg>
+                            آیا دوره های شما در هر زمینه ای وجود دارد و شرایط شرکت در آن چیست؟
+                        </summary>
+                        <p class="my-2 mx-10 text-justify text-xs sm:text-sm">
+                            یادگیری ماشین (Machine Learning) موضوعی است که در زندگی روزمره ما حضور دارد و گاهی بدون اینکه متوجه باشیم در حال استفاده از آن هستیم. برای مثال زمانی که در سایت گوگل به جستجو می‌پردازیم و گوگل لیستی از نتایج را به ما نشان می‌دهد، در حقیقت در حال استفاده از الگوریتم‌های یادگیری ماشین هستیم. همچنین، بعضی از فروشگاه‌های اینترنتی با شخصی‌سازی سایت برای کاربران، پیشنهادهایی هوشمندانه‌ای به ما ارائه می‌دهند. سیستم‌های تشخیص چهره یا دستیارهای صوتی مثل Cortana یا Siri نمونه دیگری از کاربردهای یادگیری ماشین هستند. لازم به ذکر است که پایتون در یادگیری ماشین عملکرد مناسبی دارد و بسیاری از متخصصان Machine Learning از کتابخانه‌های آن استفاده می‌کنند.
+                        </p>
+                    </details>
+                </div>
+                <!-- Faq 6-->
+                <div class="w-full md:w-10/12 py-4">
+                    <details class="group">
+                        <summary class="flex items-center gap-4 select-none cursor-pointer text-sm sm:text-base">
+                            <svg class="w-6 h-6 group-open:-rotate-90" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="27" height="27" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M8.4375 13.5L16.875 5.0625L18.0562 6.24375L10.8 13.5L18.0562 20.7563L16.875 21.9375L8.4375 13.5Z" fill="#161616"/>
+                            </svg>
+                            آیا دوره های شما در هر زمینه ای وجود دارد و شرایط شرکت در آن چیست؟
+                        </summary>
+                        <p class="my-2 mx-10 text-justify text-xs sm:text-sm">
+                            یادگیری ماشین (Machine Learning) موضوعی است که در زندگی روزمره ما حضور دارد و گاهی بدون اینکه متوجه باشیم در حال استفاده از آن هستیم. برای مثال زمانی که در سایت گوگل به جستجو می‌پردازیم و گوگل لیستی از نتایج را به ما نشان می‌دهد، در حقیقت در حال استفاده از الگوریتم‌های یادگیری ماشین هستیم. همچنین، بعضی از فروشگاه‌های اینترنتی با شخصی‌سازی سایت برای کاربران، پیشنهادهایی هوشمندانه‌ای به ما ارائه می‌دهند. سیستم‌های تشخیص چهره یا دستیارهای صوتی مثل Cortana یا Siri نمونه دیگری از کاربردهای یادگیری ماشین هستند. لازم به ذکر است که پایتون در یادگیری ماشین عملکرد مناسبی دارد و بسیاری از متخصصان Machine Learning از کتابخانه‌های آن استفاده می‌کنند.
+                        </p>
+                    </details>
+                </div>
+            </div>
+            <!-- more Faq's -->
+            <div class="hidden md:flex flex-col gap-4 p-4 w-1/4 h-full border border-zinc-300">
+                <svg class="w-7 h-7" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="23" height="24" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M11.5 1.5C9.50982 1.5 7.56433 2.11581 5.90956 3.26957C4.25479 4.42332 2.96506 6.0632 2.20345 7.98182C1.44184 9.90045 1.24257 12.0116 1.63084 14.0484C2.0191 16.0852 2.97746 17.9562 4.38473 19.4246C5.79199 20.8931 7.58496 21.8931 9.53689 22.2982C11.4888 22.7034 13.5121 22.4955 15.3507 21.7007C17.1894 20.906 18.761 19.5602 19.8667 17.8335C20.9723 16.1068 21.5625 14.0767 21.5625 12C21.5625 9.21523 20.5023 6.54451 18.6152 4.57538C16.7282 2.60625 14.1687 1.5 11.5 1.5ZM11.5 21C9.79413 21 8.12657 20.4722 6.7082 19.4832C5.28982 18.4943 4.18433 17.0887 3.53153 15.4442C2.87872 13.7996 2.70792 11.99 3.04072 10.2442C3.37351 8.49836 4.19497 6.89471 5.40119 5.63604C6.60742 4.37737 8.14425 3.5202 9.81734 3.17293C11.4904 2.82567 13.2246 3.0039 14.8006 3.68508C16.3766 4.36627 17.7237 5.51983 18.6714 6.99987C19.6191 8.47991 20.125 10.22 20.125 12C20.125 14.3869 19.2163 16.6761 17.5988 18.364C15.9813 20.0518 13.7875 21 11.5 21Z" fill="#161616"/>
+                    <path d="M11.5 18.75C12.0954 18.75 12.5781 18.2463 12.5781 17.625C12.5781 17.0037 12.0954 16.5 11.5 16.5C10.9046 16.5 10.4219 17.0037 10.4219 17.625C10.4219 18.2463 10.9046 18.75 11.5 18.75Z" fill="#161616"/>
+                    <path d="M12.2187 6H11.1406C10.7156 5.99901 10.2946 6.08563 9.90175 6.25489C9.50891 6.42415 9.15198 6.67272 8.85145 6.98631C8.55092 7.2999 8.31272 7.67235 8.15051 8.08227C7.9883 8.4922 7.90529 8.93151 7.90624 9.375V9.75H9.34374V9.375C9.34374 8.87772 9.53305 8.40081 9.87003 8.04917C10.207 7.69754 10.6641 7.5 11.1406 7.5H12.2187C12.6953 7.5 13.1523 7.69754 13.4893 8.04917C13.8263 8.40081 14.0156 8.87772 14.0156 9.375C14.0156 9.87228 13.8263 10.3492 13.4893 10.7008C13.1523 11.0525 12.6953 11.25 12.2187 11.25H10.7812V14.625H12.2187V12.75C13.0765 12.75 13.8992 12.3944 14.5058 11.7615C15.1124 11.1285 15.4531 10.2701 15.4531 9.375C15.4531 8.47989 15.1124 7.62145 14.5058 6.98851C13.8992 6.35558 13.0765 6 12.2187 6Z" fill="#161616"/>
+                </svg>
+                <span>بازدید بیشتر</span>
+                <div>
+                    <a class="text-sm text-blue-600 hover:border-b hover:border-blue-600 cursor-pointer">بازدید از صفحه سوالات</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
