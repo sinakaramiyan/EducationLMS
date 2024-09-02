@@ -19,7 +19,7 @@ This page is main page of courses and search for courses and see other details a
 ___
 
 ### Page2 : Course detail page
-This page is main page of detail course and explain course and can join course in this page and in readme file see section 'Page2 : course detail page
+This page is main page of detail course page that explain course and can join course in this page and in readme file see section 'Page2 : course detail page
 > [!Note]
 > Html file for this page is named **course.html**
 
