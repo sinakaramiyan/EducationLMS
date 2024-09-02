@@ -16,6 +16,13 @@ This page is main page of courses and search for courses and see other details a
 
 #### **Preview of FIGMA**:
 ![courses list searchjpg](https://github.com/user-attachments/assets/827ca773-ccc5-4d18-ba4b-36d8f932b9da)
+___
 
+### Page2 : Course detail page
+This page is main page of courses and search for courses and see other details about courses and in readme file see section 'Page2 : course detail page
+> [!Note]
+> Html file for this page is named **course.html**
 
+#### **Preview of FIGMA**:
+___![course detail pagejpg](https://github.com/user-attachments/assets/5958bcfb-ab59-47f7-878f-058b85783644)
 ___
