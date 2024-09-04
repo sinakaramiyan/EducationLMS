@@ -79,6 +79,9 @@ def moodlestudentcourses(request):
 def moodlestudentcoursedetail(request):
     return render(request, 'meetbased/student/coursedetail.html')
 
+def moodlestudentcourse(request):
+    return render(request, 'meetbased/student/course.html')
+
 # end moodle
 
 def monacoeditor(request):

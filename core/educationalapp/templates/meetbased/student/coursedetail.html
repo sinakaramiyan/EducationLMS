@@ -1,4 +1,4 @@
-<!-- This page is main page of courses and search for courses and see other details about courses 
+<!-- This page is main page of coursedetail and see course details 
     and in readme file see section 'STUDENT.Page2 : Course detail page'
 -->
 {% extends "base/_base.html" %}
@@ -11,19 +11,21 @@
         <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 h-full w-full -z-10 object-cover">
         <div class="flex w-full flex-col lg:flex-row justify-center items-center lg:justify-between py-20">
             <!-- right section-->
-            <div class="flex flex-col items-center lg:items-start text-right p-8">
-                <h1 class="text-3xl text-justify font-bold tracking-tight text-white sm:text-5xl">دوره یادگیری عمیق پایتون</h1>
-                <p class="mt-6 text-justify text-xs sm:text-lg leading-8 text-gray-300">توضیحات این دوره را در این قسمت مشاهده میکند</p>
+            <div class="flex flex-col items-center lg:items-start text-right px-8">
+                <div class="flex items-center justify-center">
+                    <h1 class="font-bold tracking-tight text-white text-xl md:text-4xl sm:text-3xl">دوره یادگیری عمیق پایتون</h1>
+                </div>
+                <p class="mt-6 text-xs sm:text-lg leading-8 text-gray-300">توضیحات این دوره را در این قسمت مشاهده میکند</p>
                 <div class="mt-10 flex gap-x-6 items-center">
-                    <div class="w-12 h-12 bg-blue-400"></div>
-                    <div>
-                        <h2 class="text-white font-bold">مدرس:</h2>
-                        <p class="text-gray-300 font-bold text-lg">سینا کرمیان</p>
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 bg-blue-400"></div>
+                    <div class="text-sm sm:text-base">
+                        <h2 class="text-gray-300 font-bold text-sm sm:text-base">مدرس:</h2>
+                        <p class="text-white font-bold text-sm sm:text-base">سینا کرمیان</p>
                     </div>
                 </div>
             </div>
             <!-- left section-->
-            <div class="flex flex-col justify-between max-w-96 bg-zinc-100 p-4 mx-8 border border-zinc-300">
+            <div class="hidden md:flex flex-col justify-between bg-zinc-100 p-2 m-4 border border-zinc-300">
                 <span class="text-xs text-justify sm:text-base font-bold mt-4">دوره را شروع کنید یا برای اطلاعات بیشتر با ما در ارتباط باشید</span>
                 <!-- buttons -->
                 <div>
@@ -39,13 +41,24 @@
             </div>
         </div>
     </div>
+    <!-- left hero section responisive for mobile : buttons -->
+    <div class="flex md:hidden flex-row gap-4 w-full mt-4 p-1">
+        <!-- start course button-->
+        <button class="flex justify-center w-full bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+            <span class="text-sm sm:text-base text-white">شروع دوره</span>
+        </button>
+        <!-- more information button -->
+        <button class="flex justify-center w-full bg-white p-2 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+            <span class="text-sm sm:text-base text-blue-600">اطلاعات بیشتر</span>
+        </button>
+    </div>
     <!-- course details -->
-    <div class="grid grid-cols-1 md:grid-cols-3 relative w-3/4 bg-zinc-100 border border-zinc-200 -mt-10 mx-auto shadow-lg p-2">
-        <div class="flex flex-col p-2 justify-center items-center border-b md:border-b-0 md:border-l border-zinc-400">
+    <div class="grid grid-cols-1 md:grid-cols-3 relative w-full md:w-3/4 bg-zinc-100 mt-4 md:-mt-10 mx-auto shadow-lg p-2">
+        <div class="flex flex-col p-2 justify-center items-center border-b md:border-b-0 md:border-l border-zinc-300">
             <h3 class="font-bold">دو تا سه هفته</h3>
             <p class="text-xs">این دوره دو تا سه هقته است</p>
         </div>
-        <div class="flex flex-col p-2 justify-center items-center border-b md:border-b-0 md:border-l border-zinc-400">
+        <div class="flex flex-col p-2 justify-center items-center border-b md:border-b-0 md:border-l border-zinc-300">
             <h3 class="font-bold">تکنولوژی</h3>
             <p class="text-xs">یادگیری سه الی پنح تکنولوژی</p>
         </div>
