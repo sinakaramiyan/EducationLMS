@@ -27,3 +27,13 @@ This page is main page of detail course page that explain course and can join co
 #### **Preview of FIGMA**:
 ![course detail pagejpg](https://github.com/user-attachments/assets/5958bcfb-ab59-47f7-878f-058b85783644)
 ___
+
+### STUDENT.Page3 : Course page
+This page is main page of course and see main content of course such as weeks and statistics 
+> [!Note]
+> Html file for this page located in student folder and named **course.html**
+
+#### **Preview of FIGMA**:
+![course](https://github.com/user-attachments/assets/442ff4c7-8431-4771-9b7d-09e84add2e28)
+
+___
