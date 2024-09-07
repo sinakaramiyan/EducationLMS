@@ -37,3 +37,13 @@ This page is main page of course and see main content of course such as weeks an
 ![course](https://github.com/user-attachments/assets/442ff4c7-8431-4771-9b7d-09e84add2e28)
 
 ___
+
+### STUDENT.Page4 : Week page
+This page is main page of week and see main contents such as meets and project and files and quizes. 
+> [!Note]
+> Html file for this page located in student folder and named **week.html**
+
+#### **Preview of FIGMA**:
+![weeks](https://github.com/user-attachments/assets/911d98e9-d97f-477e-9875-b119eb0082dc)
+
+___
