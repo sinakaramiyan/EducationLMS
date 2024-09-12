@@ -47,3 +47,13 @@ This page is main page of week and see main contents such as meets and project a
 ![weeks](https://github.com/user-attachments/assets/911d98e9-d97f-477e-9875-b119eb0082dc)
 
 ___
+
+### STUDENT.Page5 : Profile page
+This page is profile page for students and contain dashboard, about, details, courses, blogs and forum post sections that related to user.
+> [!Note]
+> Html file for this page located in student folder and named **profile.html**
+
+#### **Preview of FIGMA**:
+![profile](https://github.com/user-attachments/assets/655a15de-04be-4db8-abea-89ad9de6114c)
+
+___
