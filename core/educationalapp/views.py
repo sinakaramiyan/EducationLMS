@@ -88,8 +88,10 @@ def moodlestudentweek(request):
 def moodlestudentprofile(request):
     return render(request, 'meetbased/student/profile.html')
 
+def moodlesblogblogs(request):
+    return render(request, 'meetbased/blog/blogs.html')
+
 # end moodle
 
 def monacoeditor(request):
     return render(request, 'monacoeditor.html')
-    
