@@ -57,3 +57,15 @@ This page is profile page for students and contain dashboard, about, details, co
 ![profile](https://github.com/user-attachments/assets/655a15de-04be-4db8-abea-89ad9de6114c)
 
 ___
+
+## Implementation of BLOG
+In this section explain figma and code implenetation of blog pages.
+### BLOG.Page1 : blog list search
+This page is main page of blogs and search for blog posts and see other details about blogs.
+> [!Note]
+> Html file for this page located in student folder and named **blogs.html**
+
+#### **Preview of FIGMA**:
+![blogs](https://github.com/user-attachments/assets/f5c8ea43-0960-4273-b230-23f39773d108)
+
+___
