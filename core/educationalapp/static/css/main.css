@@ -829,6 +829,11 @@ html{
   margin-bottom: 2rem;
 }
 
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .-mb-28 {
   margin-bottom: -7rem;
 }
