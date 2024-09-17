@@ -91,8 +91,11 @@ def moodlestudentprofile(request):
 def moodlesblogblogs(request):
     return render(request, 'meetbased/blog/blogs.html')
 
-def moodlesblogcategory(request):
+def moodlesblogcategories(request):
     return render(request, 'meetbased/blog/blogCategories.html')
+
+def moodlesblogcategorypage(request):
+    return render(request, 'meetbased/blog/blogCategorPage.html')
 
 # end moodle
 

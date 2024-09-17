@@ -784,6 +784,11 @@ html{
   margin-right: 1rem;
 }
 
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -827,11 +832,6 @@ html{
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .-mb-28 {
@@ -1753,6 +1753,11 @@ html{
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-blue-500 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-divide-opacity));
 }
 
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
@@ -2840,6 +2845,11 @@ body {
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-blue-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-blue-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
@@ -3195,6 +3205,10 @@ body {
 
   .sm\:mr-10 {
     margin-right: 2.5rem;
+  }
+
+  .sm\:mr-16 {
+    margin-right: 4rem;
   }
 
   .sm\:block {
@@ -3553,6 +3567,12 @@ body {
     gap: 1.5rem;
   }
 
+  .md\:divide-y > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-y-reverse: 0;
+    border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+    border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+  }
+
   .md\:border-2 {
     border-width: 2px;
   }
@@ -3563,6 +3583,10 @@ body {
 
   .md\:border-l {
     border-left-width: 1px;
+  }
+
+  .md\:border-l-0 {
+    border-left-width: 0px;
   }
 
   .md\:px-4 {
@@ -3602,6 +3626,11 @@ body {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -3628,6 +3657,10 @@ body {
   .lg\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .lg\:mr-16 {
+    margin-right: 4rem;
   }
 
   .lg\:mr-20 {
