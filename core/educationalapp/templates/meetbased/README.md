@@ -62,7 +62,7 @@ In this section explain figma and code implenetation of blog pages.
 ### BLOG.Page1 : blog list search
 This page is main page of blogs and search for blog posts and see other details about blogs.
 > [!Note]
-> Html file for this page located in student folder and named **blogs.html**
+> Html file for this page located in blog folder and named **blogs.html**
 
 #### **Preview of FIGMA**:
 ![blogs](https://github.com/user-attachments/assets/8c5806a2-b12b-4d7b-b834-57cc7871d817)
@@ -72,9 +72,19 @@ ___
 ### BLOG.Page2 : blogs category
 This page is main page of blogs category and see blog category.
 > [!Note]
-> Html file for this page located in student folder and named **blogCategories.html**
+> Html file for this page located in blog folder and named **blogCategories.html**
 
 #### **Preview of FIGMA**:
 ![blogs category](https://github.com/user-attachments/assets/e4062298-fc55-4942-8dcf-3a794393f02a)
+
+___
+
+### BLOG.Page3 : blogs category main page
+This page is main page of blogs category main page and see blog category posts.
+> [!Note]
+> Html file for this page located in blog folder and named **blogCategoryPage.html**
+
+#### **Preview of FIGMA**:
+![blogs category main page](https://github.com/user-attachments/assets/fc657116-a53e-4833-acc5-ef1fcc211acd)
 
 ___
