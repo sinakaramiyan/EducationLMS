@@ -95,7 +95,10 @@ def moodlesblogcategories(request):
     return render(request, 'meetbased/blog/blogCategories.html')
 
 def moodlesblogcategorypage(request):
-    return render(request, 'meetbased/blog/blogCategorPage.html')
+    return render(request, 'meetbased/blog/blogCategoryPage.html')
+
+def moodlesblogsingleblog(request):
+    return render(request, 'meetbased/blog/singleblog.html')
 
 # end moodle
 
