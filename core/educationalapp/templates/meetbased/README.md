@@ -88,3 +88,13 @@ This page is main page of blogs category main page and see blog category posts.
 ![blogs category main page](https://github.com/user-attachments/assets/fc657116-a53e-4833-acc5-ef1fcc211acd)
 
 ___
+
+### BLOG.Page4 : single blog
+This page is main page of specific blog and see blog details content.
+> [!Note]
+> Html file for this page located in blog folder and named **singleblog.html**
+
+#### **Preview of FIGMA**:
+![blogsingle](https://github.com/user-attachments/assets/be282d25-7367-453b-a767-f4f7f56cdec0)
+
+___
