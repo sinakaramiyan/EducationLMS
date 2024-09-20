@@ -1,0 +1,658 @@
+<!-- This page is main page of forums and see main contents forum details such as title, created, search and button to see it 
+    and in readme file see section 'FORUM.Page1 : forums'
+-->
+{% extends "base/_base.html" %}
+{% load static %}
+
+{% block content %} 
+<div class="w-full">
+    <!-- header -->
+    <div class="flex justify-between items-center sm:border-b border-zinc-400 p-2">
+        <!-- hamburger menu button -->
+        <div class="">
+            <a class="cursor-pointer">
+                <svg class="w-8 h-8" viewBox="0 0 35 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="27" height="23" transform="translate(4 3)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M25.9375 7.3125H9.0625V8.75H25.9375V7.3125Z" fill="#161616"/>
+                    <path d="M25.9375 11.625H9.0625V13.0625H25.9375V11.625Z" fill="#161616"/>
+                    <path d="M25.9375 15.9375H9.0625V17.375H25.9375V15.9375Z" fill="#161616"/>
+                    <path d="M25.9375 20.25H9.0625V21.6875H25.9375V20.25Z" fill="#161616"/>
+                    <rect x="0.5" y="0.5" width="34" height="28" stroke="black"/>
+                </svg>
+            </a>
+        </div>
+        <!-- title : course and week name -->
+        <div class="hidden sm:block text-xs sm:text-base font-bold">
+            <span>
+                دوره یادگیری عمیق پایتون
+            </span>
+        </div>
+        <!-- score responsive -->
+        <div class="sm:hidden flex gap-2 items-center bg-gray-300 p-1">
+            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                <path d="M13 13V2H9V5H6V8H3V13H1V14H15V13H13ZM4 13V9H6V13H4ZM7 13V6H9V13H7ZM10 13V3H12V13H10Z" fill="#161616"></path>
+            </svg>
+            <span class="text-xs sm:text-sm">480 امتیاز</span>
+        </div>
+        <!-- score and back button -->
+        <div class="flex gap-4 items-center">
+            <!-- score -->
+            <div class="hidden sm:flex gap-2 items-center bg-gray-300 p-1">
+                <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                    <path d="M13 13V2H9V5H6V8H3V13H1V14H15V13H13ZM4 13V9H6V13H4ZM7 13V6H9V13H7ZM10 13V3H12V13H10Z" fill="#161616"></path>
+                </svg>
+                <span class="text-xs sm:text-sm">480 امتیاز</span>
+            </div>
+            <!-- back button -->
+            <a class="cursor-pointer">
+                <svg class="w-8 h-8" viewBox="0 0 35 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="34" height="28" stroke="black"/>
+                    <rect width="20" height="20" transform="translate(7 4)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M15.75 20.25L16.6312 19.3688L11.8937 14.625H24.5V13.375H11.8937L16.6312 8.63125L15.75 7.75L9.5 14L15.75 20.25Z" fill="#161616"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!-- title header responsive -->
+    <div class="flex sm:hidden justify-center text-xs sm:text-base font-bold border-b border-zinc-400 p-2">
+        <span>
+            دوره یادگیری عمیق پایتون
+        </span>
+    </div>
+
+    <!-- title and search -->
+    <div class="py-4 px-2">
+        <!-- title -->
+        <div class="flex items-center gap-4">
+            <svg class='w-9 h-9' viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                <path d="M29.875 12.5C29.125 11.75 28 11.25 26.875 11.25C25.75 11.25 24.625 11.75 23.875 12.5L22.125 10.75C23.375 9.5 25.125 8.75 26.875 8.75C28.625 8.75 30.5 9.5 31.625 10.75L29.875 12.5Z" fill="#161616"/>
+                <path d="M30 7.5C30.6904 7.5 31.25 6.94036 31.25 6.25C31.25 5.55964 30.6904 5 30 5C29.3096 5 28.75 5.55964 28.75 6.25C28.75 6.94036 29.3096 7.5 30 7.5Z" fill="#161616"/>
+                <path d="M23.75 7.5C24.4404 7.5 25 6.94036 25 6.25C25 5.55964 24.4404 5 23.75 5C23.0596 5 22.5 5.55964 22.5 6.25C22.5 6.94036 23.0596 7.5 23.75 7.5Z" fill="#161616"/>
+                <path d="M18.75 0H35C36.375 0 37.5 1.125 37.5 2.5V15C37.5 16.375 36.375 17.5 35 17.5H30.625L28.5 21.25L26.25 20L29.125 15H35V2.5H18.75V15H25V17.5H18.75C17.375 17.5 16.25 16.375 16.25 15V2.5C16.25 1.125 17.375 0 18.75 0Z" fill="#161616"/>
+                <path d="M25 23.75V31.25C25 32 24.5 32.5 23.75 32.5H17.5V35H23.75C25.875 35 27.5 33.375 27.5 31.25V23.75H25Z" fill="#161616"/>
+                <path d="M19.25 25.5C18.25 26.75 16.625 27.5 15 27.5C13.375 27.5 11.75 26.75 10.75 25.5L8.75 27C10.25 28.75 12.5 30 15 30C17.5 30 19.75 28.875 21.25 27L19.25 25.5Z" fill="#161616"/>
+                <path d="M19.375 23.75C20.4105 23.75 21.25 22.9105 21.25 21.875C21.25 20.8395 20.4105 20 19.375 20C18.3395 20 17.5 20.8395 17.5 21.875C17.5 22.9105 18.3395 23.75 19.375 23.75Z" fill="#161616"/>
+                <path d="M10.625 23.75C11.6605 23.75 12.5 22.9105 12.5 21.875C12.5 20.8395 11.6605 20 10.625 20C9.58947 20 8.75 20.8395 8.75 21.875C8.75 22.9105 9.58947 23.75 10.625 23.75Z" fill="#161616"/>
+                <path d="M12.625 32.5H6.25C5.5 32.5 5 32 5 31.25V17.5C5 16.75 5.5 16.25 6.25 16.25H12.5V13.75H6.25C4.125 13.75 2.5 15.375 2.5 17.5V31.25C2.5 33.375 4.125 35 6.25 35H11.25L14.125 40L16.25 38.75L12.625 32.5Z" fill="#161616"/>
+            </svg>
+            <h1 class="text-sm sm:text-lg font-bold">لیست فوروم های موجود در این دوره</h1>
+        </div>
+        <!-- search and join in forum -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4 my-4">
+            <!-- Search input field -->
+            <div class='flex flex-col sm:flex-row sm:items-center justify-between gap-2'>
+                <div class="relative flex items-center w-full sm:w-[280px] h-10 focus-within:shadow-lg bg-white overflow-hidden border">
+                    <div class="grid place-items-center h-full w-12 text-gray-300">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input
+                        class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
+                        type="text"
+                        id="search"
+                        placeholder="جستجو ..." /> 
+                </div>
+                <!-- add forum question -->
+                <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                    <span class="text-white text-xs sm:text-sm">افزودن موضوع گفتگو</span>
+                </button>
+            </div>
+            <!-- forum join button -->
+            <div class="flex justify-end">
+                <button class="flex justify-center w-full sm:w-fit bg-white px-4 py-2 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                    <span class="text-xs sm:text-sm text-blue-600">عضویت در فوروم</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- content: forums list -->
+    <div class="w-full">
+        <!-- header -->
+        <div class="p-2 border-b border-zinc-300 ml-0 ">
+            <!-- filter -->
+            <div class="flex justify-end">
+                <details class="group">
+                    <summary class="flex items-center gap-4 cursor-pointer select-none">
+                        <span class="text-xs sm:text-sm">
+                            موضوع
+                        </span>
+                        <svg class="w-5 h-5 group-open:rotate-180" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                            <path d="M8 10.9998L3 5.9998L3.7 5.2998L8 9.5998L12.3 5.2998L13 5.9998L8 10.9998Z" fill="#161616"></path>
+                        </svg>
+                    </summary>
+                    <div class="absolute mt-4 w-20 h-20 bg-blue-500 z-20">s</div>
+                </details>
+            </div>
+        </div>
+        <!-- forum list -->
+        <div class="no-scrollbar my-2 border w-full overflow-auto max-h-[600px]">
+            <!-- forum list header -->
+            <table class="min-w-full divide-y divide-gray-300  overflow-x-auto">
+                <thead class="bg-gray-200 sticky top-0 z-10">
+                    <tr>
+                        <th class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">عنوان گفتگو</th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">ایجاد شده</th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">آخرین فعالیت</th>
+                        <th class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
+                    </tr>
+                </thead>
+                <!-- forum list items -->
+                <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center text-xl font-bold">
+                                1
+                                <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M7.99989 3.26L9.37989 6.05L9.60989 6.55L10.1099 6.625L13.1899 7.07L10.9999 9.22L10.6249 9.585L10.7149 10.085L11.2399 13.15L8.48489 11.705L7.99989 11.5L7.53489 11.745L4.77989 13.17L5.27989 10.105L5.36989 9.605L4.99989 9.22L2.78989 7.045L5.86989 6.6L6.36989 6.525L6.59989 6.025L7.99989 3.26ZM7.99989 1L5.72489 5.61L0.639893 6.345L4.31989 9.935L3.44989 15L7.99989 12.61L12.5499 15L11.6799 9.935L15.3599 6.35L10.2749 5.61L7.99989 1Z" fill="#161616"/>
+                                </svg>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">عنوان گفتگو در اینجا میایید</td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-2 text-xs sm:text-sm font-bold text-gray-500">
+                            <div class="flex gap-2"> 
+                                <div class="w-10 h-10 bg-blue-200"></div>
+                                <div>
+                                    <h3>سینا کرمیان</h3>
+                                    <span>1403/02/01</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500 flex justify-end">
+                            <!-- add forum question -->
+                            <button class="flex justify-center px-4 py-2 bg-blue-600 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">مشاهده</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- More people... -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

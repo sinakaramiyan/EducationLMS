@@ -100,6 +100,12 @@ def moodlesblogcategorypage(request):
 def moodlesblogsingleblog(request):
     return render(request, 'meetbased/blog/singleblog.html')
 
+def moodlesforumforum(request):
+    return render(request, 'meetbased/forum/forum.html')
+
+def moodlesforumforums(request):
+    return render(request, 'meetbased/forum/forums.html')
+
 # end moodle
 
 def monacoeditor(request):
