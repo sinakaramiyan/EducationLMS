@@ -98,3 +98,15 @@ This page is main page of specific blog and see blog details content.
 ![blogsingle](https://github.com/user-attachments/assets/be282d25-7367-453b-a767-f4f7f56cdec0)
 
 ___
+
+## Implementation of FORUM
+In this section explain figma and code implenetation of forum pages.
+### FORUM.Page1 : forums
+This page is main page of forums and see main contents forum details such as title, created, search and button to see it.
+> [!Note]
+> Html file for this page located in blog folder and named **forums.html**
+
+#### **Preview of FIGMA**:
+![Forums](https://github.com/user-attachments/assets/ddc539ee-5a22-4bec-b2ad-a366f526f20c)
+
+___
