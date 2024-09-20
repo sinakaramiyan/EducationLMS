@@ -104,7 +104,7 @@ In this section explain figma and code implenetation of forum pages.
 ### FORUM.Page1 : forums
 This page is main page of forums and see main contents forum details such as title, created, search and button to see it.
 > [!Note]
-> Html file for this page located in blog folder and named **forums.html**
+> Html file for this page located in forum folder and named **forums.html**
 
 #### **Preview of FIGMA**:
 ![Forums](https://github.com/user-attachments/assets/ddc539ee-5a22-4bec-b2ad-a366f526f20c)
