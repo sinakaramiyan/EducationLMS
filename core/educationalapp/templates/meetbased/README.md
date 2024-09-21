@@ -110,3 +110,13 @@ This page is main page of forums and see main contents forum details such as tit
 ![Forums](https://github.com/user-attachments/assets/ddc539ee-5a22-4bec-b2ad-a366f526f20c)
 
 ___
+
+### FORUM.Page2 : forum
+This page is main page of single forum page and see posts in related forum and can send post.
+> [!Note]
+> Html file for this page located in forum folder and named **forum.html**
+
+#### **Preview of FIGMA**:
+![Forum](https://github.com/user-attachments/assets/9a53820c-750b-406a-8784-b0bd9ac6ab78)
+
+___
