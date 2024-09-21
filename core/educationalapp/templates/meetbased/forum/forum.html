@@ -1,1 +1,460 @@
-s
+<!-- This page is main page of single forum page and see posts in related forum and can send post.
+    and in readme file see section 'FORUM.Page2 : forum'
+-->
+{% extends "base/_base.html" %}
+{% load static %}
+
+{% block content %} 
+<div class="w-full">
+    <!-- header -->
+    <div class="flex justify-between items-center border-b border-zinc-400 p-2">
+        <!-- title : course and week name -->
+        <div class="flex items-center gap-4">
+            <svg class="w-7 h-7" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="16" height="16" transform="translate(0 0.512695)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                <path d="M14 3.5127H4C3.4 3.5127 3 3.9127 3 4.5127V11.5127C3 12.1127 3.4 12.5127 4 12.5127H8V11.5127H4V4.5127H14V11.5127H10.4L8 14.9127L8.8 15.5127L10.9 12.5127H14C14.6 12.5127 15 12.1127 15 11.5127V4.5127C15 3.9127 14.6 3.5127 14 3.5127Z" fill="#161616"/>
+                <path d="M2 9.5127H1V3.0127C1 2.1627 1.65 1.5127 2.5 1.5127H9V2.5127H2.5C2.2 2.5127 2 2.7127 2 3.0127V9.5127Z" fill="#161616"/>
+            </svg>
+            <span class="text-xs sm:text-base">
+                فوروم های دوره یادگیری عمیق پایتون
+            </span>
+        </div>
+        <!-- score and back button -->
+        <div class="flex gap-4 items-center">
+            <!-- back button -->
+            <a class="cursor-pointer" href="/meetbased/forums">
+                <svg class="w-7 h-7" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M8.70705 8L13 3.70705L12.2929 3L8 7.29295L3.70715 3L3 3.70705L7.29295 8L3 12.2929L3.70715 13L8 8.70705L12.2929 13L13 12.2929L8.70705 8Z" fill="#161616"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- blog comments -->
+    <div class="my-4">
+        <!-- comment lists -->
+        <div class="flex flex-col w-full mt-4">
+            <!-- header -->
+            <div class="flex items-center gap-4">
+                <svg class='w-8 h-8' viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M29.875 12.5C29.125 11.75 28 11.25 26.875 11.25C25.75 11.25 24.625 11.75 23.875 12.5L22.125 10.75C23.375 9.5 25.125 8.75 26.875 8.75C28.625 8.75 30.5 9.5 31.625 10.75L29.875 12.5Z" fill="#161616"/>
+                    <path d="M30 7.5C30.6904 7.5 31.25 6.94036 31.25 6.25C31.25 5.55964 30.6904 5 30 5C29.3096 5 28.75 5.55964 28.75 6.25C28.75 6.94036 29.3096 7.5 30 7.5Z" fill="#161616"/>
+                    <path d="M23.75 7.5C24.4404 7.5 25 6.94036 25 6.25C25 5.55964 24.4404 5 23.75 5C23.0596 5 22.5 5.55964 22.5 6.25C22.5 6.94036 23.0596 7.5 23.75 7.5Z" fill="#161616"/>
+                    <path d="M18.75 0H35C36.375 0 37.5 1.125 37.5 2.5V15C37.5 16.375 36.375 17.5 35 17.5H30.625L28.5 21.25L26.25 20L29.125 15H35V2.5H18.75V15H25V17.5H18.75C17.375 17.5 16.25 16.375 16.25 15V2.5C16.25 1.125 17.375 0 18.75 0Z" fill="#161616"/>
+                    <path d="M25 23.75V31.25C25 32 24.5 32.5 23.75 32.5H17.5V35H23.75C25.875 35 27.5 33.375 27.5 31.25V23.75H25Z" fill="#161616"/>
+                    <path d="M19.25 25.5C18.25 26.75 16.625 27.5 15 27.5C13.375 27.5 11.75 26.75 10.75 25.5L8.75 27C10.25 28.75 12.5 30 15 30C17.5 30 19.75 28.875 21.25 27L19.25 25.5Z" fill="#161616"/>
+                    <path d="M19.375 23.75C20.4105 23.75 21.25 22.9105 21.25 21.875C21.25 20.8395 20.4105 20 19.375 20C18.3395 20 17.5 20.8395 17.5 21.875C17.5 22.9105 18.3395 23.75 19.375 23.75Z" fill="#161616"/>
+                    <path d="M10.625 23.75C11.6605 23.75 12.5 22.9105 12.5 21.875C12.5 20.8395 11.6605 20 10.625 20C9.58947 20 8.75 20.8395 8.75 21.875C8.75 22.9105 9.58947 23.75 10.625 23.75Z" fill="#161616"/>
+                    <path d="M12.625 32.5H6.25C5.5 32.5 5 32 5 31.25V17.5C5 16.75 5.5 16.25 6.25 16.25H12.5V13.75H6.25C4.125 13.75 2.5 15.375 2.5 17.5V31.25C2.5 33.375 4.125 35 6.25 35H11.25L14.125 40L16.25 38.75L12.625 32.5Z" fill="#161616"/>
+                </svg>
+                <h1 class="text-sm sm:text-lg font-bold">عنوان گفتگو در اینجا میایید</h1>
+            </div>
+            <!-- submit comment -->
+            <div class="flex flex-col gap-2 w-full my-4 p-4 border border-zinc-200">
+                <!-- header -->
+                <div class="flex items-center gap-4 border-b border-zinc-600 pb-2">
+                    <svg class="w-5 h-5" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="28" height="28" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                        <path d="M26.25 21H22.75V17.5H21V21H17.5V22.75H21V26.25H22.75V22.75H26.25V21Z" fill="#161616"/>
+                        <path d="M13.475 26.25L4.375 20.825C3.85 20.475 3.5 19.95 3.5 19.3375V8.6625C3.5 8.05 3.85 7.4375 4.375 7.175L13.125 2.0125C13.3875 1.8375 13.65 1.75 14 1.75C14.35 1.75 14.6125 1.8375 14.875 2.0125L23.625 7.175C24.15 7.525 24.5 8.05 24.5 8.6625V14H22.75V8.6625L14 3.5L5.25 8.6625V19.3375L14.4375 24.7625L13.475 26.25Z" fill="#161616"/>
+                    </svg>
+                    <h2 class="text-sm sm:text-base font-bold">افزودن پیام</h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-8 h-8" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                        <path d="M8 2C8.49445 2 8.9778 2.14662 9.38893 2.42133C9.80005 2.69603 10.1205 3.08648 10.3097 3.54329C10.4989 4.00011 10.5484 4.50277 10.452 4.98773C10.3555 5.47268 10.1174 5.91814 9.76777 6.26777C9.41814 6.6174 8.97268 6.8555 8.48773 6.95196C8.00277 7.04843 7.50011 6.99892 7.04329 6.8097C6.58648 6.62048 6.19603 6.30005 5.92133 5.88893C5.64662 5.4778 5.5 4.99445 5.5 4.5C5.5 3.83696 5.76339 3.20107 6.23223 2.73223C6.70107 2.26339 7.33696 2 8 2ZM8 1C7.30777 1 6.63108 1.20527 6.0555 1.58986C5.47993 1.97444 5.03133 2.52107 4.76642 3.16061C4.50152 3.80015 4.4322 4.50388 4.56725 5.18282C4.7023 5.86175 5.03564 6.48539 5.52513 6.97487C6.01461 7.46436 6.63825 7.7977 7.31718 7.93275C7.99612 8.0678 8.69985 7.99849 9.33939 7.73358C9.97893 7.46867 10.5256 7.02007 10.9101 6.4445C11.2947 5.86892 11.5 5.19223 11.5 4.5C11.5 3.57174 11.1313 2.6815 10.4749 2.02513C9.8185 1.36875 8.92826 1 8 1Z" fill="#161616"></path>
+                        <path d="M13 15H12V12.5C12 12.1717 11.9353 11.8466 11.8097 11.5433C11.6841 11.24 11.4999 10.9644 11.2678 10.7322C11.0356 10.5001 10.76 10.3159 10.4567 10.1903C10.1534 10.0647 9.8283 10 9.5 10H6.5C5.83696 10 5.20107 10.2634 4.73223 10.7322C4.26339 11.2011 4 11.837 4 12.5V15H3V12.5C3 11.5717 3.36875 10.6815 4.02513 10.0251C4.6815 9.36875 5.57174 9 6.5 9H9.5C10.4283 9 11.3185 9.36875 11.9749 10.0251C12.6313 10.6815 13 11.5717 13 12.5V15Z" fill="#161616"></path>
+                    </svg>
+                    <h3 class="text-xs sm:text-sm">سینا کرمیان</h3>
+                    <span class="bg-zinc-300 p-1 text-xs w-fit px-2 py-1">
+                        معلم
+                    </span>
+                </div>
+                <!-- text content -->
+                <div class="relative">
+                    <span class="absolute right-5 top-4">
+                    <svg class="fill-current w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.8" clip-path="url(#clip0_88_10224)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56524 3.23223C2.03408 2.76339 2.66997 2.5 3.33301 2.5H9.16634C9.62658 2.5 9.99967 2.8731 9.99967 3.33333C9.99967 3.79357 9.62658 4.16667 9.16634 4.16667H3.33301C3.11199 4.16667 2.90003 4.25446 2.74375 4.41074C2.58747 4.56702 2.49967 4.77899 2.49967 5V16.6667C2.49967 16.8877 2.58747 17.0996 2.74375 17.2559C2.90003 17.4122 3.11199 17.5 3.33301 17.5H14.9997C15.2207 17.5 15.4326 17.4122 15.5889 17.2559C15.7452 17.0996 15.833 16.8877 15.833 16.6667V10.8333C15.833 10.3731 16.2061 10 16.6663 10C17.1266 10 17.4997 10.3731 17.4997 10.8333V16.6667C17.4997 17.3297 17.2363 17.9656 16.7674 18.4344C16.2986 18.9033 15.6627 19.1667 14.9997 19.1667H3.33301C2.66997 19.1667 2.03408 18.9033 1.56524 18.4344C1.0964 17.9656 0.833008 17.3297 0.833008 16.6667V5C0.833008 4.33696 1.0964 3.70107 1.56524 3.23223Z" fill=""></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6664 2.39884C16.4185 2.39884 16.1809 2.49729 16.0056 2.67253L8.25216 10.426L7.81167 12.188L9.57365 11.7475L17.3271 3.99402C17.5023 3.81878 17.6008 3.5811 17.6008 3.33328C17.6008 3.08545 17.5023 2.84777 17.3271 2.67253C17.1519 2.49729 16.9142 2.39884 16.6664 2.39884ZM14.8271 1.49402C15.3149 1.00622 15.9765 0.732178 16.6664 0.732178C17.3562 0.732178 18.0178 1.00622 18.5056 1.49402C18.9934 1.98182 19.2675 2.64342 19.2675 3.33328C19.2675 4.02313 18.9934 4.68473 18.5056 5.17253L10.5889 13.0892C10.4821 13.196 10.3483 13.2718 10.2018 13.3084L6.86847 14.1417C6.58449 14.2127 6.28409 14.1295 6.0771 13.9225C5.87012 13.7156 5.78691 13.4151 5.85791 13.1312L6.69124 9.79783C6.72787 9.65131 6.80364 9.51749 6.91044 9.41069L14.8271 1.49402Z" fill=""></path>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_88_10224">
+                            <rect width="20" height="20" fill="white"></rect>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    </span>
+                    <textarea class="w-full border border-solid bg-zinc-100 py-4 pr-12 pl-4 text-black" rows="6" style="height: 173px; direction: rtl;"></textarea>
+                </div>
+                <!-- footer -->
+                <div class="flex justify-end">
+                    <!-- comment submit button -->
+                    <button class="flex items-center justify-between gap-4 w-fit bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+                        <span class="text-xs sm:text-sm text-white">ارسال پیام</span>
+                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                            <path d="M13.855 2.14501C13.7875 2.07784 13.7023 2.03134 13.6093 2.01097C13.5163 1.9906 13.4194 1.9972 13.33 2.03001L2.33 6.03001C2.23513 6.06599 2.15346 6.12998 2.09583 6.21348C2.03819 6.29699 2.00732 6.39605 2.00732 6.49751C2.00732 6.59897 2.03819 6.69803 2.09583 6.78153C2.15346 6.86503 2.23513 6.92902 2.33 6.96501L7.13 8.88501L9.05 13.685C9.08607 13.7757 9.14791 13.8539 9.22787 13.9098C9.30783 13.9658 9.40243 13.9972 9.5 14C9.60104 13.9979 9.69909 13.9653 9.7812 13.9064C9.86332 13.8475 9.92566 13.7651 9.96 13.67L13.96 2.67001C13.9941 2.58155 14.0023 2.48522 13.9837 2.39227C13.9651 2.29932 13.9205 2.21356 13.855 2.14501ZM9.5 12.1L8.105 8.60001L10.5 6.20501L9.795 5.50001L7.38 7.91501L3.9 6.50001L12.665 3.33501L9.5 12.1Z" fill="white"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- forum posts list -->
+            <div class="w-full border px-3 py-4 my-4 overflow-y-auto">
+                <!-- header -->
+                <div class="flex items-center gap-4 border-b border-zinc-600 pb-2">
+                    <svg class="w-7 h-7" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="16" height="16" transform="translate(0 0.511719)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                        <path d="M14 3.51172H5V4.51172H14V3.51172Z" fill="#161616"/>
+                        <path d="M14 12.5117H5V13.5117H14V12.5117Z" fill="#161616"/>
+                        <path d="M14 8.01172H5V9.01172H14V8.01172Z" fill="#161616"/>
+                        <path d="M3 8.01172H2V9.01172H3V8.01172Z" fill="#161616"/>
+                        <path d="M3 3.51172H2V4.51172H3V3.51172Z" fill="#161616"/>
+                        <path d="M3 12.5117H2V13.5117H3V12.5117Z" fill="#161616"/>
+                    </svg>
+                    <h2 class="text-sm sm:text-base font-bold">لیست گفتگوها</h2>
+                </div>
+                <!-- forum post -->
+                <div class="h-fit border my-4 mx-1 py-2 px-4 cursor-pointer hover:shadow-md">
+                    <!-- header -->
+                    <div class="flex justify-between">
+                        <!-- title -->
+                        <div class="flex flex-col items-start sm:items-center sm:flex-row sm:gap-4">
+                            <!-- user ptofile photo -->
+                            <div class="w-12 h-12 bg-blue-500"></div>
+                            <!-- text -->
+                            <div class="flex flex-col gap-2 my-4">
+                                <h3 class="text-xs sm:text-sm">عنوان گفتگو در اینجا میایید</h3>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <!-- user created -->
+                                    <span class="text-sm font-bold">سینا کرمیان</span>
+                                    <!-- date and time --> 
+                                    <span class="text-xs">
+                                        2 اردیبهشت 1403 - 12:22pm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- forks -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <!-- role -->
+                            <span class="bg-zinc-300 p-1 text-xs w-fit px-2 py-1 my-2">
+                                معلم
+                            </span>
+                            <!-- likes -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M13 6H10V3C9.99956 2.60231 9.84139 2.22103 9.56018 1.93982C9.27897 1.65861 8.89769 1.50044 8.5 1.5H7.4336C7.19314 1.50096 6.96099 1.58814 6.77934 1.7457C6.59768 1.90325 6.47855 2.12074 6.4436 2.35865L6.02095 5.3169L4.2324 8H1V15H11.5C12.4279 14.999 13.3176 14.6299 13.9737 13.9737C14.6299 13.3176 14.999 12.4279 15 11.5V8C14.9994 7.46975 14.7885 6.96139 14.4136 6.58644C14.0386 6.2115 13.5303 6.0006 13 6ZM4 14H2V9H4V14ZM14 11.5C13.9992 12.1628 13.7356 12.7983 13.2669 13.2669C12.7983 13.7356 12.1628 13.9992 11.5 14H5V8.65135L6.9789 5.6831L7.4336 2.5H8.5C8.63258 2.50011 8.75969 2.55282 8.85344 2.64656C8.94718 2.74031 8.99989 2.86742 9 3V7H13C13.2651 7.00033 13.5193 7.10579 13.7067 7.29326C13.8942 7.48072 13.9997 7.73489 14 8V11.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                            <!-- replies -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M8.87 15L8 14.5L10 11H13C13.2652 11 13.5196 10.8946 13.7071 10.7071C13.8946 10.5196 14 10.2652 14 10V4C14 3.73478 13.8946 3.48043 13.7071 3.29289C13.5196 3.10536 13.2652 3 13 3H3C2.73478 3 2.48043 3.10536 2.29289 3.29289C2.10536 3.48043 2 3.73478 2 4V10C2 10.2652 2.10536 10.5196 2.29289 10.7071C2.48043 10.8946 2.73478 11 3 11H7.5V12H3C2.46957 12 1.96086 11.7893 1.58579 11.4142C1.21071 11.0391 1 10.5304 1 10V4C1 3.46957 1.21071 2.96086 1.58579 2.58579C1.96086 2.21071 2.46957 2 3 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V10C15 10.5304 14.7893 11.0391 14.4142 11.4142C14.0391 11.7893 13.5304 12 13 12H10.58L8.87 15Z" fill="#161616"/>
+                                    <path d="M8.5 4.5H7.5V6.5H5.5V7.5H7.5V9.5H8.5V7.5H10.5V6.5H8.5V4.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <div class="md:mr-16 md:ml-2">
+                        <p class="text-justify text-xs">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند و به آن مهارت داشته باشند. شرکت در کلاس پایتون کندو می‌تواند شما را در مسیر شغلی این رشته قرار دهد.
+                        </p>
+                    </div>
+                    <!-- footer -->
+                    <div class="flex justify-end mt-8">
+                        <button class="flex items-center justify-between gap-4 w-fit bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+                            <span class="text-xs sm:text-sm text-white">پاسخ دادن</span>
+                            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M14 14H2C1.73487 13.9997 1.48068 13.8943 1.2932 13.7068C1.10572 13.5193 1.00028 13.2651 1 13V10.5H2V13H14V10.5H15V13C14.9997 13.2651 14.8943 13.5193 14.7068 13.7068C14.5193 13.8943 14.2651 13.9997 14 14Z" fill="white"/>
+                                <path d="M12.5 10.5H3.5V11.5H12.5V10.5Z" fill="white"/>
+                                <path d="M12.5 8H3.5V9H12.5V8Z" fill="white"/>
+                                <path d="M12.5 5.5H3.5V6.5H12.5V5.5Z" fill="white"/>
+                                <path d="M12.5 3H3.5V4H12.5V3Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- forum post -->
+                <div class="h-fit border my-4 ml-1 mr-8 py-2 px-4 cursor-pointer hover:shadow-md">
+                    <!-- header -->
+                    <div class="flex justify-between">
+                        <!-- title -->
+                        <div class="flex flex-col items-start sm:items-center sm:flex-row sm:gap-4">
+                            <!-- user ptofile photo -->
+                            <div class="w-12 h-12 bg-blue-500"></div>
+                            <!-- text -->
+                            <div class="flex flex-col gap-2 my-4">
+                                <h3 class="text-xs sm:text-sm">عنوان گفتگو در اینجا میایید</h3>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <!-- user created -->
+                                    <span class="text-sm font-bold">سینا کرمیان</span>
+                                    <!-- date and time --> 
+                                    <span class="text-xs">
+                                        2 اردیبهشت 1403 - 12:22pm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- forks -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <!-- role -->
+                            <span class="bg-zinc-300 p-1 text-xs w-fit px-2 py-1 my-2">
+                                معلم
+                            </span>
+                            <!-- likes -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M13 6H10V3C9.99956 2.60231 9.84139 2.22103 9.56018 1.93982C9.27897 1.65861 8.89769 1.50044 8.5 1.5H7.4336C7.19314 1.50096 6.96099 1.58814 6.77934 1.7457C6.59768 1.90325 6.47855 2.12074 6.4436 2.35865L6.02095 5.3169L4.2324 8H1V15H11.5C12.4279 14.999 13.3176 14.6299 13.9737 13.9737C14.6299 13.3176 14.999 12.4279 15 11.5V8C14.9994 7.46975 14.7885 6.96139 14.4136 6.58644C14.0386 6.2115 13.5303 6.0006 13 6ZM4 14H2V9H4V14ZM14 11.5C13.9992 12.1628 13.7356 12.7983 13.2669 13.2669C12.7983 13.7356 12.1628 13.9992 11.5 14H5V8.65135L6.9789 5.6831L7.4336 2.5H8.5C8.63258 2.50011 8.75969 2.55282 8.85344 2.64656C8.94718 2.74031 8.99989 2.86742 9 3V7H13C13.2651 7.00033 13.5193 7.10579 13.7067 7.29326C13.8942 7.48072 13.9997 7.73489 14 8V11.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                            <!-- replies -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M8.87 15L8 14.5L10 11H13C13.2652 11 13.5196 10.8946 13.7071 10.7071C13.8946 10.5196 14 10.2652 14 10V4C14 3.73478 13.8946 3.48043 13.7071 3.29289C13.5196 3.10536 13.2652 3 13 3H3C2.73478 3 2.48043 3.10536 2.29289 3.29289C2.10536 3.48043 2 3.73478 2 4V10C2 10.2652 2.10536 10.5196 2.29289 10.7071C2.48043 10.8946 2.73478 11 3 11H7.5V12H3C2.46957 12 1.96086 11.7893 1.58579 11.4142C1.21071 11.0391 1 10.5304 1 10V4C1 3.46957 1.21071 2.96086 1.58579 2.58579C1.96086 2.21071 2.46957 2 3 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V10C15 10.5304 14.7893 11.0391 14.4142 11.4142C14.0391 11.7893 13.5304 12 13 12H10.58L8.87 15Z" fill="#161616"/>
+                                    <path d="M8.5 4.5H7.5V6.5H5.5V7.5H7.5V9.5H8.5V7.5H10.5V6.5H8.5V4.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <div class="md:mr-16 md:ml-2">
+                        <p class="text-justify text-xs">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند و به آن مهارت داشته باشند. شرکت در کلاس پایتون کندو می‌تواند شما را در مسیر شغلی این رشته قرار دهد.
+                        </p>
+                    </div>
+                    <!-- footer -->
+                    <div class="flex justify-end mt-8">
+                        <button class="flex items-center justify-between gap-4 w-fit bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+                            <span class="text-xs sm:text-sm text-white">پاسخ دادن</span>
+                            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M14 14H2C1.73487 13.9997 1.48068 13.8943 1.2932 13.7068C1.10572 13.5193 1.00028 13.2651 1 13V10.5H2V13H14V10.5H15V13C14.9997 13.2651 14.8943 13.5193 14.7068 13.7068C14.5193 13.8943 14.2651 13.9997 14 14Z" fill="white"/>
+                                <path d="M12.5 10.5H3.5V11.5H12.5V10.5Z" fill="white"/>
+                                <path d="M12.5 8H3.5V9H12.5V8Z" fill="white"/>
+                                <path d="M12.5 5.5H3.5V6.5H12.5V5.5Z" fill="white"/>
+                                <path d="M12.5 3H3.5V4H12.5V3Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- forum post -->
+                <div class="h-fit border my-4 mx-1 py-2 px-4 cursor-pointer hover:shadow-md">
+                    <!-- header -->
+                    <div class="flex justify-between">
+                        <!-- title -->
+                        <div class="flex flex-col items-start sm:items-center sm:flex-row sm:gap-4">
+                            <!-- user ptofile photo -->
+                            <div class="w-12 h-12 bg-blue-500"></div>
+                            <!-- text -->
+                            <div class="flex flex-col gap-2 my-4">
+                                <h3 class="text-xs sm:text-sm">عنوان گفتگو در اینجا میایید</h3>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <!-- user created -->
+                                    <span class="text-sm font-bold">سینا کرمیان</span>
+                                    <!-- date and time --> 
+                                    <span class="text-xs">
+                                        2 اردیبهشت 1403 - 12:22pm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- forks -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <!-- role -->
+                            <span class="bg-zinc-300 p-1 text-xs w-fit px-2 py-1 my-2">
+                                معلم
+                            </span>
+                            <!-- likes -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M13 6H10V3C9.99956 2.60231 9.84139 2.22103 9.56018 1.93982C9.27897 1.65861 8.89769 1.50044 8.5 1.5H7.4336C7.19314 1.50096 6.96099 1.58814 6.77934 1.7457C6.59768 1.90325 6.47855 2.12074 6.4436 2.35865L6.02095 5.3169L4.2324 8H1V15H11.5C12.4279 14.999 13.3176 14.6299 13.9737 13.9737C14.6299 13.3176 14.999 12.4279 15 11.5V8C14.9994 7.46975 14.7885 6.96139 14.4136 6.58644C14.0386 6.2115 13.5303 6.0006 13 6ZM4 14H2V9H4V14ZM14 11.5C13.9992 12.1628 13.7356 12.7983 13.2669 13.2669C12.7983 13.7356 12.1628 13.9992 11.5 14H5V8.65135L6.9789 5.6831L7.4336 2.5H8.5C8.63258 2.50011 8.75969 2.55282 8.85344 2.64656C8.94718 2.74031 8.99989 2.86742 9 3V7H13C13.2651 7.00033 13.5193 7.10579 13.7067 7.29326C13.8942 7.48072 13.9997 7.73489 14 8V11.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                            <!-- replies -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M8.87 15L8 14.5L10 11H13C13.2652 11 13.5196 10.8946 13.7071 10.7071C13.8946 10.5196 14 10.2652 14 10V4C14 3.73478 13.8946 3.48043 13.7071 3.29289C13.5196 3.10536 13.2652 3 13 3H3C2.73478 3 2.48043 3.10536 2.29289 3.29289C2.10536 3.48043 2 3.73478 2 4V10C2 10.2652 2.10536 10.5196 2.29289 10.7071C2.48043 10.8946 2.73478 11 3 11H7.5V12H3C2.46957 12 1.96086 11.7893 1.58579 11.4142C1.21071 11.0391 1 10.5304 1 10V4C1 3.46957 1.21071 2.96086 1.58579 2.58579C1.96086 2.21071 2.46957 2 3 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V10C15 10.5304 14.7893 11.0391 14.4142 11.4142C14.0391 11.7893 13.5304 12 13 12H10.58L8.87 15Z" fill="#161616"/>
+                                    <path d="M8.5 4.5H7.5V6.5H5.5V7.5H7.5V9.5H8.5V7.5H10.5V6.5H8.5V4.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <div class="md:mr-16 md:ml-2">
+                        <p class="text-justify text-xs">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند و به آن مهارت داشته باشند. شرکت در کلاس پایتون کندو می‌تواند شما را در مسیر شغلی این رشته قرار دهد.
+                        </p>
+                    </div>
+                    <!-- footer -->
+                    <div class="flex justify-end mt-8">
+                        <button class="flex items-center justify-between gap-4 w-fit bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+                            <span class="text-xs sm:text-sm text-white">پاسخ دادن</span>
+                            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M14 14H2C1.73487 13.9997 1.48068 13.8943 1.2932 13.7068C1.10572 13.5193 1.00028 13.2651 1 13V10.5H2V13H14V10.5H15V13C14.9997 13.2651 14.8943 13.5193 14.7068 13.7068C14.5193 13.8943 14.2651 13.9997 14 14Z" fill="white"/>
+                                <path d="M12.5 10.5H3.5V11.5H12.5V10.5Z" fill="white"/>
+                                <path d="M12.5 8H3.5V9H12.5V8Z" fill="white"/>
+                                <path d="M12.5 5.5H3.5V6.5H12.5V5.5Z" fill="white"/>
+                                <path d="M12.5 3H3.5V4H12.5V3Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- forum post -->
+                <div class="h-fit border my-4 mx-1 py-2 px-4 cursor-pointer hover:shadow-md">
+                    <!-- header -->
+                    <div class="flex justify-between">
+                        <!-- title -->
+                        <div class="flex flex-col items-start sm:items-center sm:flex-row sm:gap-4">
+                            <!-- user ptofile photo -->
+                            <div class="w-12 h-12 bg-blue-500"></div>
+                            <!-- text -->
+                            <div class="flex flex-col gap-2 my-4">
+                                <h3 class="text-xs sm:text-sm">عنوان گفتگو در اینجا میایید</h3>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <!-- user created -->
+                                    <span class="text-sm font-bold">سینا کرمیان</span>
+                                    <!-- date and time --> 
+                                    <span class="text-xs">
+                                        2 اردیبهشت 1403 - 12:22pm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- forks -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <!-- role -->
+                            <span class="bg-zinc-300 p-1 text-xs w-fit px-2 py-1 my-2">
+                                معلم
+                            </span>
+                            <!-- likes -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M13 6H10V3C9.99956 2.60231 9.84139 2.22103 9.56018 1.93982C9.27897 1.65861 8.89769 1.50044 8.5 1.5H7.4336C7.19314 1.50096 6.96099 1.58814 6.77934 1.7457C6.59768 1.90325 6.47855 2.12074 6.4436 2.35865L6.02095 5.3169L4.2324 8H1V15H11.5C12.4279 14.999 13.3176 14.6299 13.9737 13.9737C14.6299 13.3176 14.999 12.4279 15 11.5V8C14.9994 7.46975 14.7885 6.96139 14.4136 6.58644C14.0386 6.2115 13.5303 6.0006 13 6ZM4 14H2V9H4V14ZM14 11.5C13.9992 12.1628 13.7356 12.7983 13.2669 13.2669C12.7983 13.7356 12.1628 13.9992 11.5 14H5V8.65135L6.9789 5.6831L7.4336 2.5H8.5C8.63258 2.50011 8.75969 2.55282 8.85344 2.64656C8.94718 2.74031 8.99989 2.86742 9 3V7H13C13.2651 7.00033 13.5193 7.10579 13.7067 7.29326C13.8942 7.48072 13.9997 7.73489 14 8V11.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                            <!-- replies -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M8.87 15L8 14.5L10 11H13C13.2652 11 13.5196 10.8946 13.7071 10.7071C13.8946 10.5196 14 10.2652 14 10V4C14 3.73478 13.8946 3.48043 13.7071 3.29289C13.5196 3.10536 13.2652 3 13 3H3C2.73478 3 2.48043 3.10536 2.29289 3.29289C2.10536 3.48043 2 3.73478 2 4V10C2 10.2652 2.10536 10.5196 2.29289 10.7071C2.48043 10.8946 2.73478 11 3 11H7.5V12H3C2.46957 12 1.96086 11.7893 1.58579 11.4142C1.21071 11.0391 1 10.5304 1 10V4C1 3.46957 1.21071 2.96086 1.58579 2.58579C1.96086 2.21071 2.46957 2 3 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V10C15 10.5304 14.7893 11.0391 14.4142 11.4142C14.0391 11.7893 13.5304 12 13 12H10.58L8.87 15Z" fill="#161616"/>
+                                    <path d="M8.5 4.5H7.5V6.5H5.5V7.5H7.5V9.5H8.5V7.5H10.5V6.5H8.5V4.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <div class="md:mr-16 md:ml-2">
+                        <p class="text-justify text-xs">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند و به آن مهارت داشته باشند. شرکت در کلاس پایتون کندو می‌تواند شما را در مسیر شغلی این رشته قرار دهد.
+                        </p>
+                    </div>
+                    <!-- footer -->
+                    <div class="flex justify-end mt-8">
+                        <button class="flex items-center justify-between gap-4 w-fit bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+                            <span class="text-xs sm:text-sm text-white">پاسخ دادن</span>
+                            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M14 14H2C1.73487 13.9997 1.48068 13.8943 1.2932 13.7068C1.10572 13.5193 1.00028 13.2651 1 13V10.5H2V13H14V10.5H15V13C14.9997 13.2651 14.8943 13.5193 14.7068 13.7068C14.5193 13.8943 14.2651 13.9997 14 14Z" fill="white"/>
+                                <path d="M12.5 10.5H3.5V11.5H12.5V10.5Z" fill="white"/>
+                                <path d="M12.5 8H3.5V9H12.5V8Z" fill="white"/>
+                                <path d="M12.5 5.5H3.5V6.5H12.5V5.5Z" fill="white"/>
+                                <path d="M12.5 3H3.5V4H12.5V3Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- forum post -->
+                <div class="h-fit border my-4 mx-1 py-2 px-4 cursor-pointer hover:shadow-md">
+                    <!-- header -->
+                    <div class="flex justify-between">
+                        <!-- title -->
+                        <div class="flex flex-col items-start sm:items-center sm:flex-row sm:gap-4">
+                            <!-- user ptofile photo -->
+                            <div class="w-12 h-12 bg-blue-500"></div>
+                            <!-- text -->
+                            <div class="flex flex-col gap-2 my-4">
+                                <h3 class="text-xs sm:text-sm">عنوان گفتگو در اینجا میایید</h3>
+                                <div class="flex flex-col sm:flex-row gap-2">
+                                    <!-- user created -->
+                                    <span class="text-sm font-bold">سینا کرمیان</span>
+                                    <!-- date and time --> 
+                                    <span class="text-xs">
+                                        2 اردیبهشت 1403 - 12:22pm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- forks -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <!-- role -->
+                            <span class="bg-zinc-300 p-1 text-xs w-fit px-2 py-1 my-2">
+                                معلم
+                            </span>
+                            <!-- likes -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M13 6H10V3C9.99956 2.60231 9.84139 2.22103 9.56018 1.93982C9.27897 1.65861 8.89769 1.50044 8.5 1.5H7.4336C7.19314 1.50096 6.96099 1.58814 6.77934 1.7457C6.59768 1.90325 6.47855 2.12074 6.4436 2.35865L6.02095 5.3169L4.2324 8H1V15H11.5C12.4279 14.999 13.3176 14.6299 13.9737 13.9737C14.6299 13.3176 14.999 12.4279 15 11.5V8C14.9994 7.46975 14.7885 6.96139 14.4136 6.58644C14.0386 6.2115 13.5303 6.0006 13 6ZM4 14H2V9H4V14ZM14 11.5C13.9992 12.1628 13.7356 12.7983 13.2669 13.2669C12.7983 13.7356 12.1628 13.9992 11.5 14H5V8.65135L6.9789 5.6831L7.4336 2.5H8.5C8.63258 2.50011 8.75969 2.55282 8.85344 2.64656C8.94718 2.74031 8.99989 2.86742 9 3V7H13C13.2651 7.00033 13.5193 7.10579 13.7067 7.29326C13.8942 7.48072 13.9997 7.73489 14 8V11.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                            <!-- replies -->
+                            <div class="flex items-center gap-1 lg:gap-2">
+                                <svg class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                    <path d="M8.87 15L8 14.5L10 11H13C13.2652 11 13.5196 10.8946 13.7071 10.7071C13.8946 10.5196 14 10.2652 14 10V4C14 3.73478 13.8946 3.48043 13.7071 3.29289C13.5196 3.10536 13.2652 3 13 3H3C2.73478 3 2.48043 3.10536 2.29289 3.29289C2.10536 3.48043 2 3.73478 2 4V10C2 10.2652 2.10536 10.5196 2.29289 10.7071C2.48043 10.8946 2.73478 11 3 11H7.5V12H3C2.46957 12 1.96086 11.7893 1.58579 11.4142C1.21071 11.0391 1 10.5304 1 10V4C1 3.46957 1.21071 2.96086 1.58579 2.58579C1.96086 2.21071 2.46957 2 3 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V10C15 10.5304 14.7893 11.0391 14.4142 11.4142C14.0391 11.7893 13.5304 12 13 12H10.58L8.87 15Z" fill="#161616"/>
+                                    <path d="M8.5 4.5H7.5V6.5H5.5V7.5H7.5V9.5H8.5V7.5H10.5V6.5H8.5V4.5Z" fill="#161616"/>
+                                </svg>
+                                <span class="text-xs sm:text-sm font-bold">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <div class="md:mr-16 md:ml-2">
+                        <p class="text-justify text-xs">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد و تکامل سیستم همچنان باقی مانده است. امروز ده‌ها مهندس گوگل از پایتون استفاده می‌کنند و ما به دنبال افراد بیشتری هستیم که به آموزش زبان پایتون را بلد باشند و به آن مهارت داشته باشند. شرکت در کلاس پایتون کندو می‌تواند شما را در مسیر شغلی این رشته قرار دهد.
+                        </p>
+                    </div>
+                    <!-- footer -->
+                    <div class="flex justify-end mt-8">
+                        <button class="flex items-center justify-between gap-4 w-fit bg-blue-600 p-2 select-none cursor-pointer hover:bg-blue-400">
+                            <span class="text-xs sm:text-sm text-white">پاسخ دادن</span>
+                            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M14 14H2C1.73487 13.9997 1.48068 13.8943 1.2932 13.7068C1.10572 13.5193 1.00028 13.2651 1 13V10.5H2V13H14V10.5H15V13C14.9997 13.2651 14.8943 13.5193 14.7068 13.7068C14.5193 13.8943 14.2651 13.9997 14 14Z" fill="white"/>
+                                <path d="M12.5 10.5H3.5V11.5H12.5V10.5Z" fill="white"/>
+                                <path d="M12.5 8H3.5V9H12.5V8Z" fill="white"/>
+                                <path d="M12.5 5.5H3.5V6.5H12.5V5.5Z" fill="white"/>
+                                <path d="M12.5 3H3.5V4H12.5V3Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
