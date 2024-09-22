@@ -122,3 +122,15 @@ This page is main page of single forum page and see posts in related forum and c
 ![Forum](https://github.com/user-attachments/assets/9a53820c-750b-406a-8784-b0bd9ac6ab78)
 
 ___
+
+## Implementation of TEACHER
+In this section explain figma and code implenetation of teacher pages.
+### TEACHER.Page1 : Course page
+This file contain main teacher course page and see main content of teacher course page such as weeks and statistics.
+> [!Note]
+> Html file for this page located in teacher folder and named **course.html**
+
+#### **Preview of FIGMA**:
+![course teacher](https://github.com/user-attachments/assets/0aaa1577-56ad-4e95-bb54-13e83d70871c)
+
+___
