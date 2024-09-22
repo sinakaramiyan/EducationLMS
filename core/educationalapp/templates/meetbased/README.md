@@ -8,27 +8,29 @@ Moodle is used to create custom websites with online courses and allows for comm
 **This project description:** Moodle based project that use concept of moodle project such as meeting, classes and etc. For ui design use IBM design system concpt and every page are created by figma first then implement those with tailwind, html, css and js. 
 in this project first implement student and teacher roles.
 
-## Implementation of student
-In this section explain figma and code implenetation of student pages.
-### STUDENT.Page1 : Course list search
+## Implementation general pages
+In this section explain figma and code implenetation of general pages.
+### GENERAL.Page1 : Course list search
 This page is main page of courses and search for courses and see other details about courses.
 > [!Note]
-> Html file for this page located in student folder and named **courses.html**
+> Html file for this page named **courses.html**
 
 #### **Preview of FIGMA**:
 ![courses list searchjpg](https://github.com/user-attachments/assets/827ca773-ccc5-4d18-ba4b-36d8f932b9da)
 ___
 
-### STUDENT.Page2 : Course detail page
+### GENERAL.Page2 : Course detail page
 This page is main page of detail course page that explain course and can join course in this page.
 > [!Note]
-> Html file for this page located in student folder and named **coursedetail.html**
+> Html file for this page located named **coursedetail.html**
 
 #### **Preview of FIGMA**:
 ![course detail pagejpg](https://github.com/user-attachments/assets/5958bcfb-ab59-47f7-878f-058b85783644)
 ___
 
-### STUDENT.Page3 : Course page
+## Implementation of student
+In this section explain figma and code implenetation of student pages.
+### STUDENT.Page1 : Course page
 This page is main page of course and see main content of course such as weeks and statistics 
 > [!Note]
 > Html file for this page located in student folder and named **course.html**
@@ -38,7 +40,7 @@ This page is main page of course and see main content of course such as weeks an
 
 ___
 
-### STUDENT.Page4 : Week page
+### STUDENT.Page2 : Week page
 This page is main page of week and see main contents such as meets and project and files and quizes. 
 > [!Note]
 > Html file for this page located in student folder and named **week.html**
@@ -48,7 +50,7 @@ This page is main page of week and see main contents such as meets and project a
 
 ___
 
-### STUDENT.Page5 : Profile page
+### STUDENT.Page3 : Profile page
 This page is profile page for students and contain dashboard, about, details, courses, blogs and forum post sections that related to user.
 > [!Note]
 > Html file for this page located in student folder and named **profile.html**

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, login, signin, signinfavorite, testimonial, courses,course, course,monacoeditor, lessoncompletestroke, lessoncompleteleague,  courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription, modules, lesson, lessoncomplete, userhomecourse, moodlestudentcourses, moodlestudentcoursedetail,moodlestudentcourse,moodlestudentweek,moodlestudentprofile, moodlesblogblogs, moodlesblogcategories, moodlesblogcategorypage, moodlesblogsingleblog, moodlesforumforum, moodlesforumforums
+from .views import home, login, signin, signinfavorite, testimonial, courses,course, course,monacoeditor, lessoncompletestroke, lessoncompleteleague,  courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription, modules, lesson, lessoncomplete, userhomecourse, moodlegeneralcourses, moodlegeneralcoursedetail,moodlestudentcourse,moodlestudentweek,moodlestudentprofile, moodlesblogblogs, moodlesblogcategories, moodlesblogcategorypage, moodlesblogsingleblog, moodlesforumforum, moodlesforumforums
 from .views import moodleteachercourse
 urlpatterns = [
     path('', home, name='home'),
@@ -36,8 +36,8 @@ urlpatterns = [
 
     # start moodle
 
-    path('meetbased/student/courses/', moodlestudentcourses , name='moodlestudentcourses'),
-    path('meetbased/student/coursedetail/', moodlestudentcoursedetail , name='moodlestudentcoursedetail'),
+    path('meetbased/courses/', moodlegeneralcourses , name='moodlegeneralcourses'),
+    path('meetbased/coursedetail/', moodlegeneralcoursedetail , name='moodlegeneralcoursedetail'),
     path('meetbased/student/course/', moodlestudentcourse , name='moodlestudentcourse'),
     path('meetbased/student/week/', moodlestudentweek , name='moodlestudentweek'),
     path('meetbased/student/profile/', moodlestudentprofile , name='moodlestudentprofile'),

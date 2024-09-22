@@ -73,11 +73,11 @@ def userhomecourse(request):
 
 # start moodle
 
-def moodlestudentcourses(request):
-    return render(request, 'meetbased/student/courses.html')
+def moodlegeneralcourses(request):
+    return render(request, 'meetbased/courses.html')
 
-def moodlestudentcoursedetail(request):
-    return render(request, 'meetbased/student/coursedetail.html')
+def moodlegeneralcoursedetail(request):
+    return render(request, 'meetbased/coursedetail.html')
 
 def moodlestudentcourse(request):
     return render(request, 'meetbased/student/course.html')
