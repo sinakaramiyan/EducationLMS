@@ -1,0 +1,909 @@
+<!-- This file contain main teacher course page and see main content of teacher course page such as weeks and statistics 
+    and in readme file see section 'TEACHER.Page1 : Course page'
+-->
+{% extends "base/_base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="w-full">
+    <!-- hero section-->
+    <div class="relative isolate h-4/5 bg-blue-400">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 h-full w-full -z-10 object-cover">
+        <div class="flex w-full flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between py-12">
+            <!-- right section-->
+            <div class="flex flex-col items-center lg:items-start text-right px-8">
+                <div class="flex items-center justify-center">
+                    <h1 class="font-bold tracking-tight text-white text-xl md:text-4xl sm:text-3xl">دوره یادگیری عمیق پایتون</h1>
+                </div>
+                <p class="mt-6 text-xs sm:text-lg leading-8 text-gray-300">توضیحات این دوره را در این قسمت مشاهده میکند</p>
+                <div class="mt-6 flex gap-x-6 items-center">
+                    <div class="w-7 h-7 sm:w-10 sm:h-10 bg-blue-400"></div>
+                    <div class="text-sm sm:text-base">
+                        <h2 class="text-gray-300 font-bold text-sm sm:text-base">مدرس:</h2>
+                        <p class="text-white font-bold text-sm sm:text-base">سینا کرمیان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- left section : statistics section -->
+            <div class="flex-col justify-between max-w-[450px] w-full m-4 p-2 hidden md:flex">
+                <!-- statistics header -->
+                <div class="flex justify-between bg-zinc-100 p-1 border border-zinc-300 shadow-md">
+                    <svg class="w-7 h-7" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="25" height="25" transform="matrix(-1 0 0 -1 25 25)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                        <path d="M8.59367 6.25003H16.4062C16.8206 6.25003 17.218 6.08541 17.511 5.79238C17.8041 5.49936 17.9687 5.10193 17.9687 4.68753V3.12503C17.9687 2.71063 17.8041 2.3132 17.511 2.02017C17.218 1.72715 16.8206 1.56253 16.4062 1.56253H8.59367C8.17927 1.56253 7.78184 1.72715 7.48882 2.02017C7.19579 2.3132 7.03117 2.71063 7.03117 3.12503V4.68753C7.03117 5.10193 7.19579 5.49936 7.48882 5.79238C7.78184 6.08541 8.17927 6.25003 8.59367 6.25003ZM8.59367 3.12503H16.4062V4.68753H8.59367V3.12503Z" fill="#161616"/>
+                        <path d="M2.57258 13.8336L11.9476 23.2086C12.0201 23.2812 12.1062 23.3388 12.201 23.3781C12.2957 23.4173 12.3973 23.4376 12.4999 23.4376C12.6025 23.4376 12.7041 23.4173 12.7989 23.3781C12.8937 23.3388 12.9798 23.2812 13.0523 23.2086L22.4273 13.8336C22.5365 13.7244 22.6109 13.5852 22.641 13.4336C22.6711 13.2821 22.6557 13.1251 22.5965 12.9823C22.5374 12.8396 22.4373 12.7176 22.3089 12.6317C22.1804 12.5459 22.0294 12.5001 21.8749 12.5H17.9687V9.37503C17.9682 8.96077 17.8034 8.56362 17.5105 8.2707C17.2176 7.97777 16.8204 7.813 16.4062 7.81253L8.59367 7.81253C8.17944 7.81309 7.78234 7.97788 7.48943 8.27079C7.19653 8.56369 7.03173 8.9608 7.03117 9.37503V12.5H3.12492C2.97043 12.5001 2.81942 12.5459 2.69097 12.6317C2.56253 12.7176 2.46242 12.8396 2.4033 12.9823C2.34418 13.1251 2.32871 13.2821 2.35884 13.4336C2.38897 13.5852 2.46335 13.7244 2.57258 13.8336ZM8.59367 14.0625V9.37503L16.4062 9.37503V14.0625H19.9889L12.4999 21.5515L5.01094 14.0625H8.59367Z" fill="#161616"/>
+                    </svg>
+                    <span class="text-sm sm:text-xl font-bold">آمار دوره</span>
+                    <svg class="w-7 h-7" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="25" height="25" transform="matrix(-1 0 0 -1 25 25)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                        <path d="M8.59367 6.25003H16.4062C16.8206 6.25003 17.218 6.08541 17.511 5.79238C17.8041 5.49936 17.9687 5.10193 17.9687 4.68753V3.12503C17.9687 2.71063 17.8041 2.3132 17.511 2.02017C17.218 1.72715 16.8206 1.56253 16.4062 1.56253H8.59367C8.17927 1.56253 7.78184 1.72715 7.48882 2.02017C7.19579 2.3132 7.03117 2.71063 7.03117 3.12503V4.68753C7.03117 5.10193 7.19579 5.49936 7.48882 5.79238C7.78184 6.08541 8.17927 6.25003 8.59367 6.25003ZM8.59367 3.12503H16.4062V4.68753H8.59367V3.12503Z" fill="#161616"/>
+                        <path d="M2.57258 13.8336L11.9476 23.2086C12.0201 23.2812 12.1062 23.3388 12.201 23.3781C12.2957 23.4173 12.3973 23.4376 12.4999 23.4376C12.6025 23.4376 12.7041 23.4173 12.7989 23.3781C12.8937 23.3388 12.9798 23.2812 13.0523 23.2086L22.4273 13.8336C22.5365 13.7244 22.6109 13.5852 22.641 13.4336C22.6711 13.2821 22.6557 13.1251 22.5965 12.9823C22.5374 12.8396 22.4373 12.7176 22.3089 12.6317C22.1804 12.5459 22.0294 12.5001 21.8749 12.5H17.9687V9.37503C17.9682 8.96077 17.8034 8.56362 17.5105 8.2707C17.2176 7.97777 16.8204 7.813 16.4062 7.81253L8.59367 7.81253C8.17944 7.81309 7.78234 7.97788 7.48943 8.27079C7.19653 8.56369 7.03173 8.9608 7.03117 9.37503V12.5H3.12492C2.97043 12.5001 2.81942 12.5459 2.69097 12.6317C2.56253 12.7176 2.46242 12.8396 2.4033 12.9823C2.34418 13.1251 2.32871 13.2821 2.35884 13.4336C2.38897 13.5852 2.46335 13.7244 2.57258 13.8336ZM8.59367 14.0625V9.37503L16.4062 9.37503V14.0625H19.9889L12.4999 21.5515L5.01094 14.0625H8.59367Z" fill="#161616"/>
+                    </svg>
+                </div>
+                <!-- statistics content -->
+                <div class="flex w-full gap-2 h-fit mt-2">
+                    <!-- centered div-->
+                    <div class="flex flex-wrap gap-2 justify-between w-full">
+                        <div class="flex w-full gap-2">
+                            <!-- files -->
+                            <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                                <div class="flex gap-2 items-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                        <path d="M11 13.59L9.705 12.295L9 13L11 15L15 11L14.295 10.295L11 13.59Z" fill="#161616"/>
+                                        <path d="M12.5 2.5H11V2C10.9992 1.73502 10.8936 1.48111 10.7063 1.29374C10.5189 1.10637 10.265 1.00077 10 1H6C5.73502 1.00077 5.48111 1.10637 5.29374 1.29374C5.10637 1.48111 5.00077 1.73502 5 2V2.5H3.5C3.23502 2.50077 2.98111 2.60637 2.79374 2.79374C2.60637 2.98111 2.50077 3.23502 2.5 3.5V14C2.50077 14.265 2.60637 14.5189 2.79374 14.7063C2.98111 14.8936 3.23502 14.9992 3.5 15H8V14H3.5V3.5H5V5H11V3.5H12.5V9H13.5V3.5C13.4992 3.23502 13.3936 2.98111 13.2063 2.79374C13.0189 2.60637 12.765 2.50077 12.5 2.5ZM10 4H6V2H10V4Z" fill="#161616"/>
+                                    </svg>
+                                    <span class="font-bold">فایل ها</span>
+                                </div>
+                                <span class="text-xl font-bold">5</span>
+                            </div>
+                            <!-- score -->
+                            <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                                <div class="flex gap-2 items-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" transform="translate(0 0.511719)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                        <path d="M15 15.5117H14V13.0117C13.9992 12.3489 13.7356 11.7135 13.2669 11.2448C12.7983 10.7761 12.1628 10.5125 11.5 10.5117V9.51172C12.4279 9.51275 13.3176 9.88183 13.9737 10.538C14.6299 11.1941 14.999 12.0838 15 13.0117V15.5117Z" fill="#161616"/>
+                                        <path d="M11 15.5117H10V13.0117C9.99922 12.3489 9.73558 11.7135 9.2669 11.2448C8.79823 10.7761 8.1628 10.5125 7.5 10.5117H4.5C3.8372 10.5125 3.20177 10.7761 2.7331 11.2448C2.26442 11.7135 2.00078 12.3489 2 13.0117V15.5117H1V13.0117C1.00109 12.0838 1.37018 11.1942 2.02632 10.538C2.68247 9.8819 3.57208 9.5128 4.5 9.51172H7.5C8.42792 9.5128 9.31753 9.8819 9.97368 10.538C10.6298 11.1942 10.9989 12.0838 11 13.0117V15.5117Z" fill="#161616"/>
+                                        <path d="M10 1.51172V2.51172C10.663 2.51172 11.2989 2.77511 11.7678 3.24395C12.2366 3.71279 12.5 4.34868 12.5 5.01172C12.5 5.67476 12.2366 6.31064 11.7678 6.77949C11.2989 7.24833 10.663 7.51172 10 7.51172V8.51172C10.9283 8.51172 11.8185 8.14297 12.4749 7.48659C13.1313 6.83021 13.5 5.93998 13.5 5.01172C13.5 4.08346 13.1313 3.19322 12.4749 2.53684C11.8185 1.88047 10.9283 1.51172 10 1.51172Z" fill="#161616"/>
+                                        <path d="M6 2.51172C6.49445 2.51172 6.9778 2.65834 7.38893 2.93304C7.80005 3.20775 8.12048 3.59819 8.3097 4.05501C8.49892 4.51183 8.54843 5.01449 8.45196 5.49944C8.3555 5.9844 8.1174 6.42985 7.76777 6.77949C7.41814 7.12912 6.97268 7.36722 6.48773 7.46368C6.00277 7.56015 5.50011 7.51064 5.04329 7.32142C4.58648 7.1322 4.19603 6.81177 3.92133 6.40064C3.64662 5.98952 3.5 5.50617 3.5 5.01172C3.5 4.34868 3.76339 3.71279 4.23223 3.24395C4.70107 2.77511 5.33696 2.51172 6 2.51172ZM6 1.51172C5.30777 1.51172 4.63108 1.71699 4.0555 2.10158C3.47993 2.48616 3.03133 3.03279 2.76642 3.67233C2.50151 4.31187 2.4322 5.0156 2.56725 5.69453C2.7023 6.37347 3.03564 6.99711 3.52513 7.48659C4.01461 7.97608 4.63825 8.30942 5.31718 8.44447C5.99612 8.57952 6.69985 8.5102 7.33939 8.2453C7.97893 7.98039 8.52556 7.53179 8.91014 6.95621C9.29473 6.38064 9.5 5.70395 9.5 5.01172C9.5 4.08346 9.13125 3.19322 8.47487 2.53684C7.8185 1.88047 6.92826 1.51172 6 1.51172Z" fill="#161616"/>
+                                    </svg>
+
+                                    <span class="font-bold">اعضاء</span>
+                                </div>
+                                <span class="text-xl font-bold">40</span>
+                            </div>
+                        </div>
+                        <div class="flex w-full gap-2">
+                            <!-- meet -->
+                            <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                                <div class="flex gap-2 items-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                        <path d="M13.5 12.7929L12.5 11.7929V10.5H11.5V12.2071L12.7929 13.5L13.5 12.7929Z" fill="#161616"/>
+                                        <path d="M12 15.5C10.0701 15.5 8.5 13.9299 8.5 12C8.5 10.0701 10.0701 8.5 12 8.5C13.9299 8.5 15.5 10.0701 15.5 12C15.5 13.9299 13.9299 15.5 12 15.5ZM12 9.5C10.6215 9.5 9.5 10.6215 9.5 12C9.5 13.3785 10.6215 14.5 12 14.5C13.3785 14.5 14.5 13.3785 14.5 12C14.5 10.6215 13.3785 9.5 12 9.5Z" fill="#161616"/>
+                                        <path d="M14 7.5H15V2.5C15 1.9485 14.5513 1.5 14 1.5H12.5V2.5H14V7.5Z" fill="#161616"/>
+                                        <path d="M4.5 7.5C5.05228 7.5 5.5 7.05228 5.5 6.5C5.5 5.94772 5.05228 5.5 4.5 5.5C3.94772 5.5 3.5 5.94772 3.5 6.5C3.5 7.05228 3.94772 7.5 4.5 7.5Z" fill="#161616"/>
+                                        <path d="M8 7.5C8.55228 7.5 9 7.05228 9 6.5C9 5.94772 8.55228 5.5 8 5.5C7.44772 5.5 7 5.94772 7 6.5C7 7.05228 7.44772 7.5 8 7.5Z" fill="#161616"/>
+                                        <path d="M11.5 7.5C12.0523 7.5 12.5 7.05228 12.5 6.5C12.5 5.94772 12.0523 5.5 11.5 5.5C10.9477 5.5 10.5 5.94772 10.5 6.5C10.5 7.05228 10.9477 7.5 11.5 7.5Z" fill="#161616"/>
+                                        <path d="M3.5 11.5H2C1.4485 11.5 1 11.0513 1 10.5V2.5C1 1.9485 1.4485 1.5 2 1.5H3.5V2.5H2V10.5H3.5V11.5Z" fill="#161616"/>
+                                    </svg>
+                                    <span class="font-bold">جلسات</span>
+                                </div>
+                                <span class="text-xl font-bold">4</span>
+                            </div>
+                            <!-- online users -->
+                            <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                                <div class="flex gap-2 items-center">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                        <path d="M13 10C14.1046 10 15 9.10457 15 8C15 6.89543 14.1046 6 13 6C11.8954 6 11 6.89543 11 8C11 9.10457 11.8954 10 13 10Z" fill="#161616"/>
+                                        <path d="M11 15H10V12.5C10 11.837 9.73661 11.2011 9.26777 10.7322C8.79893 10.2634 8.16304 10 7.5 10H4.5C3.83696 10 3.20107 10.2634 2.73223 10.7322C2.26339 11.2011 2 11.837 2 12.5V15H1V12.5C1 11.5717 1.36875 10.6815 2.02513 10.0251C2.6815 9.36875 3.57174 9 4.5 9H7.5C8.42826 9 9.3185 9.36875 9.97487 10.0251C10.6313 10.6815 11 11.5717 11 12.5V15Z" fill="#161616"/>
+                                        <path d="M6 2C6.49445 2 6.9778 2.14662 7.38893 2.42133C7.80005 2.69603 8.12048 3.08648 8.3097 3.54329C8.49892 4.00011 8.54843 4.50277 8.45196 4.98773C8.3555 5.47268 8.1174 5.91814 7.76777 6.26777C7.41814 6.6174 6.97268 6.8555 6.48773 6.95196C6.00277 7.04843 5.50011 6.99892 5.04329 6.8097C4.58648 6.62048 4.19603 6.30005 3.92133 5.88893C3.64662 5.4778 3.5 4.99445 3.5 4.5C3.5 3.83696 3.76339 3.20107 4.23223 2.73223C4.70107 2.26339 5.33696 2 6 2ZM6 1C5.30777 1 4.63108 1.20527 4.0555 1.58986C3.47993 1.97444 3.03133 2.52107 2.76642 3.16061C2.50151 3.80015 2.4322 4.50388 2.56725 5.18282C2.7023 5.86175 3.03564 6.48539 3.52513 6.97487C4.01461 7.46436 4.63825 7.7977 5.31718 7.93275C5.99612 8.0678 6.69985 7.99849 7.33939 7.73358C7.97893 7.46867 8.52556 7.02007 8.91014 6.4445C9.29473 5.86892 9.5 5.19223 9.5 4.5C9.5 3.57174 9.13125 2.6815 8.47487 2.02513C7.8185 1.36875 6.92826 1 6 1Z" fill="#161616"/>
+                                    </svg>
+                                    <span class="font-bold">انلاین</span>
+                                </div>
+                                <span class="text-xl font-bold">4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- statistics section reponsive for mobile -->
+    <div class="flex md:hidden flex-col justify-between w-full py-2">
+        <!-- statistics header -->
+        <div class="flex justify-between items-center bg-zinc-100 p-1 border border-zinc-300 shadow-md">
+            <svg class="w-7 h-7" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="25" height="25" transform="matrix(-1 0 0 -1 25 25)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                <path d="M8.59367 6.25003H16.4062C16.8206 6.25003 17.218 6.08541 17.511 5.79238C17.8041 5.49936 17.9687 5.10193 17.9687 4.68753V3.12503C17.9687 2.71063 17.8041 2.3132 17.511 2.02017C17.218 1.72715 16.8206 1.56253 16.4062 1.56253H8.59367C8.17927 1.56253 7.78184 1.72715 7.48882 2.02017C7.19579 2.3132 7.03117 2.71063 7.03117 3.12503V4.68753C7.03117 5.10193 7.19579 5.49936 7.48882 5.79238C7.78184 6.08541 8.17927 6.25003 8.59367 6.25003ZM8.59367 3.12503H16.4062V4.68753H8.59367V3.12503Z" fill="#161616"/>
+                <path d="M2.57258 13.8336L11.9476 23.2086C12.0201 23.2812 12.1062 23.3388 12.201 23.3781C12.2957 23.4173 12.3973 23.4376 12.4999 23.4376C12.6025 23.4376 12.7041 23.4173 12.7989 23.3781C12.8937 23.3388 12.9798 23.2812 13.0523 23.2086L22.4273 13.8336C22.5365 13.7244 22.6109 13.5852 22.641 13.4336C22.6711 13.2821 22.6557 13.1251 22.5965 12.9823C22.5374 12.8396 22.4373 12.7176 22.3089 12.6317C22.1804 12.5459 22.0294 12.5001 21.8749 12.5H17.9687V9.37503C17.9682 8.96077 17.8034 8.56362 17.5105 8.2707C17.2176 7.97777 16.8204 7.813 16.4062 7.81253L8.59367 7.81253C8.17944 7.81309 7.78234 7.97788 7.48943 8.27079C7.19653 8.56369 7.03173 8.9608 7.03117 9.37503V12.5H3.12492C2.97043 12.5001 2.81942 12.5459 2.69097 12.6317C2.56253 12.7176 2.46242 12.8396 2.4033 12.9823C2.34418 13.1251 2.32871 13.2821 2.35884 13.4336C2.38897 13.5852 2.46335 13.7244 2.57258 13.8336ZM8.59367 14.0625V9.37503L16.4062 9.37503V14.0625H19.9889L12.4999 21.5515L5.01094 14.0625H8.59367Z" fill="#161616"/>
+            </svg>
+            <span class="text-sm sm:text-xl font-bold">آمار دوره</span>
+            <svg class="w-7 h-7" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="25" height="25" transform="matrix(-1 0 0 -1 25 25)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                <path d="M8.59367 6.25003H16.4062C16.8206 6.25003 17.218 6.08541 17.511 5.79238C17.8041 5.49936 17.9687 5.10193 17.9687 4.68753V3.12503C17.9687 2.71063 17.8041 2.3132 17.511 2.02017C17.218 1.72715 16.8206 1.56253 16.4062 1.56253H8.59367C8.17927 1.56253 7.78184 1.72715 7.48882 2.02017C7.19579 2.3132 7.03117 2.71063 7.03117 3.12503V4.68753C7.03117 5.10193 7.19579 5.49936 7.48882 5.79238C7.78184 6.08541 8.17927 6.25003 8.59367 6.25003ZM8.59367 3.12503H16.4062V4.68753H8.59367V3.12503Z" fill="#161616"/>
+                <path d="M2.57258 13.8336L11.9476 23.2086C12.0201 23.2812 12.1062 23.3388 12.201 23.3781C12.2957 23.4173 12.3973 23.4376 12.4999 23.4376C12.6025 23.4376 12.7041 23.4173 12.7989 23.3781C12.8937 23.3388 12.9798 23.2812 13.0523 23.2086L22.4273 13.8336C22.5365 13.7244 22.6109 13.5852 22.641 13.4336C22.6711 13.2821 22.6557 13.1251 22.5965 12.9823C22.5374 12.8396 22.4373 12.7176 22.3089 12.6317C22.1804 12.5459 22.0294 12.5001 21.8749 12.5H17.9687V9.37503C17.9682 8.96077 17.8034 8.56362 17.5105 8.2707C17.2176 7.97777 16.8204 7.813 16.4062 7.81253L8.59367 7.81253C8.17944 7.81309 7.78234 7.97788 7.48943 8.27079C7.19653 8.56369 7.03173 8.9608 7.03117 9.37503V12.5H3.12492C2.97043 12.5001 2.81942 12.5459 2.69097 12.6317C2.56253 12.7176 2.46242 12.8396 2.4033 12.9823C2.34418 13.1251 2.32871 13.2821 2.35884 13.4336C2.38897 13.5852 2.46335 13.7244 2.57258 13.8336ZM8.59367 14.0625V9.37503L16.4062 9.37503V14.0625H19.9889L12.4999 21.5515L5.01094 14.0625H8.59367Z" fill="#161616"/>
+            </svg>
+        </div>
+        <!-- statistics content -->
+        <div class="flex w-full gap-2 h-fit mt-2">
+            <!-- centered div-->
+            <div class="flex flex-wrap gap-2 justify-between w-full">
+                <div class="flex w-full gap-2">
+                    <!-- files -->
+                    <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                        <div class="flex gap-2 items-center">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M11 13.59L9.705 12.295L9 13L11 15L15 11L14.295 10.295L11 13.59Z" fill="#161616"/>
+                                <path d="M12.5 2.5H11V2C10.9992 1.73502 10.8936 1.48111 10.7063 1.29374C10.5189 1.10637 10.265 1.00077 10 1H6C5.73502 1.00077 5.48111 1.10637 5.29374 1.29374C5.10637 1.48111 5.00077 1.73502 5 2V2.5H3.5C3.23502 2.50077 2.98111 2.60637 2.79374 2.79374C2.60637 2.98111 2.50077 3.23502 2.5 3.5V14C2.50077 14.265 2.60637 14.5189 2.79374 14.7063C2.98111 14.8936 3.23502 14.9992 3.5 15H8V14H3.5V3.5H5V5H11V3.5H12.5V9H13.5V3.5C13.4992 3.23502 13.3936 2.98111 13.2063 2.79374C13.0189 2.60637 12.765 2.50077 12.5 2.5ZM10 4H6V2H10V4Z" fill="#161616"/>
+                            </svg>
+                            <span class="text-sm sm:text-base">فایل ها</span>
+                        </div>
+                        <span class="text-base sm:text-xl font-bold">5</span>
+                    </div>
+                    <!-- score -->
+                    <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                        <div class="flex gap-2 items-center">
+                            <svg class="w-5 h-5" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" transform="translate(0 0.511719)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M15 15.5117H14V13.0117C13.9992 12.3489 13.7356 11.7135 13.2669 11.2448C12.7983 10.7761 12.1628 10.5125 11.5 10.5117V9.51172C12.4279 9.51275 13.3176 9.88183 13.9737 10.538C14.6299 11.1941 14.999 12.0838 15 13.0117V15.5117Z" fill="#161616"/>
+                                <path d="M11 15.5117H10V13.0117C9.99922 12.3489 9.73558 11.7135 9.2669 11.2448C8.79823 10.7761 8.1628 10.5125 7.5 10.5117H4.5C3.8372 10.5125 3.20177 10.7761 2.7331 11.2448C2.26442 11.7135 2.00078 12.3489 2 13.0117V15.5117H1V13.0117C1.00109 12.0838 1.37018 11.1942 2.02632 10.538C2.68247 9.8819 3.57208 9.5128 4.5 9.51172H7.5C8.42792 9.5128 9.31753 9.8819 9.97368 10.538C10.6298 11.1942 10.9989 12.0838 11 13.0117V15.5117Z" fill="#161616"/>
+                                <path d="M10 1.51172V2.51172C10.663 2.51172 11.2989 2.77511 11.7678 3.24395C12.2366 3.71279 12.5 4.34868 12.5 5.01172C12.5 5.67476 12.2366 6.31064 11.7678 6.77949C11.2989 7.24833 10.663 7.51172 10 7.51172V8.51172C10.9283 8.51172 11.8185 8.14297 12.4749 7.48659C13.1313 6.83021 13.5 5.93998 13.5 5.01172C13.5 4.08346 13.1313 3.19322 12.4749 2.53684C11.8185 1.88047 10.9283 1.51172 10 1.51172Z" fill="#161616"/>
+                                <path d="M6 2.51172C6.49445 2.51172 6.9778 2.65834 7.38893 2.93304C7.80005 3.20775 8.12048 3.59819 8.3097 4.05501C8.49892 4.51183 8.54843 5.01449 8.45196 5.49944C8.3555 5.9844 8.1174 6.42985 7.76777 6.77949C7.41814 7.12912 6.97268 7.36722 6.48773 7.46368C6.00277 7.56015 5.50011 7.51064 5.04329 7.32142C4.58648 7.1322 4.19603 6.81177 3.92133 6.40064C3.64662 5.98952 3.5 5.50617 3.5 5.01172C3.5 4.34868 3.76339 3.71279 4.23223 3.24395C4.70107 2.77511 5.33696 2.51172 6 2.51172ZM6 1.51172C5.30777 1.51172 4.63108 1.71699 4.0555 2.10158C3.47993 2.48616 3.03133 3.03279 2.76642 3.67233C2.50151 4.31187 2.4322 5.0156 2.56725 5.69453C2.7023 6.37347 3.03564 6.99711 3.52513 7.48659C4.01461 7.97608 4.63825 8.30942 5.31718 8.44447C5.99612 8.57952 6.69985 8.5102 7.33939 8.2453C7.97893 7.98039 8.52556 7.53179 8.91014 6.95621C9.29473 6.38064 9.5 5.70395 9.5 5.01172C9.5 4.08346 9.13125 3.19322 8.47487 2.53684C7.8185 1.88047 6.92826 1.51172 6 1.51172Z" fill="#161616"/>
+                            </svg>
+
+                            <span class="text-sm sm:text-base">اعضاء</span>
+                        </div>
+                        <span class="text-base sm:text-xl font-bold">40</span>
+                    </div>
+                </div>
+                <div class="flex w-full gap-2">
+                    <!-- meet -->
+                    <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                        <div class="flex gap-2 items-center">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M13.5 12.7929L12.5 11.7929V10.5H11.5V12.2071L12.7929 13.5L13.5 12.7929Z" fill="#161616"/>
+                                <path d="M12 15.5C10.0701 15.5 8.5 13.9299 8.5 12C8.5 10.0701 10.0701 8.5 12 8.5C13.9299 8.5 15.5 10.0701 15.5 12C15.5 13.9299 13.9299 15.5 12 15.5ZM12 9.5C10.6215 9.5 9.5 10.6215 9.5 12C9.5 13.3785 10.6215 14.5 12 14.5C13.3785 14.5 14.5 13.3785 14.5 12C14.5 10.6215 13.3785 9.5 12 9.5Z" fill="#161616"/>
+                                <path d="M14 7.5H15V2.5C15 1.9485 14.5513 1.5 14 1.5H12.5V2.5H14V7.5Z" fill="#161616"/>
+                                <path d="M4.5 7.5C5.05228 7.5 5.5 7.05228 5.5 6.5C5.5 5.94772 5.05228 5.5 4.5 5.5C3.94772 5.5 3.5 5.94772 3.5 6.5C3.5 7.05228 3.94772 7.5 4.5 7.5Z" fill="#161616"/>
+                                <path d="M8 7.5C8.55228 7.5 9 7.05228 9 6.5C9 5.94772 8.55228 5.5 8 5.5C7.44772 5.5 7 5.94772 7 6.5C7 7.05228 7.44772 7.5 8 7.5Z" fill="#161616"/>
+                                <path d="M11.5 7.5C12.0523 7.5 12.5 7.05228 12.5 6.5C12.5 5.94772 12.0523 5.5 11.5 5.5C10.9477 5.5 10.5 5.94772 10.5 6.5C10.5 7.05228 10.9477 7.5 11.5 7.5Z" fill="#161616"/>
+                                <path d="M3.5 11.5H2C1.4485 11.5 1 11.0513 1 10.5V2.5C1 1.9485 1.4485 1.5 2 1.5H3.5V2.5H2V10.5H3.5V11.5Z" fill="#161616"/>
+                            </svg>
+                            <span class="text-sm sm:text-base">جلسات</span>
+                        </div>
+                        <span class="text-base sm:text-xl font-bold">4</span>
+                    </div>
+                    <!-- online users -->
+                    <div class="flex gap-2 justify-between px-4 py-2 items-center w-full bg-zinc-100 shadow-md">
+                        <div class="flex gap-2 items-center">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M13 10C14.1046 10 15 9.10457 15 8C15 6.89543 14.1046 6 13 6C11.8954 6 11 6.89543 11 8C11 9.10457 11.8954 10 13 10Z" fill="#161616"/>
+                                <path d="M11 15H10V12.5C10 11.837 9.73661 11.2011 9.26777 10.7322C8.79893 10.2634 8.16304 10 7.5 10H4.5C3.83696 10 3.20107 10.2634 2.73223 10.7322C2.26339 11.2011 2 11.837 2 12.5V15H1V12.5C1 11.5717 1.36875 10.6815 2.02513 10.0251C2.6815 9.36875 3.57174 9 4.5 9H7.5C8.42826 9 9.3185 9.36875 9.97487 10.0251C10.6313 10.6815 11 11.5717 11 12.5V15Z" fill="#161616"/>
+                                <path d="M6 2C6.49445 2 6.9778 2.14662 7.38893 2.42133C7.80005 2.69603 8.12048 3.08648 8.3097 3.54329C8.49892 4.00011 8.54843 4.50277 8.45196 4.98773C8.3555 5.47268 8.1174 5.91814 7.76777 6.26777C7.41814 6.6174 6.97268 6.8555 6.48773 6.95196C6.00277 7.04843 5.50011 6.99892 5.04329 6.8097C4.58648 6.62048 4.19603 6.30005 3.92133 5.88893C3.64662 5.4778 3.5 4.99445 3.5 4.5C3.5 3.83696 3.76339 3.20107 4.23223 2.73223C4.70107 2.26339 5.33696 2 6 2ZM6 1C5.30777 1 4.63108 1.20527 4.0555 1.58986C3.47993 1.97444 3.03133 2.52107 2.76642 3.16061C2.50151 3.80015 2.4322 4.50388 2.56725 5.18282C2.7023 5.86175 3.03564 6.48539 3.52513 6.97487C4.01461 7.46436 4.63825 7.7977 5.31718 7.93275C5.99612 8.0678 6.69985 7.99849 7.33939 7.73358C7.97893 7.46867 8.52556 7.02007 8.91014 6.4445C9.29473 5.86892 9.5 5.19223 9.5 4.5C9.5 3.57174 9.13125 2.6815 8.47487 2.02513C7.8185 1.36875 6.92826 1 6 1Z" fill="#161616"/>
+                            </svg>
+                            <span class="text-sm sm:text-base">انلاین</span>
+                        </div>
+                        <span class="text-base sm:text-xl font-bold">4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header of week -->
+    <div class="flex flex-col sm:flex-row justify-between gap-4 my-8 w-full border-b pb-4">
+        <h1 class='text-sm sm:text-xl font-bold w-full'>
+            هفته اول -
+            <span>سرتیتر هفته</span>
+        </h1>
+        <!-- start and end date -->
+        <div class="flex justify-end items-center gap-2 w-full">
+            <div class="flex gap-2 items-center">
+                <span class="bg-zinc-200 p-[0.2px] sm:p-1 text-xs sm:text-base">از</span>
+                <span class="text-xs sm:text-sm">1403/02/01</span>
+            </div>
+            <div class="flex gap-2 items-center">
+                <span class="bg-zinc-200 p-[0.5px] sm:p-1 text-xs sm:text-base">تا</span>
+                <span class="text-xs sm:text-sm">1403/02/01</span>
+            </div>
+        </div>
+    </div>
+    <!-- statistics : list of all quizes -->
+    <div class="w-full mt-10">
+        <!-- header -->
+        <div class="flex justify-between items-center p-2 border-b border-zinc-300">
+            <div class="flex items-center gap-4">
+                <svg class="w-6 h-6" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="16" height="16" transform="translate(0 0.511719)" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M14 3.51172H5V4.51172H14V3.51172Z" fill="#161616"/>
+                    <path d="M14 12.5117H5V13.5117H14V12.5117Z" fill="#161616"/>
+                    <path d="M14 8.01172H5V9.01172H14V8.01172Z" fill="#161616"/>
+                    <path d="M3 8.01172H2V9.01172H3V8.01172Z" fill="#161616"/>
+                    <path d="M3 3.51172H2V4.51172H3V3.51172Z" fill="#161616"/>
+                    <path d="M3 12.5117H2V13.5117H3V12.5117Z" fill="#161616"/>
+                </svg>
+                <h2 class="text-sm sm:text-base font-bold">لیست دانش آموزان هفته</h2>
+            </div>
+            <!-- filter -->
+            <div class="flex">
+                <!-- filter -->
+                <details class="group">
+                    <summary class="flex items-center gap-4 cursor-pointer select-none">
+                        <span class="text-xs sm:text-sm">
+                            موضوع
+                        </span>
+                        <svg class="w-5 h-5 group-open:rotate-180" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                            <path d="M8 10.9998L3 5.9998L3.7 5.2998L8 9.5998L12.3 5.2998L13 5.9998L8 10.9998Z" fill="#161616"></path>
+                        </svg>
+                    </summary>
+                    <div class="absolute mt-4 w-20 h-20 bg-blue-500 z-20">s</div>
+                </details>
+            </div>
+        </div>
+        <!-- message -->
+        <div class="my-4 w-full bg-zinc-200 px-1 py-2 flex justify-center">
+            <span class="text-xs">برای مشاهده و نمره دادن به اعضاء این هفته روی نام دانش آموز مورد نظر در لیست کلیک کنید</span>
+        </div>
+        <!-- user details -->
+        <div class="no-scrollbar my-2 border overflow-auto max-h-[300px]">
+            <!-- table header -->
+            <table class="min-w-full divide-y divide-gray-300 overflow-x-auto">
+                <thead class="bg-gray-200 sticky top-0 z-10">
+                    <tr>
+                        <th class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">نام</th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">جلسه</th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">تمرین</th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">سوالات</th>
+                        <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">امتیاز</th>
+                    </tr>
+                </thead>
+                <!-- user lists -->
+                <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <tr>
+                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                            <div class="flex gap-2 items-center font-bold">
+                                1
+                                <div class="w-5 h-5 sm:w-7 sm:h-7 bg-blue-500"></div> 
+                            </div>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <a class='cursor-pointer hover:border-b-2'>سینا کرمیان</a>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"/>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"/>
+                            </svg>
+                        </td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">8/10</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                    </tr>
+                    <!-- More people... -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- user week details section such as meet, quiz and project or exercise -->
+    <div class="border border-zinc-300 p-4 mt-10">
+        <!-- header : title -->
+        <div class="flex justify-between items-center pb-2 border-b border-zinc-300 w-full">
+            <!-- title -->
+            <div class="flex items-center gap-4 border-l pl-2 border-zinc-300">
+                <svg class="w-7 h-7" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="25" height="25" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                    <path d="M21.9297 16.4062L17.1875 11.7188L21.9297 7.03125L23.0469 8.13281L19.4219 11.7188L23.0469 15.3047L21.9297 16.4062Z" fill="#161616"></path>
+                    <path d="M17.1875 23.4375H15.625V19.5312C15.625 18.4952 15.2134 17.5017 14.4809 16.7691C13.7483 16.0366 12.7548 15.625 11.7188 15.625H7.03125C5.99525 15.625 5.00168 16.0366 4.26911 16.7691C3.53655 17.5017 3.125 18.4952 3.125 19.5312V23.4375H1.5625V19.5312C1.5625 18.0808 2.13867 16.6898 3.16426 15.6643C4.18985 14.6387 5.58085 14.0625 7.03125 14.0625H11.7188C13.1692 14.0625 14.5602 14.6387 15.5857 15.6643C16.6113 16.6898 17.1875 18.0808 17.1875 19.5312V23.4375Z" fill="#161616"></path>
+                    <path d="M9.375 3.125C10.1476 3.125 10.9028 3.3541 11.5452 3.78332C12.1876 4.21255 12.6883 4.82262 12.9839 5.53639C13.2796 6.25017 13.3569 7.03558 13.2062 7.79332C13.0555 8.55106 12.6834 9.24709 12.1371 9.79339C11.5908 10.3397 10.8948 10.7117 10.1371 10.8624C9.37933 11.0132 8.59392 10.9358 7.88014 10.6402C7.16637 10.3445 6.5563 9.84383 6.12707 9.20145C5.69785 8.55907 5.46875 7.80383 5.46875 7.03125C5.46875 5.99525 5.8803 5.00168 6.61286 4.26911C7.34543 3.53655 8.339 3.125 9.375 3.125ZM9.375 1.5625C8.29338 1.5625 7.23606 1.88324 6.33673 2.48415C5.43739 3.08506 4.73645 3.93917 4.32253 4.93845C3.90862 5.93773 3.80032 7.03732 4.01133 8.09815C4.22234 9.15898 4.74319 10.1334 5.50801 10.8982C6.27283 11.6631 7.24727 12.1839 8.3081 12.3949C9.36893 12.6059 10.4685 12.4976 11.4678 12.0837C12.4671 11.6698 13.3212 10.9689 13.9221 10.0695C14.523 9.17019 14.8438 8.11287 14.8438 7.03125C14.8438 5.58085 14.2676 4.18985 13.242 3.16426C12.2164 2.13867 10.8254 1.5625 9.375 1.5625Z" fill="#161616"></path>
+                </svg>
+
+                <h2 class="text-sm sm:text-xl font-bold">سینا کرمیان</h2>
+            </div>
+            <!-- last active -->
+            <div class="flex items-center gap-1">
+                <span class="text-xs sm:text-sm">آخرین فعالیت</span>
+                <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                    <path d="M5 8L10 3L10.7 3.7L6.4 8L10.7 12.3L10 13L5 8Z" fill="black"/>
+                </svg>
+                <span class="text-xs sm:text-sm text-zinc-400">1 ساعت پیش</span>
+            </div>
+        </div>
+        <!-- user week details -->
+        <div class="divide-y divide-zinc-300">
+            <!-- week related meeting -->
+            <div class="p-2">
+                <!-- title -->
+                <div class="flex items-center gap-4 pb-4">
+                    <svg class="w-8 h-8" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                        <path d="M20.625 7.5H19.6875V1.875H17.8125V7.5H12.1875V1.875H10.3125V7.5H9.375C8.87772 7.5 8.40081 7.69754 8.04918 8.04918C7.69754 8.40081 7.5 8.87772 7.5 9.375V20.625C7.5 21.1223 7.69754 21.5992 8.04918 21.9508C8.40081 22.3025 8.87772 22.5 9.375 22.5H10.3125V28.125H12.1875V22.5H17.8125V28.125H19.6875V22.5H20.625C21.1223 22.5 21.5992 22.3025 21.9508 21.9508C22.3025 21.5992 22.5 21.1223 22.5 20.625V9.375C22.5 8.87772 22.3025 8.40081 21.9508 8.04918C21.5992 7.69754 21.1223 7.5 20.625 7.5ZM9.375 20.625V9.375H20.625V20.625H9.375Z" fill="#161616"/>
+                        <path d="M25.3125 13.125H23.4375V16.875H25.3125V13.125Z" fill="#161616"/>
+                    </svg>
+                    <h1 class="text-sm sm:text-lg font-bold">جلسه</h2>
+                </div>
+                <!-- content -->
+                <div class="flex flex-col sm:flex-row gap-2 items-center w-full">
+                    <!-- meeting details -->
+                    <div class="grid grid-cols-2 sm:flex sm:flex-col w-full border border-zinc-300 px-2">
+                        <!--title -->
+                        <div class="flex gap-4 items-center p-2">
+                            <svg class="w-6 h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                                <path d="M8.5 6H4V7H8.5V6Z" fill="#161616"></path>
+                                <path d="M6.5 8.5H4V9.5H6.5V8.5Z" fill="#161616"></path>
+                                <path d="M10.5 13H2C1.73488 12.9997 1.4807 12.8942 1.29323 12.7068C1.10576 12.5193 1.0003 12.2651 1 12V4C1.0003 3.73488 1.10576 3.4807 1.29323 3.29323C1.4807 3.10576 1.73488 3.0003 2 3H10.5C10.7651 3.0003 11.0193 3.10576 11.2068 3.29323C11.3942 3.4807 11.4997 3.73488 11.5 4V6.0283L14.2094 4.0933C14.2842 4.03984 14.3722 4.00801 14.4638 4.00131C14.5555 3.99461 14.6472 4.01331 14.7289 4.05534C14.8106 4.09737 14.8791 4.16111 14.9269 4.23956C14.9748 4.31801 15 4.40812 15 4.5V11.5C15.0001 11.5919 14.9748 11.682 14.927 11.7605C14.8791 11.8389 14.8106 11.9027 14.7289 11.9447C14.6472 11.9867 14.5555 12.0054 14.4638 11.9987C14.3722 11.992 14.2842 11.9602 14.2094 11.9067L11.5 9.9717V12C11.4997 12.2651 11.3942 12.5193 11.2068 12.7068C11.0193 12.8942 10.7651 12.9997 10.5 13ZM2 4V12.0005L10.5 12V9C10.4999 8.90812 10.5252 8.818 10.573 8.73954C10.6209 8.66109 10.6894 8.59734 10.7711 8.5553C10.8528 8.51326 10.9445 8.49456 11.0362 8.50126C11.1278 8.50795 11.2158 8.53978 11.2906 8.59325L14 10.5283V5.4717L11.2906 7.4067C11.2158 7.46016 11.1278 7.49199 11.0362 7.49869C10.9445 7.50539 10.8528 7.48669 10.7711 7.44466C10.6894 7.40263 10.6209 7.33889 10.5731 7.26044C10.5252 7.18199 10.5 7.09188 10.5 7V4H2Z" fill="#161616"></path>
+                            </svg>
+                            <h2 class="text-xs sm:text-sm">
+                                عنوان جلسه
+                            </h2>
+                        </div>
+                        <!-- meet status -->
+                        <div class="flex gap-4 items-center p-2">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                            </svg>
+                            <h2 class="text-xs sm:text-sm">
+                                برگزار شده
+                            </h2>
+                        </div>
+                        <!-- time hold on -->
+                        <div class="flex gap-4 items-center p-2">
+                            <svg class="w-6 h-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="20" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                                <path d="M10 17.5C8.64027 17.5 7.31106 17.0968 6.18047 16.3414C5.04988 15.5859 4.1687 14.5122 3.64834 13.2559C3.12799 11.9997 2.99184 10.6174 3.25712 9.28375C3.52239 7.95013 4.17717 6.72512 5.13866 5.76364C6.10014 4.80215 7.32515 4.14737 8.65877 3.8821C9.99239 3.61683 11.3747 3.75297 12.631 4.27333C13.8872 4.79368 14.9609 5.67486 15.7164 6.80545C16.4718 7.93604 16.875 9.26525 16.875 10.625C16.875 12.4484 16.1507 14.197 14.8614 15.4864C13.5721 16.7757 11.8234 17.5 10 17.5ZM10 5C8.8875 5 7.79996 5.3299 6.87493 5.94798C5.94991 6.56606 5.22894 7.44457 4.80319 8.4724C4.37745 9.50024 4.26606 10.6312 4.4831 11.7224C4.70014 12.8135 5.23587 13.8158 6.02254 14.6025C6.80921 15.3891 7.81149 15.9249 8.90263 16.1419C9.99377 16.359 11.1248 16.2476 12.1526 15.8218C13.1804 15.3961 14.0589 14.6751 14.677 13.7501C15.2951 12.8251 15.625 11.7375 15.625 10.625C15.625 9.13315 15.0324 7.70241 13.9775 6.64752C12.9226 5.59263 11.4919 5 10 5Z" fill="#161616"></path>
+                                <path d="M11.6188 13.125L9.37502 10.8812V6.875H10.625V10.3625L12.5 12.2437L11.6188 13.125Z" fill="#161616"></path>
+                                <path d="M4.73854 2.50197L2.50024 4.74496L3.38505 5.62792L5.62335 3.38493L4.73854 2.50197Z" fill="#161616"></path>
+                                <path d="M15.2595 2.49648L14.3747 3.37944L16.613 5.62243L17.4978 4.73947L15.2595 2.49648Z" fill="#161616"></path>
+                            </svg>
+                            <input type="time" value="09:30" disabled="">
+                        </div>
+                        <!-- date hold on -->
+                        <div class="flex gap-4 items-center p-2">
+                            <svg class="w-6 h-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="20" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                                <path d="M16.25 2.5H13.75V1.25H12.5V2.5H7.5V1.25H6.25V2.5H3.75C3.0625 2.5 2.5 3.0625 2.5 3.75V16.25C2.5 16.9375 3.0625 17.5 3.75 17.5H16.25C16.9375 17.5 17.5 16.9375 17.5 16.25V3.75C17.5 3.0625 16.9375 2.5 16.25 2.5ZM16.25 16.25H3.75V7.5H16.25V16.25ZM16.25 6.25H3.75V3.75H6.25V5H7.5V3.75H12.5V5H13.75V3.75H16.25V6.25Z" fill="#161616"></path>
+                            </svg>
+                            <input type="date" value="1403-01-02" disabled="">
+                        </div>
+                    </div>
+                    <!-- grading -->
+                    <div class="w-full px-4 py-2 flex flex-col justify-between border border-zinc-300">
+                        <h2 class="text-sm sm:text-base font-bold">
+                            تخصیص نمره
+                        </h2>
+                        <div class="flex gap-4 items-center p-2">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                            </svg>
+                            <!-- joining in meet status -->
+                            <div>
+                                <span class="text-xs sm:text-sm">
+                                    در جلسه شرکت کرده است
+                                </span>
+                            </div>
+                        </div>
+                        <!-- score to student -->
+                        <form class="max-w-sm">
+                            <select class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-1 px-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected>انتخاب نمره ...</option>
+                                <option value="10">10</option>
+                                <option value="10">20</option>
+                                <option value="10">30</option>
+                                <option value="10">40</option>
+                                <option value="10">50</option>
+                                <option value="10">60</option>
+                                <option value="10">70</option>
+                                <option value="10">80</option>
+                                <option value="10">90</option>
+                                <option value="10">100</option>
+                            </select>
+                            <a class="flex justify-center w-full bg-blue-600 p-2 mt-2 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">ثبت نمره</span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- week related exercise or project -->
+            <div class="p-2">
+                <!-- title -->
+                <div class="flex items-center gap-4 pb-4">
+                    <svg class="w-8 h-8" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                        <path d="M27.8438 18.0938L25.0312 15.2812C24.6562 14.9062 24.0938 14.9062 23.7188 15.2812L15 24V28.125H19.125L27.8438 19.4062C28.2188 19.0312 28.2188 18.4688 27.8438 18.0938ZM18.375 26.25H16.875V24.75L21.5625 20.0625L23.0625 21.5625L18.375 26.25ZM24.375 20.25L22.875 18.75L24.375 17.25L25.875 18.75L24.375 20.25Z" fill="#161616"/>
+                        <path d="M11.25 21.5625H9.375V23.4375H11.25V21.5625Z" fill="#161616"/>
+                        <path d="M16.875 16.875H13.125V18.75H16.875V16.875Z" fill="#161616"/>
+                        <path d="M11.25 16.875H9.375V18.75H11.25V16.875Z" fill="#161616"/>
+                        <path d="M20.625 12.1875H13.125V14.0625H20.625V12.1875Z" fill="#161616"/>
+                        <path d="M11.25 12.1875H9.375V14.0625H11.25V12.1875Z" fill="#161616"/>
+                        <path d="M6.5625 26.25V6.5625H9.375V9.375H20.625V6.5625H23.4375V12.1875H25.3125V6.5625C25.3125 5.53125 24.4688 4.6875 23.4375 4.6875H20.625V3.75C20.625 2.71875 19.7812 1.875 18.75 1.875H11.25C10.2188 1.875 9.375 2.71875 9.375 3.75V4.6875H6.5625C5.53125 4.6875 4.6875 5.53125 4.6875 6.5625V26.25C4.6875 27.2812 5.53125 28.125 6.5625 28.125H11.25V26.25H6.5625ZM11.25 3.75H18.75V7.5H11.25V3.75Z" fill="#161616"/>
+                    </svg>
+                    <h1 class="text-sm sm:text-lg font-bold">تمرین - پروژه</h1>
+                </div>
+                <!-- content -->
+                <!-- student upload file -->
+                <div class="p-4 w-full border border-zinc-300">
+                    <!-- title -->
+                    <h2 class="text-sm sm:text-base font-bold">
+                        فایل آپلود شده دانش آموز
+                    </h2>
+                    <!-- file -->
+                    <div class="flex gap-2 w-full justify-between mt-4 mx-2 px-2">
+                        <!-- file name -->
+                        <div class="flex gap-4">
+                            <svg class="w-5 h-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="25" height="25" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                <path d="M21.875 14.8438H11.5859L13.6016 12.8203L12.5 11.7188L8.59375 15.625L12.5 19.5313L13.6016 18.4297L11.5859 16.4063H21.875V14.8438Z" fill="#161616"/>
+                                <path d="M18.75 10.9375V7.81251C18.7506 7.7097 18.7309 7.60777 18.692 7.51259C18.6531 7.4174 18.5958 7.33083 18.5234 7.25783L13.0547 1.78908C12.9817 1.71667 12.8951 1.65938 12.7999 1.6205C12.7047 1.58163 12.6028 1.56192 12.5 1.56251H4.6875C4.2731 1.56251 3.87567 1.72713 3.58265 2.02016C3.28962 2.31318 3.125 2.71061 3.125 3.12501V21.875C3.125 22.2894 3.28962 22.6868 3.58265 22.9799C3.87567 23.2729 4.2731 23.4375 4.6875 23.4375H17.1875C17.6019 23.4375 17.9993 23.2729 18.2924 22.9799C18.5854 22.6868 18.75 22.2894 18.75 21.875V20.3125H17.1875V21.875H4.6875V3.12501H10.9375V7.81251C10.9375 8.22691 11.1021 8.62434 11.3951 8.91737C11.6882 9.21039 12.0856 9.37501 12.5 9.37501H17.1875V10.9375H18.75ZM12.5 7.81251V3.44533L16.8672 7.81251H12.5Z" fill="#161616"/>
+                            </svg>
+                            <span class="text-xs sm:text-sm">نام فایل پاسخ</span>
+                        </div>
+                        <a class="flex justify-center bg-white px-2 py-1 mx-2 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                            <span class="text-blue-500 text-xs sm:text-sm">مشاهده</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 py-2 md:flex-row w-full">
+                    <!-- description -->
+                    <div class="p-4 w-full border border-zinc-300">
+                        <h2 class="text-sm sm:text-base font-bold">
+                            توضیحات
+                        </h2>
+                        <p class="text-xs sm:text-sm text-justify mt-2 mx-2">
+                            پایتون به عنوان یک زبان تایپ شده پویا واقعاً انعطاف پذیر است. این بدان معنی است که هیچ قانون سختی در مورد نحوه ساخت ویژگی وجود ندارد و شما با استفاده از روش‌های مختلف مشکلات حل انعطاف پذیری بیشتری خواهید داشت. پایتون از ابتدا قسمت مهمی از گوگل بوده و با رشد.
+                        </p>
+                    </div>
+                    <!-- grading -->
+                    <div class="w-full p-4 flex flex-col border border-zinc-300">
+                        <h2 class="text-sm sm:text-base font-bold">
+                            تخصیص نمره
+                        </h2>
+                        <div class="flex gap-4 items-center p-2">
+                            <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                            </svg>
+                            <!-- joining in meet status -->
+                            <div>
+                                <span class="text-xs sm:text-sm">
+                                    در جلسه شرکت کرده است
+                                </span>
+                            </div>
+                        </div>
+                        <!-- score to student -->
+                        <form class="max-w-sm">
+                            <select class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-1 px-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected>انتخاب نمره ...</option>
+                                <option value="10">10</option>
+                                <option value="10">20</option>
+                                <option value="10">30</option>
+                                <option value="10">40</option>
+                                <option value="10">50</option>
+                                <option value="10">60</option>
+                                <option value="10">70</option>
+                                <option value="10">80</option>
+                                <option value="10">90</option>
+                                <option value="10">100</option>
+                            </select>
+                            <a class="flex justify-center w-full bg-blue-600 p-2 mt-2 select-none cursor-pointer hover:bg-blue-400">
+                                <span class="text-white text-xs sm:text-sm">ثبت نمره</span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- week related quizes -->
+            <div class="w-full p-2">
+                <!-- header -->
+                <div class="flex justify-between items-center p-2">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-6 h-6" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="30" height="30" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                            <path d="M15 1.875C12.4041 1.875 9.86654 2.64477 7.70815 4.08696C5.54975 5.52916 3.86749 7.579 2.87409 9.97728C1.88069 12.3756 1.62077 15.0146 2.1272 17.5606C2.63363 20.1066 3.88367 22.4452 5.71923 24.2808C7.55479 26.1163 9.89345 27.3664 12.4394 27.8728C14.9854 28.3792 17.6244 28.1193 20.0227 27.1259C22.421 26.1325 24.4709 24.4503 25.913 22.2919C27.3552 20.1335 28.125 17.5959 28.125 15C28.125 11.519 26.7422 8.18064 24.2808 5.71922C21.8194 3.25781 18.481 1.875 15 1.875ZM15 26.25C12.775 26.25 10.5999 25.5902 8.74984 24.354C6.89979 23.1179 5.45785 21.3609 4.60636 19.3052C3.75488 17.2495 3.53209 14.9875 3.96617 12.8052C4.40026 10.6229 5.47171 8.61839 7.04505 7.04505C8.6184 5.47171 10.623 4.40025 12.8052 3.96617C14.9875 3.53208 17.2495 3.75487 19.3052 4.60636C21.3609 5.45784 23.1179 6.89978 24.354 8.74984C25.5902 10.5999 26.25 12.775 26.25 15C26.25 17.9837 25.0647 20.8452 22.955 22.955C20.8452 25.0647 17.9837 26.25 15 26.25Z" fill="#161616"/>
+                            <path d="M15 23.4375C15.7767 23.4375 16.4063 22.8079 16.4063 22.0312C16.4063 21.2546 15.7767 20.625 15 20.625C14.2234 20.625 13.5938 21.2546 13.5938 22.0312C13.5938 22.8079 14.2234 23.4375 15 23.4375Z" fill="#161616"/>
+                            <path d="M15.9375 7.5H14.5313C13.9769 7.49876 13.4277 7.60704 12.9153 7.81862C12.4029 8.03019 11.9374 8.34089 11.5454 8.73289C11.1534 9.12488 10.8427 9.59044 10.6311 10.1028C10.4195 10.6152 10.3113 11.1644 10.3125 11.7188V12.1875H12.1875V11.7188C12.1875 11.0971 12.4344 10.501 12.874 10.0615C13.3135 9.62193 13.9097 9.375 14.5313 9.375H15.9375C16.5591 9.375 17.1552 9.62193 17.5948 10.0615C18.0343 10.501 18.2813 11.0971 18.2813 11.7188C18.2813 12.3404 18.0343 12.9365 17.5948 13.376C17.1552 13.8156 16.5591 14.0625 15.9375 14.0625H14.0625V18.2812H15.9375V15.9375C17.0564 15.9375 18.1294 15.493 18.9206 14.7019C19.7118 13.9107 20.1563 12.8376 20.1563 11.7188C20.1563 10.5999 19.7118 9.52681 18.9206 8.73564C18.1294 7.94447 17.0564 7.5 15.9375 7.5Z" fill="#161616"/>
+                        </svg>
+                        <h2 class="text-sm sm:text-base font-bold">سوالات</h2>
+                    </div>
+                    <!-- filter -->
+                    <div class="flex">
+                        <!-- filter -->
+                        <details class="group">
+                            <summary class="flex items-center gap-4 cursor-pointer select-none">
+                                <span class="text-xs sm:text-sm">
+                                    موضوع
+                                </span>
+                                <svg class="w-5 h-5 group-open:rotate-180" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"></rect>
+                                    <path d="M8 10.9998L3 5.9998L3.7 5.2998L8 9.5998L12.3 5.2998L13 5.9998L8 10.9998Z" fill="#161616"></path>
+                                </svg>
+                            </summary>
+                            <div class="absolute mt-4 w-20 h-20 bg-blue-500 z-20">s</div>
+                        </details>
+                    </div>
+                </div>
+                <!-- user details -->
+                <div class="no-scrollbar my-2 border overflow-auto max-h-[300px]">
+                    <!-- table header -->
+                    <table class="min-w-full divide-y divide-gray-300 overflow-x-auto">
+                        <thead class="bg-gray-200 sticky top-0 z-10">
+                            <tr>
+                                <th class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
+                                <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">عنوان</th>
+                                <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">وضعیت پاسخ</th>
+                                <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">سطح</th>
+                                <th class="px-3 py-3.5 text-right text-xs sm:text-sm font-bold text-gray-900">امتیاز</th>
+                                <th class="relative py-3.5 pl-3 pr-4 sm:pr-6"></th>
+                            </tr>
+                        </thead>
+                        <!-- user lists -->
+                        <tbody class="divide-y divide-gray-200 bg-white">
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <div class="flex gap-2 items-center font-bold">1</div>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="cursor-pointer hover:border-b-2">عنوان پاسخ در اینجا میایید</a>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="16" height="16" fill="#2DB63B" style="mix-blend-mode:multiply"></rect>
+                                        <path d="M6.5 12L2 7.49997L2.707 6.79297L6.5 10.5855L13.293 3.79297L14 4.49997L6.5 12Z" fill="white"></path>
+                                    </svg>
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    متوسط
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">10000</td>
+                                <td class="whitespace-nowrap px-3 py-4 text-xs sm:text-sm font-bold text-gray-500">
+                                    <a class="flex justify-between items-center w-1/2 bg-white px-2 py-1 select-none cursor-pointer border border-blue-600 hover:bg-blue-50">
+                                        <span class="text-blue-500 text-xs sm:text-sm">پبش نمایش</span>
+                                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="16" height="16" fill="white" fill-opacity="0.01" style="mix-blend-mode:multiply"/>
+                                            <path d="M15.4698 7.83C14.8817 6.30882 13.8608 4.99331 12.5332 4.04604C11.2056 3.09878 9.62953 2.56129 7.99979 2.5C6.37005 2.56129 4.79398 3.09878 3.46639 4.04604C2.1388 4.99331 1.11787 6.30882 0.529787 7.83C0.490071 7.93985 0.490071 8.06015 0.529787 8.17C1.11787 9.69118 2.1388 11.0067 3.46639 11.954C4.79398 12.9012 6.37005 13.4387 7.99979 13.5C9.62953 13.4387 11.2056 12.9012 12.5332 11.954C13.8608 11.0067 14.8817 9.69118 15.4698 8.17C15.5095 8.06015 15.5095 7.93985 15.4698 7.83ZM7.99979 12.5C5.34979 12.5 2.54979 10.535 1.53479 8C2.54979 5.465 5.34979 3.5 7.99979 3.5C10.6498 3.5 13.4498 5.465 14.4648 8C13.4498 10.535 10.6498 12.5 7.99979 12.5Z" fill="#007AFF"/>
+                                            <path d="M7.99979 5C7.40644 5 6.82642 5.17595 6.33308 5.50559C5.83973 5.83524 5.45521 6.30377 5.22815 6.85195C5.00109 7.40013 4.94168 8.00333 5.05743 8.58527C5.17319 9.16721 5.45891 9.70176 5.87847 10.1213C6.29802 10.5409 6.83257 10.8266 7.41452 10.9424C7.99646 11.0581 8.59966 10.9987 9.14784 10.7716C9.69602 10.5446 10.1646 10.1601 10.4942 9.66671C10.8238 9.17336 10.9998 8.59334 10.9998 8C10.9998 7.20435 10.6837 6.44129 10.1211 5.87868C9.5585 5.31607 8.79544 5 7.99979 5ZM7.99979 10C7.60422 10 7.21755 9.8827 6.88865 9.66294C6.55975 9.44318 6.3034 9.13082 6.15203 8.76537C6.00065 8.39991 5.96105 7.99778 6.03822 7.60982C6.11539 7.22186 6.30587 6.86549 6.58557 6.58579C6.86528 6.30608 7.22164 6.1156 7.60961 6.03843C7.99757 5.96126 8.3997 6.00087 8.76515 6.15224C9.13061 6.30362 9.44296 6.55996 9.66273 6.88886C9.88249 7.21776 9.99979 7.60444 9.99979 8C9.99979 8.53043 9.78907 9.03914 9.414 9.41421C9.03893 9.78929 8.53022 10 7.99979 10Z" fill="#007AFF"/>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- More people... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

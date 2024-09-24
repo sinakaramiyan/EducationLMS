@@ -109,6 +109,9 @@ def moodlesforumforums(request):
 def moodleteachercourse(request):
     return render(request, 'meetbased/teacher/course.html')
 
+def moodleteacherweek(request):
+    return render(request, 'meetbased/teacher/week.html')
+
 # end moodle
 
 def monacoeditor(request):
