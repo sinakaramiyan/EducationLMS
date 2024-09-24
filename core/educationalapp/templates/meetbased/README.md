@@ -134,3 +134,13 @@ This file contain main teacher course page and see main content of teacher cours
 ![course teacher](https://github.com/user-attachments/assets/0aaa1577-56ad-4e95-bb54-13e83d70871c)
 
 ___
+
+### TEACHER.Page2 : Week page
+This file contain main teacher week page and see main content of teacher week page such as list of each student and their work related to them.
+> [!Note]
+> Html file for this page located in teacher folder and named **week.html**
+
+#### **Preview of FIGMA**:
+![weeks teacher](https://github.com/user-attachments/assets/24951575-a301-4124-9d2d-e0c76e47ac12)
+
+___
