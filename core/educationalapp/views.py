@@ -112,6 +112,9 @@ def moodleteachercourse(request):
 def moodleteacherweek(request):
     return render(request, 'meetbased/teacher/week.html')
 
+def moodleteacherprofile(request):
+    return render(request, 'meetbased/teacher/profile.html')
+
 # end moodle
 
 def monacoeditor(request):

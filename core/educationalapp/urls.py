@@ -1,6 +1,11 @@
 from django.urls import path
-from .views import home, login, signin, signinfavorite, testimonial, courses,course, course,monacoeditor, lessoncompletestroke, lessoncompleteleague,  courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription, modules, lesson, lessoncomplete, userhomecourse, moodlegeneralcourses, moodlegeneralcoursedetail,moodlestudentcourse,moodlestudentweek,moodlestudentprofile, moodlesblogblogs, moodlesblogcategories, moodlesblogcategorypage, moodlesblogsingleblog, moodlesforumforum, moodlesforumforums
-from .views import moodleteachercourse, moodleteacherweek
+from .views import home, login, signin, signinfavorite, testimonial, course,monacoeditor, courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription
+from .views import modules, lesson, lessoncomplete, userhomecourse, lessoncompletestroke, lessoncompleteleague, courses,course
+from .views import moodlegeneralcourses, moodlegeneralcoursedetail
+from .views import moodlestudentcourse,moodlestudentweek,moodlestudentprofile 
+from .views import moodlesblogblogs, moodlesblogcategories, moodlesblogcategorypage, moodlesblogsingleblog
+from .views import moodlesforumforum, moodlesforumforums
+from .views import moodleteachercourse, moodleteacherweek, moodleteacherprofile
 urlpatterns = [
     path('', home, name='home'),
     path('login/', login , name='login'),
@@ -49,6 +54,7 @@ urlpatterns = [
     path('meetbased/forums', moodlesforumforums , name='moodlesforumforums'),
     path('meetbased/teacher/course/', moodleteachercourse , name='moodleteachercourse'),
     path('meetbased/teacher/week/', moodleteacherweek , name='moodleteacherweek'),
+    path('meetbased/teacher/profile/', moodleteacherprofile , name='moodleteacherprofile'),
 
     # end moodle
     
