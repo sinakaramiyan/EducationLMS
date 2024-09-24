@@ -144,3 +144,13 @@ This file contain main teacher week page and see main content of teacher week pa
 ![weeks teacher](https://github.com/user-attachments/assets/24951575-a301-4124-9d2d-e0c76e47ac12)
 
 ___
+
+### TEACHER.Page3 : Profile page
+This page is profile page for teacher and contain dashboard, about, details, courses, blogs and forum post sections that related to teacher user.
+> [!Note]
+> Html file for this page located in teacher folder and named **profile.html**
+
+#### **Preview of FIGMA**:
+![profile teacher](https://github.com/user-attachments/assets/b3d08875-7adf-4795-b857-edc5dd45c620)
+
+___
