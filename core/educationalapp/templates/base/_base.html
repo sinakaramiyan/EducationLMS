@@ -1,5 +1,4 @@
-<!-- Load compress and static templates -->
-{% load compress %} 
+
 {% load static %}
 
 <!-- Define the HTML document structure -->
@@ -35,9 +34,8 @@
         }
     </style>
     
-    {% compress css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    {% endcompress %}
+
 </head>
 <body>
     <!-- Navbar content -->

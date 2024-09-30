@@ -1,4 +1,4 @@
-{% load compress %} 
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -9,10 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EducationLMS</title>
     
-    {% compress css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    {% endcompress %}
-
+    
     <style>
         #tick{
             animation: 3s ease-in-out slideins;
