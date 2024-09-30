@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
+#database pgadmin pass="12345"
 #super user: username=sina , pass=12345
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
