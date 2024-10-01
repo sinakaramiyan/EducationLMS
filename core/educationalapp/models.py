@@ -1,5 +1,9 @@
 from django.db import models
 
+#########################
+# role assignment process
+#########################
+
 class user(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=50, unique=True)
@@ -68,7 +72,7 @@ class roleAssignment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 # when role=student and role assignment occur to user then set this addition details
-class student_more_details(models.Model):
+class studentMoreDetails(models.Model):
     id = models.AutoField(primary_key=True)
     RA_id = models.ForeignKey(roleAssignment, on_delete=models.CASCADE)
     resume = models.FileField(upload_to='resumes/', blank=True, null=True)
@@ -79,7 +83,7 @@ class student_more_details(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 # when role=admins( all of them ) and role assignment occur to user then set this addition details
-class teacher_more_details(models.Model):
+class teacherMoreDetails(models.Model):
     id = models.AutoField(primary_key=True)
     RA_id = models.ForeignKey(roleAssignment, on_delete=models.CASCADE)
     resume = models.FileField(upload_to='resumes/', blank=True, null=True)
@@ -88,9 +92,130 @@ class teacher_more_details(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 # every user that has role assignment contain this model
-class RA_level(models.Model):
+class RALevel(models.Model):
     RA_id = models.ForeignKey(roleAssignment, on_delete=models.CASCADE)
     level_name = models.CharField(max_length=50)
     level_description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+######################################
+# subscription process for student use
+######################################
+
+# describe duration of plan
+class subscriptionPlan(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    duration = models.CharField(max_length=20, choices=[
+        ('3 months', '3 months'),
+        ('6 months', '6 months'),
+        ('1 year', '1 year')
+    ])
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    # active status
+    active_status = models.BooleanField(default=True)
+    activated_at = models.DateTimeField(auto_now_add=True)
+    deactivated_at = models.DateTimeField(null=True, blank=True)
+
+
+    def __str__(self):
+        return self.name
+
+class course(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    course_level = models.CharField(max_length=50, choices=[
+        ('beginner', 'Beginner'),
+        ('intermediate', 'Intermediate'),
+        ('advanced', 'Advanced')
+    ])
+    start_date = models.DateField()
+    end_date = models.DateField()
+    edit_date = models.DateTimeField(auto_now=True)
+    visible = models.BooleanField(default=True)
+    enablecompletion = models.BooleanField(default=False)
+    completionnotify = models.BooleanField(default=False)
+
+# every plan has courses with their price mount that can participate in it
+class subscriptonCoursePlan(models.Model):
+    id = models.AutoField(primary_key=True)
+    subscription_plan_id = models.ForeignKey(subscriptionPlan, on_delete=models.CASCADE)
+    course_id = models.ForeignKey(course, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    # active status
+    active_status = models.BooleanField(default=True)
+    activated_at = models.DateTimeField(auto_now_add=True)
+    deactivated_at = models.DateTimeField(null=True, blank=True)
+
+
+    def __str__(self):
+        return self.name
+
+class subscriptionDiscount(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    code = models.CharField(max_length=50, unique=True)
+    discount_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    discount_percent = models.DecimalField(max_digits=5, decimal_places=2)
+
+    # active status
+    active_status = models.BooleanField(default=True)
+    activated_at = models.DateTimeField(auto_now_add=True)
+    deactivated_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+# acitve subscription plan for user
+class subscriptionInPlan(models.Model):
+    RA_id = models.OneToOneField(roleAssignment, on_delete=models.CASCADE, primary_key=True)
+    subscription_course_plan_id = models.ForeignKey(subscriptonCoursePlan, on_delete=models.CASCADE)
+    discount_id = models.ForeignKey(subscriptionDiscount, on_delete=models.CASCADE)
+
+    payment_type = models.CharField(max_length=50)
+    payment_code = models.CharField(max_length=50)
+    payment_date = models.DateField()
+    payment_after_discount = models.DecimalField(max_digits=10, decimal_places=2) 
+    total_price = models.DecimalField(max_digits=10, decimal_places=2) 
+    discount_price = models.DecimalField(max_digits=10, decimal_places=2) 
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+
+    downgraded_to_plan_id = models.ForeignKey(subscriptonCoursePlan, on_delete=models.CASCADE, null=True, blank=True, related_name='downgraded_plan')
+    downgraded_at = models.DateTimeField(null=True, blank=True)
+
+    upgrade_to_plan_id = models.ForeignKey(subscriptonCoursePlan, on_delete=models.CASCADE, null=True, blank=True, related_name='upgraded_plan')
+    upgraded_at = models.DateTimeField(null=True, blank=True)
+
+    renewed_subscription_id = models.ForeignKey(subscriptonCoursePlan, on_delete=models.CASCADE, null=True, blank=True, related_name='renewed_subscription')
+    renewed_at = models.DateTimeField(null=True, blank=True)
+
+
+# history of subscription for users
+class subscriptionInPlanHisotry(models.Model):
+    RA_id = models.OneToOneField(roleAssignment, on_delete=models.CASCADE, primary_key=True)
+    subscription_course_plan_id = models.ForeignKey(subscriptonCoursePlan, on_delete=models.CASCADE)
+
+    payment_type = models.CharField(max_length=255)
+    payment_code = models.CharField(max_length=255) 
+    payment_date = models.DateTimeField() 
+    payment_after_discount = models.DecimalField(max_digits=10, decimal_places=2) 
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField() 
