@@ -219,3 +219,36 @@ class subscriptionInPlanHisotry(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     start_at = models.DateTimeField()
     end_at = models.DateTimeField() 
+
+###############
+# course enroll
+###############
+
+# set role for course 
+class courseEnroll(models.Model):
+    id = models.AutoField(primary_key=True)
+    RA_id = models.ForeignKey(roleAssignment, on_delete=models.CASCADE)
+    course_id = models.ForeignKey(course, on_delete=models.CASCADE)
+
+    name = models.CharField(max_length=255)
+    enroll = models.BooleanField(default=False)
+    status = models.CharField(max_length=20)
+    enroll_period = models.IntegerField()
+    enroll_start_date = models.DateField()
+    enroll_end_date = models.DateField()
+    password = models.CharField(max_length=255)
+    expire_notify = models.BooleanField(default=False)
+    time_created = models.DateTimeField(auto_now_add=True)
+    time_modified = models.DateTimeField(auto_now=True)
+
+# when role for course created then role assignment user can participate in course with related role 
+class RAEnrollment(models.Model):
+    id = models.AutoField(primary_key=True)
+    RA_id = models.ForeignKey(roleAssignment, on_delete=models.CASCADE)
+    course_enroll_id = models.ForeignKey(courseEnroll, on_delete=models.CASCADE)
+
+    status = models.CharField(max_length=20)
+    time_created = models.DateTimeField(auto_now_add=True)
+    time_modified = models.DateTimeField(auto_now=True)
+    time_expiration = models.DateTimeField(auto_now=True)
+
