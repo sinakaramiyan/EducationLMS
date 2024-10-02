@@ -71,6 +71,9 @@ class roleAssignment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"{self.firstname}-{self.lastname} => {self.role.name}"
+
 # when role=student and role assignment occur to user then set this addition details
 class studentMoreDetails(models.Model):
     id = models.AutoField(primary_key=True)
@@ -98,6 +101,9 @@ class RALevel(models.Model):
     level_description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.RA_id.user.firstname}-{self.RA_id.user.lastname} => level: {self.level_name}"
 
 
 ######################################
@@ -141,6 +147,9 @@ class course(models.Model):
     visible = models.BooleanField(default=True)
     enablecompletion = models.BooleanField(default=False)
     completionnotify = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.title}({self.title})"
 
 # every plan has courses with their price mount that can participate in it
 class subscriptonCoursePlan(models.Model):
@@ -252,3 +261,241 @@ class RAEnrollment(models.Model):
     time_modified = models.DateTimeField(auto_now=True)
     time_expiration = models.DateTimeField(auto_now=True)
 
+##################
+# course automatic
+##################
+
+# in automatic course this model stand for learning path that contain courses
+class automaticCourseGroup(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    edit_date = models.DateTimeField(auto_now=True)
+    visible = models.BooleanField(default=True)
+    enable_completion = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"course group: {self.title}"
+
+# model for user that complete group
+class automaticCourseGroupComplete(models.Model):
+    id = models.AutoField(primary_key=True)
+    course_group_id = models.ForeignKey(automaticCourseGroup, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return f"The course_group {self.course_group_id.title} completed with {self.RA_enrollment_id.RA_id.user.firstname}-{self.RA_enrollment_id.RA_id.user.lastname} at {self.time_modified}"
+
+# represent course in learning path
+class automaticCourse(models.Model):
+    id = models.AutoField(primary_key=True)
+    course_group_id = models.ForeignKey(automaticCourseGroup, on_delete=models.CASCADE)
+    # in list of learning path this index tell, what queue this course has.
+    index = models.IntegerField()
+    prerequisite = models.OneToOneField('self', on_delete=models.CASCADE, null=True, blank=True, parent_link=True)
+    
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    edit_date = models.DateField(auto_now=True)
+    visible = models.BooleanField(default=True)
+    language = models.CharField(max_length=10)
+    enable_completion = models.BooleanField(default=False)
+    completion_notify = models.BooleanField(default=False)
+    score = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return f"course title: {self.title}"
+
+# model for user that complete course
+class automaticCourseComplete(models.Model):
+    id = models.AutoField(primary_key=True)
+    course_id = models.ForeignKey(automaticCourse, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return f"The course {self.course_id.title} completed with {self.RA_enrollment_id.RA_id.user.firstname}-{self.RA_enrollment_id.RA_id.user.lastname} at {self.time_modified}"
+
+# faze means steps that require for pass course
+class automaticCourseFaze(models.Model):
+    id = models.AutoField(primary_key=True)
+    course_id = models.ForeignKey(automaticCourse, on_delete=models.CASCADE)
+    # in list of courses faze this index tell, what queue this faze has.
+    index = models.IntegerField()
+    title = models.CharField(max_length=255)
+    sub_name = models.CharField(max_length=255, blank=True, null=True)
+    faze_intro_title = models.CharField(max_length=255)
+    faze_intro_content = models.TextField()
+    faze_review_title = models.CharField(max_length=255)
+    faze_review_content = models.TextField()
+    score = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return f"faze name: {self.title}"
+
+
+# model for user that complete faze
+class automaticCourseFazeComplete(models.Model):
+    id = models.AutoField(primary_key=True)
+    faze_id = models.ForeignKey(automaticCourseFaze, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return f"The faze {self.faze_id.title} completed with {self.RA_enrollment_id.RA_id.user.firstname}-{self.RA_enrollment_id.RA_id.user.lastname} at {self.time_modified}"
+
+# in every faze we have collection of group that in ui can see as slaty progressbar
+class automaticCourseFazeGroup(models.Model):
+    id = models.AutoField(primary_key=True)
+    faze_id = models.ForeignKey(automaticCourseFaze, on_delete=models.CASCADE)
+    # in list of courses faze group this index tell, what queue this faze group has.
+    index = models.IntegerField()
+    title = models.CharField(max_length=255)
+    score = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return f"faze group name: {self.title}"
+    
+# model for user that complete group
+class automaticCourseFazeGroupComplete(models.Model):
+    id = models.AutoField(primary_key=True)
+    faze_group_id = models.ForeignKey(automaticCourseFazeGroup, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return f"The group faze {self.faze_group_id.title} completed with {self.RA_enrollment_id.RA_id.user.firstname}-{self.RA_enrollment_id.RA_id.user.lastname} at {self.time_modified}"
+    
+# every progressbar( group contain collection of progresssbar ) has section in it that contain related content
+class automaticCourseFazeGroupSection(models.Model):
+    id = models.AutoField(primary_key=True)
+    faze_group_id = models.ForeignKey(automaticCourseFazeGroup, on_delete=models.CASCADE)
+    # in list of courses faze group section this index tell, what queue this faze group section has.
+    index = models.IntegerField()
+    title = models.CharField(max_length=255)
+    section_type = models.CharField(max_length=50)
+    n_the_section = models.IntegerField()
+    score = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return f"faze section name: {self.title}"
+
+# model for user that complete faze section ( individual progressbar )
+class automaticCourseFazeGroupComplete(models.Model):
+    id = models.AutoField(primary_key=True)
+    faze_group_section_id = models.ForeignKey(automaticCourseFazeGroupSection, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return f"The group faze section {self.faze_group_section_id.title} completed with {self.RA_enrollment_id.RA_id.user.firstname}-{self.RA_enrollment_id.RA_id.user.lastname} at {self.time_modified}"
+
+# every faze section ( individual progressbar ) have plenty of content that been save in this model
+class automaticCourseFazeGroupSectionContentTemplate(models.Model):
+    id = models.AutoField(primary_key=True)
+    faze_group_section_id = models.ForeignKey(automaticCourseFazeGroupSection, on_delete=models.CASCADE)
+    # in list of courses faze group section content this index tell, what queue this faze group section content has.
+    index = models.IntegerField()
+    title = models.CharField(max_length=255)
+    # contain html content
+    section_content = models.TextField()  # or use custom models.HTMLField()
+    has_next_btn = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.section_content
+    
+# define type for content in faze section content template
+class columnType(models.Model):
+    id = models.AutoField(primary_key=True)
+    template_id = models.ForeignKey(automaticCourseFazeGroupSectionContentTemplate, on_delete=models.CASCADE)
+    TYPE_CHOICES = [
+        ('question', 'Question'),
+        ('content', 'Number'),
+        ('data', 'Data'),
+        # Add more choices as needed
+    ]
+    type = models.CharField(max_length=50, choices=TYPE_CHOICES)
+
+    def __str__(self):
+        return f"{self.template_id.title} - {self.type}"
+
+# quiz for template related content
+class templateQuiz(models.Model):
+    id = models.AutoField(primary_key=True)
+    template_id = models.ForeignKey(automaticCourseFazeGroupSectionContentTemplate, on_delete=models.CASCADE)
+    question = models.TextField()
+    option1 = models.CharField(max_length=255)
+    option2 = models.CharField(max_length=255)
+    option3 = models.CharField(max_length=255)
+    option4 = models.CharField(max_length=255)
+    correct_option = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.question
+
+# quiz score for every question ( quiz )
+class quizPoints(models.Model):
+    id = models.AutoField(primary_key=True)
+    quiz_id = models.ForeignKey(templateQuiz, on_delete=models.CASCADE)
+    points_title = models.CharField(max_length=255)
+    points_value = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.quiz_id.question} - score: {self.points_value}"
+    
+# define user answer for related quiz
+class submitQuiz(models.Model):
+    id = models.AutoField(primary_key=True)
+    quiz_id = models.ForeignKey(templateQuiz, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    is_correct = models.BooleanField(default=False)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return self.is_correct
+
+# short quiz for template related content
+class templateShorQuiz(models.Model):
+    id = models.AutoField(primary_key=True)
+    template_id = models.ForeignKey(automaticCourseFazeGroupSectionContentTemplate, on_delete=models.CASCADE)
+    question = models.TextField()
+
+    def __str__(self):
+        return f"{self.template_id.title} - question: {self.question}"
+    
+# options for short quiz
+class shortQuizOptions(models.Model):
+    id = models.AutoField(primary_key=True)
+    short_quiz_id = models.ForeignKey(templateShorQuiz, on_delete=models.CASCADE)
+    option_text = models.CharField(max_length=255)
+    is_correct = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.is_correct
+
+
+# short quiz score for every question ( quiz )
+class quizPoints(models.Model):
+    id = models.AutoField(primary_key=True)
+    short_quiz_id = models.ForeignKey(templateShorQuiz, on_delete=models.CASCADE)
+    points_title = models.CharField(max_length=255)
+    points_value = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.short_quiz_id.question} - score: {self.points_value}"
+    
+# define user answer for related quiz
+class submitShortQuiz(models.Model):
+    id = models.AutoField(primary_key=True)
+    short_quiz_id = models.ForeignKey(templateShorQuiz, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    is_correct = models.BooleanField(default=False)
+    time_modified = models.DateField(auto_now_add=False)
+
+    def __str__(self):
+        return self.is_correct
