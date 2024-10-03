@@ -161,7 +161,7 @@ class automaticCourseEnroll(models.Model):
     time_modified = models.DateTimeField(auto_now=True)
 
 # when role for course created then role assignment user can participate in course with related role 
-class RAEnrollment(models.Model):
+class automaticRAEnrollment(models.Model):
     id = models.AutoField(primary_key=True)
     RA_id = models.ForeignKey(roleAssignment, on_delete=models.CASCADE)
     automatic_course_enroll_id = models.ForeignKey(automaticCourseEnroll, on_delete=models.CASCADE, default=1)
@@ -174,7 +174,7 @@ class RAEnrollment(models.Model):
 class automaticCourseGroupComplete(models.Model):
     id = models.AutoField(primary_key=True)
     course_group_id = models.ForeignKey(automaticCourseGroup, on_delete=models.CASCADE)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     time_modified = models.DateField(auto_now_add=False)
 
     def __str__(self):
@@ -184,7 +184,7 @@ class automaticCourseGroupComplete(models.Model):
 class automaticCourseComplete(models.Model):
     id = models.AutoField(primary_key=True)
     automatic_course_id = models.ForeignKey(automaticCourse, on_delete=models.CASCADE)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     time_modified = models.DateField(auto_now_add=False)
 
     def __str__(self):
@@ -212,7 +212,7 @@ class automaticCourseFaze(models.Model):
 class automaticCourseFazeComplete(models.Model):
     id = models.AutoField(primary_key=True)
     faze_id = models.ForeignKey(automaticCourseFaze, on_delete=models.CASCADE)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     time_modified = models.DateField(auto_now_add=False)
 
     def __str__(self):
@@ -234,7 +234,7 @@ class automaticCourseFazeGroup(models.Model):
 class automaticCourseFazeGroupComplete(models.Model):
     id = models.AutoField(primary_key=True)
     faze_group_id = models.ForeignKey(automaticCourseFazeGroup, on_delete=models.CASCADE, default=1)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     time_modified = models.DateField(auto_now_add=False)
 
     def __str__(self):
@@ -258,7 +258,7 @@ class automaticCourseFazeGroupSection(models.Model):
 class automaticCourseFazeGroupsectionComplete(models.Model):
     id = models.AutoField(primary_key=True)
     faze_group_section_id = models.ForeignKey(automaticCourseFazeGroupSection, on_delete=models.CASCADE)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     time_modified = models.DateField(auto_now_add=False)
 
     def __str__(self):
@@ -321,9 +321,10 @@ class quizPoints(models.Model):
 class submitQuiz(models.Model):
     id = models.AutoField(primary_key=True)
     quiz_id = models.ForeignKey(templateQuiz, on_delete=models.CASCADE)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     is_correct = models.BooleanField(default=False)
     time_modified = models.DateField(auto_now_add=False)
+    score = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
 
     def __str__(self):
         return self.is_correct
@@ -362,9 +363,10 @@ class shortQuizPoints(models.Model):
 class submitShortQuiz(models.Model):
     id = models.AutoField(primary_key=True)
     short_quiz_id = models.ForeignKey(templateShorQuiz, on_delete=models.CASCADE)
-    RA_enrollment_id = models.ForeignKey(RAEnrollment, on_delete=models.CASCADE)
+    RA_enrollment_id = models.ForeignKey(automaticRAEnrollment, on_delete=models.CASCADE)
     is_correct = models.BooleanField(default=False)
     time_modified = models.DateField(auto_now_add=False)
+    score = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
 
     def __str__(self):
         return self.is_correct
@@ -452,7 +454,7 @@ class subscriptionDiscount(models.Model):
         return self.name
 
 # acitve subscription plan for user
-class subscriptionInPlan(models.Model):
+class automaticCourseSubscriptionInPlan(models.Model):
     RA_id = models.OneToOneField(roleAssignment, on_delete=models.CASCADE, primary_key=True)
     automatic_course_plan_id = models.ForeignKey(automaticCoursePlan, on_delete=models.CASCADE, default=1)
     discount_id = models.ForeignKey(subscriptionDiscount, on_delete=models.CASCADE)
