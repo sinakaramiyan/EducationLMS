@@ -481,7 +481,7 @@ class automaticCourseSubscriptionInPlan(models.Model):
 
 
 # history of subscription for users
-class subscriptionInPlanHisotry(models.Model):
+class automaticCourseSubscriptionInPlanHisotry(models.Model):
     RA_id = models.OneToOneField(roleAssignment, on_delete=models.CASCADE, primary_key=True)
     automatic_course_plan_id = models.ForeignKey(automaticCoursePlan, on_delete=models.CASCADE, default=1)
 
@@ -494,3 +494,49 @@ class subscriptionInPlanHisotry(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     start_at = models.DateTimeField()
     end_at = models.DateTimeField() 
+
+#########################
+# automatic course strike
+#########################
+
+# maintain strike for users
+class automaticCourseStrike(models.Model):
+    id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(user, on_delete=models.CASCADE)
+    strike_start_date = models.DateField()
+    DAYS_OF_WEEK = [
+    ('monday', 'Monday'),
+    ('tuesday', 'Tuesday'),
+    ('wednesday', 'Wednesday'),
+    ('thursday', 'Thursday'),
+    ('friday', 'Friday'),
+    ('saturday', 'Saturday'),
+    ('sunday', 'Sunday'),
+    ]
+    strike_day_name = models.CharField(max_length=10, choices=DAYS_OF_WEEK)
+    battery_status_number = models.SmallIntegerField()
+    battery_status = models.CharField(max_length=50, choices=[
+        ('one', 'One'),
+        ('two', 'Two'),
+    ])
+    strike_length = models.IntegerField()
+    expiration_date = models.DateField()
+    strike_status = models.CharField(max_length=50, choices=[
+        ('active', 'Active'),
+        ('inactive', 'Inactive'),
+        ('expired', 'Expired'),
+    ])
+
+    def __str__(self):
+        return f"Strike for {self.user.firstname} - {self.user.lastname}"
+    
+# contain history of strikes that user had
+class automaticCourseStrikeHistory(models.Model):
+    id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(user, on_delete=models.CASCADE)
+    strike_start_date = models.DateField()
+    strike_day_name = models.CharField(max_length=10)
+    battery_status = models.CharField(max_length=20)
+    length = models.IntegerField()
+    expiration_date = models.DateField()
+    status = models.CharField(max_length=20)
