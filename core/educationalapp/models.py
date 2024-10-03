@@ -1,32 +1,33 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from .managers import CustomUserManager
 
 #########################
 # role assignment process
 #########################
 
-class user(models.Model):
-    id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=50, unique=True)
-    password = models.CharField(max_length=255)
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
+class User(AbstractUser):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     address = models.TextField()
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     picture = models.ImageField(upload_to='', blank=True, null=True)
-    firstaccess = models.DateTimeField(auto_now_add=True)
     lastaccess = models.DateTimeField(auto_now=True)
     currentlogin = models.DateTimeField(auto_now=True)
 
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone']
+
+    objects = CustomUserManager()
+
     def __str__(self):
-        return f"{self.firstname} - {self.lastname}"
+        return f"{self.first_name} - {self.last_name}"
 
 # notification related to the user
 class notification(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(user, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     title = models.CharField(max_length=255)
     description = models.TextField()
     active_status = models.BooleanField(default=True)
@@ -34,7 +35,7 @@ class notification(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.firstname}{self.lastname} - {self.title}"
+        return f"{self.user_id.first_name}{self.user_id.last_name} - {self.title}"
 
 class role(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -44,7 +45,7 @@ class role(models.Model):
     def __str__(self):
         return self.name
 
-class permission(models.Model):
+class coursePermission(models.Model):
     name = models.CharField(max_length=50, unique=True)
     codename = models.CharField(max_length=100, unique=True)
     description = models.TextField()
@@ -55,15 +56,15 @@ class permission(models.Model):
 # Model representing a many-to-many relationship between roles and permissions
 class rolePermission(models.Model):
     role = models.ForeignKey(role, on_delete=models.CASCADE)
-    permission = models.ForeignKey(permission, on_delete=models.CASCADE)
+    course_permission_id = models.ForeignKey(coursePermission, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.role.name} - {self.permission.name}"
+        return f"{self.role.name} - {self.course_permission_id.name}"
 
 # RoleAssignment model represents the assignment of a role to a related user
 class roleAssignment(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(user, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     role = models.ForeignKey(role, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     # Status of the role assignment (either "active" or "suspended")
@@ -72,7 +73,7 @@ class roleAssignment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.firstname}-{self.lastname} => {self.role.name}"
+        return f"{self.user_id.first_name}-{self.user_id.last_name} => {self.role.name}"
 
 # when role=student and role assignment occur to user then set this addition details
 class studentMoreDetails(models.Model):
@@ -103,7 +104,7 @@ class RALevel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.RA_id.user.firstname}-{self.RA_id.user.lastname} => level: {self.level_name}"
+        return f"{self.RA_id.user.first_name}-{self.RA_id.user.last_name} => level: {self.level_name}"
 
 ######################################
 # course automatic and their relations
@@ -502,7 +503,7 @@ class automaticCourseSubscriptionInPlanHisotry(models.Model):
 # maintain strike for users
 class automaticCourseStrike(models.Model):
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(user, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     strike_start_date = models.DateField()
     DAYS_OF_WEEK = [
     ('monday', 'Monday'),
@@ -528,12 +529,12 @@ class automaticCourseStrike(models.Model):
     ])
 
     def __str__(self):
-        return f"Strike for {self.user.firstname} - {self.user.lastname}"
+        return f"Strike for {self.user_id.first_name} - {self.user_id.last_name}"
     
 # contain history of strikes that user had
 class automaticCourseStrikeHistory(models.Model):
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(user, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     strike_start_date = models.DateField()
     strike_day_name = models.CharField(max_length=10)
     battery_status = models.CharField(max_length=20)

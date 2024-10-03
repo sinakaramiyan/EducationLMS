@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'education_DB', 
         'USER': 'postgres',
         'PASSWORD': '12345',
@@ -129,3 +129,5 @@ STATIC_ROOT = str(BASE_DIR.joinpath('static'))
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'educationalapp.User'
