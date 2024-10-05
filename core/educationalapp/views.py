@@ -45,6 +45,15 @@ def setting(request):
 
 # start brilliant
 
+def brilliantSignIn(request):
+    return render(request, 'courseLearning/signIn.html')
+
+def brilliantSignUp(request):
+    return render(request, 'courseLearning/signUp.html')
+
+def brilliantResetPassword(request):
+    return render(request, 'courseLearning/resetPassword.html')
+
 def courses(request):
     return render(request, 'courseLearning/courses.html')
 

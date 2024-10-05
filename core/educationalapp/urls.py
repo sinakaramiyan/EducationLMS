@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import home, login, signin, signinfavorite, testimonial, course,monacoeditor, courseintroduction, dashboard, profile, setting, resetpassword, calendar, congrateRegister, subscription
-from .views import modules, lesson, lessoncomplete, userhomecourse, lessoncompletestroke, lessoncompleteleague, courses,course
+from .views import brilliantSignIn, brilliantSignUp, brilliantResetPassword, modules, lesson, lessoncomplete, userhomecourse, lessoncompletestroke, lessoncompleteleague, courses,course
 from .views import moodlegeneralcourses, moodlegeneralcoursedetail
 from .views import moodlestudentcourse,moodlestudentweek,moodlestudentprofile 
 from .views import moodlesblogblogs, moodlesblogcategories, moodlesblogcategorypage, moodlesblogsingleblog
@@ -28,6 +28,9 @@ urlpatterns = [
 
     # start brilliant
 
+    path('brilliant/signIn/', brilliantSignIn , name='brilliantSignIn'),
+    path('brilliant/signUp/', brilliantSignUp , name='brilliantSignUp'),
+    path('brilliant/resetPassword/', brilliantResetPassword , name='brilliantResetPassword'),
     path('brilliant/home/', userhomecourse , name='userhomecourse'),
     path('brilliant/courses/', courses , name='courses'),
     path('brilliant/modules/learning_path', modules , name='modules'),   
