@@ -1,23 +1,26 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .managers import CustomUserManager
+from django.core.validators import RegexValidator
 
 #########################
 # role assignment process
 #########################
 
 class User(AbstractUser):
+    username = None
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
+    national_id = models.CharField(max_length=20, null=True ,unique=True, validators=[
+        RegexValidator(r'^\d{10}$', 'کد ملی را درست وارد کنید')
+    ])
     address = models.TextField()
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     picture = models.ImageField(upload_to='', blank=True, null=True)
-    lastaccess = models.DateTimeField(auto_now=True)
-    currentlogin = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone','password']
 
     objects = CustomUserManager()
 
