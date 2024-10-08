@@ -107,6 +107,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    # actual path to your custom backend
+    'educationalapp.authentications.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    
+]
+
 INTERNAL_IPS = ["127.0.0.1"]
 
 # Internationalization

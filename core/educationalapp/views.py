@@ -1,4 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.backends import ModelBackend
+from django.urls import reverse_lazy
+from .models import User
+from .forms import UserRegistrationForm, signInForm
+from .authentications import EmailBackend
+from django.contrib.auth import views, forms
 
 def home(request):
     return render(request, 'home.html')
@@ -46,10 +53,67 @@ def setting(request):
 # start brilliant
 
 def brilliantSignIn(request):
-    return render(request, 'courseLearning/signIn.html')
+    if request.method == "POST":
+        form = signInForm(request.POST)
+        print(form)
+
+        print(request.POST.get('username'))
+        print(request.POST.get('password'))
+        print(form.is_valid)
+        if form.is_valid():
+            print('1')
+            email = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = EmailBackend.authenticate(username=email, password=password)
+            if user is not None:
+                print('2')
+                login(request, user)
+                print('3')
+                return redirect('/brilliant/home/')
+        elif not form.is_valid():
+            print('5')
+            print(form.errors)
+            print('8')
+            form.errors['password'] = form.error_class(['رمز عبور با تکرار آن برابر نیست.'])
+    else:
+        print('6')
+        form = signInForm()
+    
+    print('4')
+    return render(request, 'courseLearning/signin.html', {'form': form})
 
 def brilliantSignUp(request):
-    return render(request, 'courseLearning/signUp.html')
+    # reset form in every refresh and back button
+    # password hashing for when save in db
+    # show error messages
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            phone = form.cleaned_data['phone']
+            email = form.cleaned_data['email']
+            password1 = form.cleaned_data['password1']
+            password2 = form.cleaned_data['password2']
+
+            if password1 == password2:
+                # Create a new user
+                user = User(
+                    email=email, 
+                    password=password1, 
+                    first_name=first_name, 
+                    last_name=last_name,
+                    phone=phone
+                )
+                user.save()
+                resopnse = redirect('/brilliant/signIn')
+                return resopnse
+            else:
+                form.errors['password2'] = form.error_class(['رمز عبور با تکرار آن برابر نیست.'])
+    else:
+        form = UserRegistrationForm()
+
+    return render(request, 'courseLearning/signUp.html', {'form': form})
 
 def brilliantResetPassword(request):
     return render(request, 'courseLearning/resetPassword.html')

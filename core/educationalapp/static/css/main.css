@@ -2185,14 +2185,6 @@ html{
   fill: #d4d4d8;
 }
 
-.fill-gray-500 {
-  fill: #6b7280;
-}
-
-.fill-gray-600 {
-  fill: #4b5563;
-}
-
 .stroke-black {
   stroke: #000;
 }
@@ -2676,6 +2668,11 @@ html{
 .text-zinc-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 91 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .underline {
