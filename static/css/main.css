@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'IRANSansXV';
+        src: url(../fonts/IRANSansXV.woff2) format('woff2');
+    }
+}
+
+html {
+    font-family: 'IRANSansXV';
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+body {
+    animation: 2s ease-in-out slidein;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #cdd3d2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(243, 241, 241);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(195, 191, 191);
+    cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(158, 153, 153);
+}
