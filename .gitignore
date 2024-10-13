@@ -1,5 +1,9 @@
 env
 node_modules
+media/
+
+webpack-stats.json
+migrations
 __pycache__
 *.pyc
-notes.txt
+.env
