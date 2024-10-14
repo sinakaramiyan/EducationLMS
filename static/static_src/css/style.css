@@ -554,14 +554,6 @@ video {
   display: none;
 }
 
-:root {
-  --tw-rotate-x: 0;
-  --tw-rotate-y: 0;
-  --tw-translate-z: 0;
-  --tw-scale-z: 1;
-  --tw-rotate-3d: 0,0,0,0deg;
-}
-
 @font-face {
   font-family: 'IRANSansXV';
 

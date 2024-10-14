@@ -3,14 +3,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     devtool: false,
     watch: false,
 
-    entry: './static/js/index.js', // Your entry point for JS/CSS
+    entry: './static/static_src/js/index.js', // Your entry point for JS/CSS
     output: {
         filename: 'bundle.js', // Output JS file
-        path: path.resolve(__dirname, 'static/dist/'), // Output directory
+        path: path.resolve(__dirname, 'static/static_build/'), // Output directory
         clean: true,  // Cleans old files
     },
     module: {
@@ -19,7 +19,6 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'style-loader',
                     'css-loader',
                     'postcss-loader' // Use PostCSS for Tailwind
                 ],
@@ -42,7 +41,7 @@ module.exports = {
             filename: 'style.css', // Output CSS file
         }),
         new BundleTracker({ 
-            path: path.resolve(__dirname, './static/dist/'),
+            path: path.resolve(__dirname, './static/static_build/'),
             filename: 'webpack-stats.json' 
         })
     ],

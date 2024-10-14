@@ -5,9 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch --mode development",
-    "tailwind:css": "npx tailwindcss -i ./static/css/main.css -o ./static/css/style.css --watch",
-    "start": "concurrently \"npm run tailwind:css\" \"npm run build\" "
+    "watch": "webpack --watch --config webpack.config.js",
+    "tailwind":"npx tailwindcss -i ./static/static_src/css/main.css -o ./static/static_src/css/style.css --watch"
   },
   "keywords": [],
   "author": "",

@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     str(BASE_DIR.joinpath('static')),
-    str(BASE_DIR.joinpath('static/dist'))
+    str(BASE_DIR.joinpath('static/static_build'))
 ]
 
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
@@ -171,7 +171,7 @@ WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
         # The directory where Webpack will output the bundled files
-        'BUNDLE_DIR_NAME': 'dist/', # must end with slash
+        'BUNDLE_DIR_NAME': 'static_build/', # must end with slash
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
