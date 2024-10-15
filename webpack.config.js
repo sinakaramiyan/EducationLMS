@@ -3,6 +3,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
+    // mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    // devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
+    // watch: process.env.NODE_ENV === 'production' ? false : true,
+
     mode: 'development',
     devtool: false,
     watch: false,
