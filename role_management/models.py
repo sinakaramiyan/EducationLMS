@@ -1,6 +1,16 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from core.models import CustomUser
+from django.core.validators import RegexValidator
+from django.conf import settings
+import os
+
+def resume_directory_path(instance, filename):
+    user_id = instance.user.id
+    path = os.path.join('resume', str(user_id))
+    os.makedirs(os.path.join(settings.MEDIA_ROOT, path), exist_ok=True)
+
+    return os.path.join(path, filename)
 
 # exit role such as student, ...
 class Role(models.Model):
@@ -27,13 +37,13 @@ class CoursePermission(models.Model):
         max_length=50, 
         unique=True,
         verbose_name=_("Name")
-        )
+    )
     
     code_name = models.CharField(
         max_length=100,
         unique=True,
         verbose_name=_("Code Name")
-        )
+    )
     
     description = models.TextField(
         verbose_name=_("Description")
@@ -47,12 +57,14 @@ class RolePermission(models.Model):
     Role = models.ForeignKey(
         Role,
         verbose_name=_("Role"),
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE
+    )
     
     course_permission = models.ForeignKey(
         CoursePermission, 
         verbose_name=_("Course Permission"),
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE
+    )
     
 # RoleAssignment model represents the assignment of a role to a related user
 class RoleAssignment(models.Model):
@@ -82,7 +94,7 @@ class RoleAssignment(models.Model):
     status = models.CharField(
         max_length=10, 
         verbose_name=_("Status"),
-        choices=[('active', 'Active'), ('suspended', 'Suspended')]
+        default=True
     )
 
     created_at = models.DateTimeField(
@@ -111,19 +123,35 @@ class StudentMoreDetails(models.Model):
         null=True
     )
 
-    father_name = models.CharField(
-        max_length=255,
-        verbose_name=_("Father Name")
+    father_number = models.CharField(
+        max_length=15,
+        validators=[
+            RegexValidator(
+                regex=r'^\+?1?\d{9,15}$',
+                message="شماره تلفن باید با فرمت '+989876543210' وارد شود. حداکثر ۱۵ رقم مجاز است."),
+        ],
+        verbose_name=_("Father Number")
     )
 
-    mother_name = models.CharField(
-        max_length=255,
-        verbose_name=_("Mother Name")
+    mother_number = models.CharField(
+        max_length=15,
+        validators=[
+            RegexValidator(
+                regex=r'^\+?1?\d{9,15}$',
+                message="شماره تلفن باید با فرمت '+989876543210' وارد شود. حداکثر ۱۵ رقم مجاز است."),
+        ],
+        verbose_name=_("Mother Number")
     )
 
     home_number = models.CharField(
-        max_length=20,
-        verbose_name=_("Home Number"))
+        max_length=15,
+        validators=[
+            RegexValidator(
+                regex=r'^\d{3}-\d{5}$',
+                message="شماره تلفن باید با فرمت '1234567-021' وارد شود. حداکثر ۱۵ رقم مجاز است."),
+        ],
+        verbose_name=_("Home Number")
+    )
     
     updated_at = models.DateTimeField(
         auto_now=True,
@@ -145,7 +173,7 @@ class ManagerMoreDetails(models.Model):
     )
 
     resume = models.FileField(
-        upload_to='resumes/', 
+        upload_to=resume_directory_path, 
         verbose_name=_("Resume"),
         blank=True, 
         null=True
