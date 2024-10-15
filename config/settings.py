@@ -36,7 +36,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.microsoft',
 
     # local
-    'core'
+    'core',
+    'home',
+    'notification_management',
+    'role_management'
 ]
 
 MIDDLEWARE = [

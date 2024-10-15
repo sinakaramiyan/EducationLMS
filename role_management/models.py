@@ -52,7 +52,7 @@ class CoursePermission(models.Model):
     def __str__(self):
         return self.name
     
-# Model representing a many-to-many relationship between roles and permissions
+# Model representing a relationship between roles and permissions
 class RolePermission(models.Model):
     Role = models.ForeignKey(
         Role,

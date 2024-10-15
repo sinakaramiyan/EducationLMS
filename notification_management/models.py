@@ -11,7 +11,6 @@ class Notification(models.Model):
     user = models.ManyToManyField(
         CustomUser, 
         verbose_name=_("User"),
-        on_delete=models.CASCADE
     )
     
     title = models.CharField(
