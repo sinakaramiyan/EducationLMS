@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'individual_course',
     'individual_course_group',
     'individual_course_chapters',
-    'individual_course_lessons'
+    'individual_course_lessons',
+    'individual_course_contents',
 ]
 
 MIDDLEWARE = [
