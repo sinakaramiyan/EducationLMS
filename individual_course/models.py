@@ -21,7 +21,7 @@ class IndividualCourse(models.Model):
         verbose_name=_("Role")
     )
 
-    # in list of learning path this index tell, what queue this course has.
+    # in list of learning path ( individual course group ) this index tell, what queue this individual course has.
     index = models.IntegerField(
         verbose_name=_("Index")
     )
@@ -70,7 +70,15 @@ class IndividualCourse(models.Model):
     score = models.DecimalField(
         verbose_name=_("Score"),
         max_digits=5, 
-        decimal_places=2)
+        decimal_places=2
+    )
 
     def __str__(self):
         return self.title
+    
+    def set_index(self, *args, **kwargs):
+        if self.pk is None: # Check if the object is being created
+            # Get the maximum index value from the existing records
+            max_index = IndividualCourse.objects.aggregate(models.Max('index'))
+            self.index = (max_index or 0) + 1 # Increment by 1, default to 1 if no records exist
+        super().save(*args, **kwargs)

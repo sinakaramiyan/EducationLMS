@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'role_management',
     'individual_course_enrollment',
     'individual_course',
-    'individual_course_group'
+    'individual_course_group',
+    'individual_course_chapters',
 ]
 
 MIDDLEWARE = [
