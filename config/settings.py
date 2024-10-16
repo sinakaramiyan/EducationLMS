@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'core',
     'home',
     'notification_management',
-    'role_management'
+    'role_management',
+    'individual_course_enrollment',
+    'individual_course',
+    'individual_course_group'
 ]
 
 MIDDLEWARE = [
