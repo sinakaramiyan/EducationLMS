@@ -1,22 +1,22 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from individual_course.models import IndividualCourse
 from individual_course_enrollment.models import IndividualCourseEnrolment
+from individual_course_chapters.models import IndividualCourseChapter
 
-# chapter means steps that require for pass individual course
-class IndividualCourseChapter(models.Model):
+# in every faze we have collection of group that in ui can see as slaty progressbar
+class IndividualCourseLessons(models.Model):
     id = models.AutoField(
         verbose_name=_("Id"),
         primary_key=True
     )
 
-    individual_course = models.ForeignKey(
-        IndividualCourse, 
-        verbose_name=_("Individual Course"),
+    chapter = models.ForeignKey(
+        IndividualCourseChapter, 
+        verbose_name=_("Chapter"),
         on_delete=models.CASCADE
     )
 
-    # in list of course chapters this index tell, what queue this chapter has.
+    # in list of courses lessons this index tell, what queue this lesson has.
     index = models.IntegerField(
         verbose_name=_("Index")
     )
@@ -45,17 +45,17 @@ class IndividualCourseChapter(models.Model):
             max_index = IndividualCourseChapter.objects.aggregate(models.Max('index'))
             self.index = (max_index or 0) + 1 # Increment by 1, default to 1 if no records exist
         super().save(*args, **kwargs)
-
-# model for enrollment user that complete chapter
-class IndividualCourseChapterComplete(models.Model):
+    
+# model for user that complete lessons
+class IndividualCourseLessonsComplete(models.Model):
     id = models.AutoField(
         verbose_name=_("Id"),
         primary_key=True
     )
 
-    chapter = models.ForeignKey(
-        IndividualCourseChapter, 
-        verbose_name=_("Chapter"),
+    lessons = models.ForeignKey(
+        IndividualCourseLessons, 
+        verbose_name=_("Lessons"),
         on_delete=models.CASCADE
     )
 
