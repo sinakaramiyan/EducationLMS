@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'individual_course_contents',
     'individual_course_templates',
     'individual_course_quizes',
-    'individual_course_short_quizes'
+    'individual_course_short_quizes',
+    'individual_course_strikes'
 ]
 
 MIDDLEWARE = [
