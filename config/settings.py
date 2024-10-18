@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
 
 load_dotenv()
 
@@ -16,6 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
 
+    # django-admin-interface
+    "admin_interface",
+    "colorfield",
+
     # main django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,6 +31,9 @@ INSTALLED_APPS = [
 
     # whitenoise 
     'whitenoise.runserver_nostatic',
+    
+    # rosetta
+    'rosetta',
     
     # django all-auth
     'allauth',
@@ -208,3 +216,14 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+# Django-admin-interface
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
+
+# Rosetta
+LANGUAGES = [
+    ('en', _('English')),
+    ('fa', _('Persian')),
+    # other languages
+]

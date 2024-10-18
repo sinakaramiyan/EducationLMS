@@ -6,11 +6,18 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
-    # add debug toolbar to apps
-    path('__debug__/', include('debug_toolbar.urls')),
-    path('accounts/', include('allauth.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += [path("__debug__/", include("debug_toolbar.urls"))]
+
+if 'allauth' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('accounts/', include('allauth.urls')),
+    ]
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('rosetta/', include('rosetta.urls'))
+    ]
