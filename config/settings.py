@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     
     # rosetta
     'rosetta',
+
+    # django-extension
+    'django_extensions',
     
     # django all-auth
     'allauth',
@@ -43,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.microsoft',
 
-    # local
+    # apps
     'core',
     'home',
     'notification_management',
@@ -227,3 +230,9 @@ LANGUAGES = [
     ('fa', _('Persian')),
     # other languages
 ]
+
+# django-extension => graph models
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}

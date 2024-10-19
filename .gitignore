@@ -6,3 +6,5 @@ __pycache__
 *.pyc
 .env
 venv
+LMS_DB_SCHEMA.dot
+LMS_DB_SCHEMA.png
