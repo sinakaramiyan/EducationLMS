@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import IndividualCourseChapter, IndividualCourseChapterComplete
 
-# Register your models here.
+admin.site.register(IndividualCourseChapter)
+
+admin.site.register(IndividualCourseChapterComplete)

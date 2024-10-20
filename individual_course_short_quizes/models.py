@@ -24,7 +24,7 @@ class IndividualShortQuiz(models.Model):
         return self.question
     
 # answer options for short quiz
-class IndividualShorQuizOptions(models.Model):
+class IndividualShortQuizOptions(models.Model):
     id = models.AutoField(
         verbose_name=_("Id"),
         primary_key=True
@@ -49,8 +49,8 @@ class IndividualShorQuizOptions(models.Model):
     def __str__(self):
         return self.text
 
-# short quiz score for every question ( quiz )
-class IndividualShorQuizPoints(models.Model):
+# short quiz score for every question ( short quiz )
+class IndividualShortQuizPoints(models.Model):
     id = models.AutoField(
         verbose_name=_("Id"),
         primary_key=True
@@ -74,8 +74,8 @@ class IndividualShorQuizPoints(models.Model):
     def __str__(self):
         return f"{self.points_title}: {self.points_value}"
     
-# define user answer for related quiz
-class IndividualShorQuizSubmit(models.Model):
+# define user answer for related short quiz
+class IndividualShortQuizSubmit(models.Model):
     id = models.AutoField(
         verbose_name=_("Id"),
         primary_key=True

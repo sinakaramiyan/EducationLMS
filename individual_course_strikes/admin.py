@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import IndividualCourseStrike, IndividualCourseStrikeHistory
 
-# Register your models here.
+admin.site.register(IndividualCourseStrike)
+
+admin.site.register(IndividualCourseStrikeHistory)

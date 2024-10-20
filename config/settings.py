@@ -151,6 +151,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -224,6 +226,13 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
+
+# django-extension => graph models
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
+
 # Rosetta
 LANGUAGES = [
     ('en', _('English')),
@@ -231,8 +240,7 @@ LANGUAGES = [
     # other languages
 ]
 
-# django-extension => graph models
-GRAPH_MODELS = {
-  'all_applications': True,
-  'group_models': True,
-}
+# Specify the paths where your translation files will be stored
+LOCALE_PATHS = [
+    str(BASE_DIR.joinpath('static/static_src/translations'))
+]

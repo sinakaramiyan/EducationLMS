@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import IndividualCourseTemplate, columnType
 
-# Register your models here.
+admin.site.register(IndividualCourseTemplate)
+
+admin.site.register(columnType)

@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import IndividualCourseLessons, IndividualCourseLessonsComplete
 
-# Register your models here.
+admin.site.register(IndividualCourseLessons)
+
+admin.site.register(IndividualCourseLessonsComplete)
