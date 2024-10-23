@@ -1,7 +1,8 @@
 from .models import CustomUser
-from django.contrib.auth.forms import UserCreationForm
+from allauth.account.forms import SignupForm
+from django import forms
 
-class UserRegistrationForm(UserCreationForm):
+class UserRegistrationForm(SignupForm):
     class Meta:
         model = CustomUser
         fields = ('first_name', 'last_name', 'phone', 'email', 'password1', 'password2')
@@ -23,6 +24,10 @@ class UserRegistrationForm(UserCreationForm):
         })
         
         # Add autofocus to the first_name field
-        self.fields['first_name'].widget.attrs.update({
-            'autofocus': 'autofocus'
-        })
+        # self.fields['first_name'].widget.attrs.update({
+        #     'autofocus': 'autofocus'
+        # })
+    
+    def save(self, request):
+        user = super(UserRegistrationForm, self).save(request)
+        return user

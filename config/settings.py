@@ -162,7 +162,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     str(BASE_DIR.joinpath('static')),
-    str(BASE_DIR.joinpath('static/static_build'))
+    # str(BASE_DIR.joinpath('static/static_build'))
 ]
 
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
@@ -179,8 +179,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'core.CustomUser'
 DEFAULT_PROFILE_IMG = 'profile.png'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = '/home'
 
 # Whitenoise
 STORAGES = {
@@ -215,12 +215,14 @@ DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'WEBP'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'JPEG': ".webp"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 
-
 # Django all-auth
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+# Django all-auth custom forms
+ACCOUNT_FORMS = {'signup': 'core.forms.UserRegistrationForm'}
 
 # Django-admin-interface
 X_FRAME_OPTIONS = "SAMEORIGIN"

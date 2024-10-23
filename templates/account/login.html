@@ -3,7 +3,7 @@
 
 {% block title %}لاگین{% endblock title %}
 
-{% block content %}
+{% block main %}
     <div class="flex h-[100dvh] dark:bg-slate-700 mx-8 dark:border-slate-600">
         {# right panel #}
         <div class="w-1/2 hidden lg:inline-block">
@@ -131,10 +131,10 @@
                             حساب کاربری ندارید؟
                         </p>
                         {# signup button #}
-                        <a href='{% url "signup" %}' class="text-blue-600">ثبت نام</a>
+                        <a href='/accounts/signup/' class="text-blue-600">ثبت نام</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-{% endblock content %}
+{% endblock main %}

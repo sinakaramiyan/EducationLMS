@@ -13,20 +13,20 @@
     
     {% block link %}{% endblock link %}
     
-    <link rel="stylesheet" href="{% static 'static_src/css/style.css' %}" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="{% static 'static_build/style.css' %}" />
 </head>
 <body>
     <header>
         {% block header %}{% endblock header %}
     </header>
 
-    <section>
-        {% block content %}{% endblock content %}
-    </section>
+    <main>
+        {% block main %}{% endblock main %}
+    </main>
 
     <footer>
         {% block footer %}{% endblock footer %}
     </footer>
+    <script src="{% static 'static_build/bundle.js' %}"></script>
 </body>
 </html>
