@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "alpinejs": "^3.14.3",
-    "concurrently": "^9.0.1"
+    "concurrently": "^9.0.1",
+    "htmx.org": "^1.9.12"
   }
 }
