@@ -1,15 +1,11 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var BundleTracker = require('webpack-bundle-tracker');
+// var BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
-    // mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-    // devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
-    // watch: process.env.NODE_ENV === 'production' ? false : true,
-
-    mode: 'development',
-    devtool: false,
-    watch: false,
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    devtool: process.env.NODE_ENV === 'production' ? false : 'source-map',
+    watch: process.env.NODE_ENV === 'production' ? false : true,
 
     entry: './static/static_src/js/index.js', // Your entry point for JS/CSS
     output: {
@@ -44,9 +40,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css', // Output CSS file
         }),
-        new BundleTracker({ 
-            path: path.resolve(__dirname, './static/static_build/'),
-            filename: 'webpack-stats.json' 
-        })
+        // Emergency comment this for reload webpack every seccond
+        // new BundleTracker({ 
+        //     path: path.resolve(__dirname, './static/static_build/'),
+        //     filename: 'webpack-stats.json' 
+        // })
     ],
 };
