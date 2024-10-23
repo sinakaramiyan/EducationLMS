@@ -197,10 +197,9 @@ class ManagerMoreDetails(models.Model):
 
 # every user that has role assignment contain level
 class RALevel(models.Model):
-    role_assignment = models.ForeignKey(
+    role_assignment = models.OneToOneField(
         RoleAssignment, 
         verbose_name=_("Role Assignment"),
-        primary_key=True,
         on_delete=models.CASCADE
     )
 
