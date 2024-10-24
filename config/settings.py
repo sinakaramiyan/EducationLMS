@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     str(BASE_DIR.joinpath('static')),
-    # str(BASE_DIR.joinpath('static/static_build'))
+    str(BASE_DIR.joinpath('static/static_build'))
 ]
 
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
@@ -211,6 +211,10 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+# This will allow you to test the signup process without actually 
+# sending emails because in django all-auth when signup an email was sent to user
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Django all-auth custom forms
 ACCOUNT_FORMS = {'signup': 'core.forms.UserRegistrationForm'}
